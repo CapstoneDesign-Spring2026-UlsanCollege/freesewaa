@@ -19,14 +19,6 @@ Sprint 1
 
 RAM
 
-# Demo
-
-Provide a working demo link or short video.
-
-Demo link:
-
-Local demo showing repository structure and project setup.
-
 
 ## Demo Script
 
@@ -162,5 +154,6 @@ https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa/commit/xxxx
 * [x] Sprint notes are written
 * [ ] Each member posted receipts
 * [x] Links are working
+
 
 
