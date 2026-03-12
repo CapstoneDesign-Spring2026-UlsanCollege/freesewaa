@@ -1,14 +1,14 @@
 # PROJECT.md - Capstone Design Project Overview
 
-This document explains **what your team is building** and **why it matters**.
+This document explains what our team is going to build and why it is important.
 
-It should be short, clear, and realistic.
+Our project idea may improve or change during the semester, but it should always answer these three questions:
 
-Your project description will evolve during the semester, but it must always answer three questions:
+What problem are we solving?
 
-1. What problem are you solving?
-2. What will your system actually do?
-3. What will your final demo show?
+What will our system do?
+
+What will we show in the final demo?
 
 ---
 
@@ -16,7 +16,7 @@ Your project description will evolve during the semester, but it must always ans
 
 **Team Name**
 
-[Team name]
+[FreeSewa Team]
 
 **Repository**
 
@@ -26,153 +26,97 @@ Your project description will evolve during the semester, but it must always ans
 
 | Name | Role Rotation (first week) |
 | --- | --- |
-| | |
-| | |
-| | |
-| | |
+|Tamang Sujan | |
+|Pathak Ram | |
+|Shrestha Sujan | |
+|Karki Jung Swarnim | |
+|Khadka Mohan | |
 
 ---
 
 # Project Title
 
-[Short project title]
+[FREESEWA – Free Service Sharing App]
 
-Example:
-
-Campus Study Room Finder
 
 ---
 
 # Problem Statement
 
-Describe the problem your project solves.
+Many people throw away items after using them even though they are still usable. At the same time, many other people may need those items but cannot afford to buy them. Because there is no simple platform to connect these people, useful items are wasted.
 
-Focus on **a real situation** someone experiences.
-
-Good problem statements are **specific and understandable**.
-
-Example:
-
-> Many university students struggle to find available study rooms on campus. Rooms are often reserved but unused, and students waste time searching for open spaces.
-
-Your problem:
-
-[Write 2-4 sentences describing the problem]
+Our project FREESEWA tries to solve this problem by creating a platform where people can give away items for free and others can request them if they need them.
 
 ---
 
 # Target Users
 
-Who will use this system?
+The main users of this system are:
 
-Examples:
+-Students
 
-- students
-- teachers
-- small businesses
-- mobile users
-- developers
+-People living in the community
 
-Your users:
+-People who want to give away items
 
-[Describe the main users of your system]
+-People who need items but cannot buy them
+
+These users can easily share or request items through the app.
 
 ---
 
 # Project Goal
 
-Describe what your project will accomplish.
+The goal of this project is to create a platform where users can post items they want to give away for free. Other users can browse the items and request them if they need them.
 
-Focus on **what the system will allow users to do**.
-
-Example:
-
-> The system will allow students to view available study rooms, reserve them, and see live availability.
-
-Your goal:
-
-[Write 2-4 sentences describing the system]
+This system will help reduce waste and help people who need useful items.
 
 ---
 
 # Core Features (First Version)
 
-List the **3-5 most important features**.
+-Post an item for free
 
-These should be **small enough to build during the semester**.
+-Browse available items
 
-Example:
+-Request an item
 
-- View available rooms
-- Reserve a room
-- Cancel reservation
-- Display reservation schedule
+-View item details (description, photo, location)
 
-Your core features:
-
-- [Feature 1]
-- [Feature 2]
-- [Feature 3]
-- [Feature 4]
-- [Feature 5]
+-Mark item as given or unavailable
 
 ---
 
 # Demo Scenario (Very Important)
 
-Describe **exactly what you will show in the demo**.
-
-This should describe a **real interaction with the system**.
-
-Example:
-
-> A student opens the website, views available study rooms, reserves one for 2 hours, and sees the reservation appear on the schedule.
-
-Your demo scenario:
-
-Step 1:
-Step 2:
-Step 3:
-Step 4:
+Step 1: A user opens the FREESEWA website.
+Step 2: The user posts an item they want to give away (for example, an old book).
+Step 3: Another user browses the available items in the system.
+Step 4: The second user requests the item.
 
 ---
 
 # Minimum Viable Product (MVP)
 
-The **MVP** is the smallest version of your project that still works.
+The minimum version of our project will allow users to post a free item and allow other users to see the item list and request it.
 
-It must:
-
-- run without crashing
-- demonstrate the core idea
-- allow a short demo
-
-Example:
-
-> The MVP will allow a user to view rooms and create a simple reservation.
-
-Your MVP:
-
-[Describe the smallest working version of your system]
+This version will show the basic idea of the system and allow a simple demo.
 
 ---
 
 # Stretch Goals (Optional)
 
-Stretch goals are **nice improvements**, not required features.
+If we have more time, we want to add:
 
-Examples:
+-User login system
 
-- notifications
-- mobile UI improvements
-- analytics
-- advanced search
+-Image upload for items
 
-Your stretch goals:
+-Notifications when someone requests an item
 
-- 
-- 
-- 
+-Search function for items
+
+-Mobile friendly design
 
 ---
 
@@ -184,93 +128,11 @@ Examples:
 
 | Area | Tool |
 | --- | --- |
-| Frontend | React |
+| Frontend | HTML, CSS, JavaScript |
 | Backend | Node.js |
-| Database | PostgreSQL |
-| Hosting | Vercel |
-
-Your stack:
-
-| Area | Tool |
-| --- | --- |
-| Frontend | |
-| Backend | |
-| Database | |
-| Hosting | |
+| Database | MySQL |
+| Hosting | Github |
 
 ---
 
-# Project Scope Rules
 
-To keep the project realistic:
-
-- Start small
-- Add features gradually
-- Focus on **working software**
-
-Avoid projects that are:
-
-- too large
-- unclear
-- impossible to demo
-
-A good project is:
-
-```text
-Demoable
-Feasible
-Well-scoped
-```
-
----
-
-# Weekly Development Process
-
-Your team will work in **weekly sprints**.
-
-Typical cycle:
-
-```text
-Idea
-↓
-Issue
-↓
-Branch
-↓
-Pull Request
-↓
-Merge
-↓
-Demo
-```
-
-Each week ends with a **Sprint Packet submission**.
-
----
-
-# Project Evolution
-
-Your project **will change during the semester**.
-
-You should update this document when:
-
-- the scope changes
-- new features are added
-- the demo scenario evolves
-- technology decisions change
-
-Use Git commits to track changes.
-
----
-
-# What a Good Project Looks Like
-
-Strong projects usually:
-
-- solve a clear problem
-- have a simple demo
-- grow gradually
-- focus on reliability
-- maintain clear documentation
-
-The goal is not to build something huge.
