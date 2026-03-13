@@ -1,140 +1,257 @@
-# PROJECT.md - Capstone Design Project Overview
+PROJECT.md — Capstone Design Project Overview
 
-This document explains what our team is going to build and why it is important.
+This document outlines the concept, objectives, and scope of our capstone design project.
 
-Our project idea may improve or change during the semester, but it should always answer these three questions:
+The purpose of this document is to clearly define:
 
-1.What problem are we solving?
+The problem our team intends to solve
 
-2.What will our system do?
+The functionality of the proposed system
 
-3.What will we show in the final demo?
+The expected outcome of the final project demonstration
 
----
+This document may evolve throughout the semester as new features are added and the project design improves.
 
-# Team Information
+Team Information
 
-**Team Name**
+Team Name: Free Sewaa Team
+Repository:
+https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa
 
-[FreeSewa Team]
+Team Members
+Name	Role Rotation (First Week)
+Karki Swarnim Jung	Project Manager
+Shrestha Sujan	Scribe
+Tamang Sujan	QA Lead
+Pathak Ram	Demo Driver
+Khadka Mohan	Developer
 
-**Repository**
+Roles may rotate during development to ensure each member gains experience in design, development, testing, and documentation.
 
-[https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa]
+Project Title
 
-**Team Members**
+Free Sewaa — Community Donation and Resource Sharing Platform
 
-| Name | Role Rotation (first week) |
-| --- | --- |
-|Tamang Sujan |Scribe |
-|Pathak Ram |Project Manager (PM) |
-|Shrestha Sujan |QA Lead |
-|Karki Jung Swarnim |Demo Driver |
-|Khadka Mohan |Technical Lead |
+Problem Statement
 
----
+Many usable items such as clothing, books, electronics, and furniture are frequently discarded even though they remain functional.
 
-# Project Title
+At the same time, many individuals and families struggle to afford these items.
 
-[FREESEWA – Free Service Sharing App]
+People who want to donate often lack a simple way to connect with those who need these resources, and individuals searching for reusable goods may not know where to find them.
 
+This disconnect leads to:
 
----
+Increased waste of usable resources
 
-# Problem Statement
+Missed opportunities for community support
 
-Many people throw away items after using them even though they are still usable. At the same time, many other people may need those items but cannot afford to buy them. Because there is no simple platform to connect these people, useful items are wasted.
+Reduced sustainability
 
-Our project FREESEWA tries to solve this problem by creating a platform where people can give away items for free and others can request them if they need them.
+Free Sewaa addresses this issue by providing a platform where users can donate items, browse available goods, and request items they need.
 
----
+Target Users
 
-# Target Users
+The platform is intended for:
 
-The main users of this system are:
+Students
 
-- Students
+Low-income individuals or families
 
-- People living in the community
+Community members wishing to donate items
 
-- People who want to give away items
+Individuals seeking reusable goods
 
-- People who need items but cannot buy them
+The platform allows these users to share resources within their community efficiently.
 
-These users can easily share or request items through the app.
+Project Goal
 
----
+The goal of Free Sewaa is to build a web-based platform that connects donors with people who need items.
 
-# Project Goal
+Users will be able to:
 
-The goal of this project is to create a platform where users can post items they want to give away for free. Other users can browse the items and request them if they need them.
+Post donation items
 
-This system will help reduce waste and help people who need useful items.
+Browse available items
 
----
+Request items
 
-# Core Features (First Version)
+Contact donors
 
-- Post an item for free
+The platform promotes sustainability, reuse, and community collaboration.
 
-- Browse available items
+Core Features (First Version)
 
-- Request an item
+Post Donation Item
+Users can upload items they wish to donate with descriptions and categories.
 
-- View item details (description, photo, location)
+Browse Available Items
+Users can view all available donation listings.
 
-- Mark item as given or unavailable
+Request an Item
+Users can submit a request for items they are interested in.
 
----
+Contact Donor
+Users can communicate with donors to arrange pickup.
 
-# Demo Scenario (Very Important)
+Item Details Page
+Each listing will display item description, category, and contact information.
 
-Step 1: A user opens the FREESEWA website.
-Step 2: The user posts an item they want to give away (for example, an old book).
-Step 3: Another user browses the available items in the system.
-Step 4: The second user requests the item.
+Demo Scenario
 
----
+Step 1: A user opens the Free Sewaa website.
 
-# Minimum Viable Product (MVP)
+Step 2: A donor posts an item (example: a used textbook).
 
-The minimum version of our project will allow users to post a free item and allow other users to see the item list and request it.
+Step 3: Another user browses available items.
 
-This version will show the basic idea of the system and allow a simple demo.
+Step 4: The user requests the item and contacts the donor.
 
----
+Minimum Viable Product (MVP)
 
-# Stretch Goals (Optional)
+The MVP will allow users to:
 
-If we have more time, we want to add:
+Post a donation item
 
-- User login system
+View donation listings
 
-- Image upload for items
+Request an item
 
-- Notifications when someone requests an item
+Contact donors
 
-- Search function for items
+The MVP demonstrates the core functionality of the platform.
 
-- Mobile friendly design
+Stretch Goals
 
----
+Optional features may include:
 
-# Technology Stack
+User login system
 
-List the tools your team plans to use.
+Search functionality
 
-Examples:
+Category filtering
 
-| Area | Tool |
-| --- | --- |
-| Frontend | HTML, CSS, JavaScript |
-| Backend | Node.js |
-| Database | MySQL |
-| Hosting | Github |
+Notifications
 
----
+Mobile-friendly design
 
+Technology Stack
+Area	Technology
+Frontend	HTML, CSS, JavaScript
+Backend	Node.js
+Database	MongoDB / MySQL
+Hosting	GitHub / Vercel
+Development Workflow
 
+Our team will follow a sprint-based workflow:
 
+Idea
+↓
+Issue
+↓
+Branch
+↓
+Pull Request
+↓
+Merge
+↓
+Demo
 
+Project Evolution
+
+This document will be updated if:
+
+Project scope changes
+
+New features are added
+
+Technology decisions change
+
+All updates will be tracked through Git commits.
+
+2️⃣ README.md
+Free Sewaa
+
+Free Sewaa is a community donation platform designed to help people share reusable items instead of discarding them.
+
+The platform connects donors with individuals who need items, helping reduce waste while supporting communities.
+
+Project Vision
+
+Free Sewaa aims to encourage sustainability and resource sharing by creating a digital space where people can donate items and others can easily find them.
+
+By reducing unnecessary waste, the platform supports both environmental sustainability and community collaboration.
+
+Features
+
+Post items for donation
+
+Browse available donation listings
+
+Request items
+
+Contact donors
+
+View item details
+
+Technology Stack
+
+Frontend
+HTML
+CSS
+JavaScript
+
+Backend
+Node.js
+
+Database
+MongoDB / MySQL
+
+Hosting
+GitHub / Vercel
+
+How the System Works
+
+Users visit the Free Sewaa website
+
+Donors post items they wish to give away
+
+Other users browse available items
+
+Interested users request items and contact donors
+
+Project Structure
+frontend/
+backend/
+database/
+docs/
+Installation (Example)
+
+Clone the repository
+
+git clone https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa
+
+Navigate to the project directory
+
+cd freesewaa
+
+Install dependencies
+
+npm install
+
+Run the application
+
+npm start
+Team
+
+Free Sewaa Development Team
+
+Karki Swarnim Jung
+
+Shrestha Sujan
+
+Tamang Sujan
+
+Pathak Ram
+
+Khadka Mohan
