@@ -1,150 +1,215 @@
-PROJECT.md — Capstone Design Project Overview
 
-This document outlines the concept, objectives, and scope of our capstone design project.
+# PROJECT.md — Capstone Design Project Overview
+
+This document describes the concept, objectives, and development plan of the **Free Sewaa** capstone project.
 
 The purpose of this document is to clearly define:
 
-The problem our team intends to solve
+* The **problem** our team aims to solve
+* The **system functionality** we plan to implement
+* The **expected outcome** of the final project demonstration
 
-The functionality of the proposed system
+As the project progresses throughout the semester, this document may be updated to reflect changes in scope, features, or technical decisions.
 
-The expected outcome of the final project demonstration
+---
 
-This document may evolve throughout the semester as new features are added and the project design improves.
+# Team Information
 
-Team Information
+**Team Name:** Free Sewaa Team
 
-Team Name: Free Sewaa Team
-Repository:
-https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa
+**Repository:**
+[https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa)
 
-Team Members
-Name	Role Rotation (First Week)
-Karki Swarnim Jung	Project Manager
-Shrestha Sujan	Scribe
-Tamang Sujan	QA Lead
-Pathak Ram	Demo Driver
-Khadka Mohan	Developer
+## Team Members
 
-Roles may rotate during development to ensure each member gains experience in design, development, testing, and documentation.
+| Name               | Role Rotation (First Week) |
+| ------------------ | -------------------------- |
+| Karki Swarnim Jung | Project Manager            |
+| Shrestha Sujan     | Scribe                     |
+| Tamang Sujan       | QA Lead                    |
+| Pathak Ram         | Demo Driver                |
+| Khadka Mohan       | Developer                  |
 
-Project Title
+Roles may rotate during the development cycle to ensure that each team member contributes to **planning, development, testing, and documentation**.
 
-Free Sewaa — Community Donation and Resource Sharing Platform
+---
 
-Problem Statement
+# Project Title
 
-Many usable items such as clothing, books, electronics, and furniture are frequently discarded even though they remain functional.
+**Free Sewaa — Community Donation and Resource Sharing Platform**
 
-At the same time, many individuals and families struggle to afford these items.
+---
 
-People who want to donate often lack a simple way to connect with those who need these resources, and individuals searching for reusable goods may not know where to find them.
+# Problem Statement
 
-This disconnect leads to:
+Many usable items such as **clothing, books, furniture, electronics, and household goods** are frequently discarded even though they remain functional.
 
-Increased waste of usable resources
+At the same time, many individuals and families face financial challenges that prevent them from purchasing essential items.
 
-Missed opportunities for community support
+People who wish to donate items often lack a **simple and accessible way to connect with individuals who need them**. Likewise, people searching for reusable goods may not know where to find available donations.
 
-Reduced sustainability
+This disconnect results in:
 
-Free Sewaa addresses this issue by providing a platform where users can donate items, browse available goods, and request items they need.
+* Increased **waste of usable resources**
+* Missed opportunities for **community support**
+* Reduced **sustainability**
 
-Target Users
+The **Free Sewaa platform** aims to address this issue by providing a centralized digital system where users can **donate items and others can easily browse and request them**.
 
-The platform is intended for:
+---
 
-Students
+# Target Users
 
-Low-income individuals or families
+The platform is designed for a wide range of users including:
 
-Community members wishing to donate items
+* Students
+* Low-income individuals or families
+* Community members who want to donate usable items
+* Individuals seeking free reusable goods
 
-Individuals seeking reusable goods
+The platform enables these users to **connect and exchange resources within their community**.
 
-The platform allows these users to share resources within their community efficiently.
+---
 
-Project Goal
+# Project Goal
 
-The goal of Free Sewaa is to build a web-based platform that connects donors with people who need items.
+The goal of Free Sewaa is to develop a **web-based platform that connects donors with individuals who need items**.
 
-Users will be able to:
+Through the system, users will be able to:
 
-Post donation items
+* Post items they wish to donate
+* Browse available items
+* Request items they need
+* Contact donors to arrange pickup
 
-Browse available items
+By facilitating these interactions, the system encourages:
 
-Request items
+* **Sustainability**
+* **Reuse of resources**
+* **Community support**
 
-Contact donors
+---
 
-The platform promotes sustainability, reuse, and community collaboration.
+# Core Features (First Version)
 
-Core Features (First Version)
+The initial version of the platform will focus on the following core features:
 
-Post Donation Item
-Users can upload items they wish to donate with descriptions and categories.
+### 1. Post Donation Item
 
-Browse Available Items
-Users can view all available donation listings.
+Users can upload items they wish to donate, including details such as title, description, category, and location.
 
-Request an Item
-Users can submit a request for items they are interested in.
+### 2. Browse Available Items
 
-Contact Donor
-Users can communicate with donors to arrange pickup.
+Users can browse a list of available donated items displayed in an organized interface.
 
-Item Details Page
-Each listing will display item description, category, and contact information.
+### 3. Request an Item
 
-Demo Scenario
+Users can submit a request for an item they are interested in receiving.
 
-Step 1: A user opens the Free Sewaa website.
+### 4. Contact Donor
 
-Step 2: A donor posts an item (example: a used textbook).
+Users can communicate with donors to arrange pickup or delivery.
 
-Step 3: Another user browses available items.
+### 5. Item Details Page
 
-Step 4: The user requests the item and contacts the donor.
+Each listing will display detailed information including:
 
-Minimum Viable Product (MVP)
+* Category
+* Description
+* Location
+* Contact information
+
+These features together form the **Minimum Viable Product (MVP)**.
+
+---
+
+# Demo Scenario (Very Important)
+
+The final demonstration will illustrate how the platform operates through a complete user interaction.
+
+**Step 1:**
+A user opens the Free Sewaa website.
+
+**Step 2:**
+A donor uploads a new item for donation (for example, a used textbook).
+
+**Step 3:**
+Another user browses the available listings on the platform.
+
+**Step 4:**
+The user selects the item, submits a request, and contacts the donor to arrange pickup.
+
+This demonstration will show how the platform successfully **connects donors with recipients**.
+
+---
+
+# Minimum Viable Product (MVP)
+
+The **Minimum Viable Product** will include the core functionality necessary to demonstrate the platform’s concept.
 
 The MVP will allow users to:
 
-Post a donation item
+* Post a donation item
+* View available listings
+* Request items
+* Contact donors
 
-View donation listings
+The goal is to develop a **simple but reliable system that demonstrates the core workflow of the platform**.
 
-Request an item
+---
 
-Contact donors
+# Stretch Goals (Optional)
 
-The MVP demonstrates the core functionality of the platform.
+If time permits, the following features may be implemented:
 
-Stretch Goals
+* User account registration and login
+* Search functionality for items
+* Category filters
+* Notification system for item requests
+* Mobile-friendly responsive design
 
-Optional features may include:
+These enhancements will be considered once the **MVP is fully functional**.
 
-User login system
+---
 
-Search functionality
+# Technology Stack
 
-Category filtering
+| Area     | Technology            |
+| -------- | --------------------- |
+| Frontend | HTML, CSS, JavaScript |
+| Backend  | Node.js               |
+| Database | MongoDB or MySQL      |
+| Hosting  | GitHub / Vercel       |
 
-Notifications
+The technology stack may evolve as development progresses.
 
-Mobile-friendly design
+---
 
-Technology Stack
-Area	Technology
-Frontend	HTML, CSS, JavaScript
-Backend	Node.js
-Database	MongoDB / MySQL
-Hosting	GitHub / Vercel
-Development Workflow
+# Project Scope Rules
 
-Our team will follow a sprint-based workflow:
+To ensure the project remains **manageable and achievable**, the team will follow these guidelines:
 
+* Begin with a **small and functional MVP**
+* Gradually add features through **iterative development**
+* Focus on **reliability and demonstrable functionality**
+
+Projects that are overly complex, poorly defined, or difficult to demonstrate will be avoided.
+
+A successful project should be:
+
+* **Demoable**
+* **Technically feasible**
+* **Well-scoped**
+
+---
+
+# Weekly Development Process
+
+The team will follow a **sprint-based development workflow** similar to professional software development practices.
+
+Typical workflow:
+
+```
 Idea
 ↓
 Issue
@@ -153,105 +218,44 @@ Branch
 ↓
 Pull Request
 ↓
+Code Review
+↓
 Merge
 ↓
 Demo
+```
 
-Project Evolution
+Each week will conclude with a **Sprint Packet submission** documenting development progress.
 
-This document will be updated if:
+---
 
-Project scope changes
+# Project Evolution
 
-New features are added
+As development continues, the project may evolve.
 
-Technology decisions change
+This document will be updated when:
 
-All updates will be tracked through Git commits.
+* The project scope changes
+* New features are introduced
+* The demo scenario evolves
+* Technology decisions change
 
-2️⃣ README.md
-Free Sewaa
+All updates will be tracked through **Git commits within the repository**.
 
-Free Sewaa is a community donation platform designed to help people share reusable items instead of discarding them.
+---
 
-The platform connects donors with individuals who need items, helping reduce waste while supporting communities.
+# What a Good Project Looks Like
 
-Project Vision
+Successful capstone projects typically:
 
-Free Sewaa aims to encourage sustainability and resource sharing by creating a digital space where people can donate items and others can easily find them.
+* Address a **clear and meaningful problem**
+* Provide a **simple and reliable demonstration**
+* Grow gradually through development
+* Maintain **clear documentation and organization**
+* Focus on **working software rather than overly complex ideas**
 
-By reducing unnecessary waste, the platform supports both environmental sustainability and community collaboration.
+The goal of this project is not to build a large-scale system, but to develop a **functional platform that demonstrates sound engineering practices, collaboration, and problem-solving skills.**
 
-Features
+---
 
-Post items for donation
 
-Browse available donation listings
-
-Request items
-
-Contact donors
-
-View item details
-
-Technology Stack
-
-Frontend
-HTML
-CSS
-JavaScript
-
-Backend
-Node.js
-
-Database
-MongoDB / MySQL
-
-Hosting
-GitHub / Vercel
-
-How the System Works
-
-Users visit the Free Sewaa website
-
-Donors post items they wish to give away
-
-Other users browse available items
-
-Interested users request items and contact donors
-
-Project Structure
-frontend/
-backend/
-database/
-docs/
-Installation (Example)
-
-Clone the repository
-
-git clone https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa
-
-Navigate to the project directory
-
-cd freesewaa
-
-Install dependencies
-
-npm install
-
-Run the application
-
-npm start
-Team
-
-Free Sewaa Development Team
-
-Karki Swarnim Jung
-
-Shrestha Sujan
-
-Tamang Sujan
-
-Pathak Ram
-
-Khadka Mohan
