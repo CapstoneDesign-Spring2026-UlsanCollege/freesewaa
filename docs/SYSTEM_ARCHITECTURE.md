@@ -1,140 +1,90 @@
 
+## System Architecture Diagram
 
-# SYSTEM_ARCHITECTURE.md — Free Sewaa Platform
+```mermaid
+flowchart TD
 
-## System Overview
+User[User / Community Member]
 
-Free Sewaa is designed using a **three-tier web application architecture**, which separates the system into independent layers. This approach improves **scalability, maintainability, and organization**.
+Frontend[Frontend Interface  
+HTML / CSS / JavaScript]
 
-The system consists of:
+Backend[Backend Server  
+Node.js / Express]
 
-1. **Frontend Layer** – User interface for interacting with the platform
-2. **Backend Layer** – Server logic and application processing
-3. **Database Layer** – Storage and management of system data
+Database[(Database  
+MongoDB / MySQL)]
 
----
+User --> Frontend
+Frontend --> Backend
+Backend --> Database
+Database --> Backend
+Backend --> Frontend
+Frontend --> User
+````
 
-## Architecture Diagram
-
-```
-           User Browser
-                │
-                ▼
-        Frontend (HTML, CSS, JavaScript)
-                │
-        HTTP Requests / API Calls
-                │
-                ▼
-         Backend Server (Node.js)
-                │
-        Business Logic & Validation
-                │
-                ▼
-        Database (MongoDB / MySQL)
-                │
-         Data Storage & Retrieval
 ```
 
 ---
 
-## Frontend Layer
+# What this diagram shows
 
-The **frontend** represents the user interface of the platform. It is responsible for displaying information and collecting user input.
+The system has **three main layers**:
 
-### Responsibilities
+### User Layer
+People interact with the platform through a web browser.
 
-* Display donation items
-* Provide forms for posting items
-* Allow users to browse and search listings
-* Send requests to the backend server
-* Render responses received from the backend
+### Frontend Layer
+The frontend handles:
 
-### Technologies
+- displaying items
+- showing forms
+- user interaction
 
-* HTML
-* CSS
-* JavaScript
+Built with:
 
----
+```
 
-## Backend Layer
+HTML
+CSS
+JavaScript
 
-The **backend server** handles the core functionality of the application and processes requests received from the frontend.
-
-### Responsibilities
-
-* Handle user requests
-* Manage item listings
-* Process item requests
-* Validate user input
-* Communicate with the database
-
-### Technology
-
-* Node.js
+```
 
 ---
 
-## Database Layer
+### Backend Layer
+The backend processes requests such as:
 
-The **database** stores all persistent data used by the platform.
+- posting donation items
+- retrieving item listings
+- handling requests
 
-### Stored Data
+Built with:
 
-* Item listings
-* Item descriptions and categories
-* User contact information
-* Item request records
+```
 
-### Possible Database Technologies
+Node.js
+Express
 
-* MongoDB
-* MySQL
-
----
-
-## Data Flow Example
-
-Example workflow for posting a donation item:
-
-1. A user fills out the **donation item form** on the website.
-2. The frontend sends the data to the backend server.
-3. The backend validates the input data.
-4. The backend stores the item information in the database.
-5. The item listing becomes visible on the platform.
+```
 
 ---
 
-## Security Considerations
+### Database Layer
+The database stores information such as:
 
-To ensure system reliability and security, the platform will include:
+- item listings
+- item descriptions
+- categories
+- contact information
 
-* Input validation
-* Protection against invalid data submissions
-* Secure handling of user information
+Possible technologies:
 
+```
+
+MongoDB
+MySQL
 ---
-
-## Future Architecture Improvements
-
-As the platform evolves, the architecture may include:
-
-* User authentication system
-* Image storage service
-* Notification system
-* API-based communication
-
-These improvements will enhance the platform’s **scalability and usability**.
-
----
-
-## System Architecture Summary
-
-The three-layer architecture used in Free Sewaa ensures that:
-
-* The **frontend handles user interaction**
-* The **backend processes system logic**
-* The **database manages data storage**
-
-This separation makes the platform **organized, scalable, and easier to maintain**.
+helps for database management
 
