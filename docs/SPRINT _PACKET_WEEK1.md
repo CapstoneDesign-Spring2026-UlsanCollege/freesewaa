@@ -1,119 +1,181 @@
 
-# SPRINT_PACKET_WEEK1.md — Free Sewaa Project
 
-## Sprint Information
-
-**Project Name:** Free Sewaa — Community Donation Platform
-**Sprint Number:** Sprint 1
-**Sprint Duration:** Week 1
-**Sprint Focus:** Project Setup and Planning
+**Sprint Packet — Sprint 1 (Onboarding Week)**
 
 ---
 
-# Sprint Goal
+# Sprint Packet — Sprint 1
 
-The goal of Sprint 1 was to establish the **foundation of the Free Sewaa project**.
-During this sprint, the team focused on organizing the repository, defining the project scope, and creating the initial documentation required for development.
+## Team
 
-This sprint ensures that the team has a **clear understanding of the project objectives, workflow, and technical direction** before beginning system development.
+**Team Name:** Free Sewaa
+**Repository:** [https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa)
+**Sprint:** Sprint 1 — Week 1 (Onboarding)
 
----
+### Sprint Roles
 
-# Tasks Completed
+| Role            | Team Member        |
+| --------------- | ------------------ |
+| Project Manager | Sujan Shrestha     |
+| Scribe          | Sujan Tamang       |
+| QA Lead         | Swarnim Jung Karki |
+| Demo Driver     | Ram Pathak         |
+| Developer       | Mohan Khadka       |
 
-The following tasks were completed during Sprint 1:
-
-* Created the project **GitHub repository**
-* Defined the **project concept and problem statement**
-* Identified **target users and project goals**
-* Established the **technology stack**
-* Created initial project documentation:
-
-  * `README.md`
-  * `PROJECT.md`
-  * `TEAM_AGREEMENT.md`
-  * `SYSTEM_ARCHITECTURE.md`
-* Designed the **basic repository folder structure**
-* Discussed the **weekly development workflow**
+The Project Manager coordinates the sprint activities and prepares the Sprint Packet submission.
 
 ---
 
-# Repository Structure
+# Demo
 
-The repository was organized to separate documentation, frontend, backend, and database components.
+**Demo Link:** TBD
 
-```id="pbi1lg"
-freesewaa/
-│
-├── README.md
-├── PROJECT.md
-├── TEAM_AGREEMENT.md
-├── SYSTEM_ARCHITECTURE.md
-│
-├── docs/
-│   └── sprint-packet-week1.md
-│
-├── frontend/
-├── backend/
-├── database/
-└── assets/
-```
+### Demo Script
+
+• Introduce the **Free Sewaa platform**, a community-based system designed to reduce waste by allowing people to donate reusable items instead of discarding them.
+
+• Show the **GitHub repository and documentation** created during this sprint, including the project overview and team agreement.
+
+• Demonstrate the **initial homepage interface** built using HTML and CSS, which represents the first technical artifact of the project.
 
 ---
 
-# Deliverables
+# Backup Demo Plan
 
-At the end of Sprint 1, the following deliverables were completed:
+If the live demonstration cannot be shown, the team will present:
 
-* Project repository created
-* Project documentation prepared
-* Initial architecture defined
-* Development workflow established
+* Screenshots of the GitHub repository structure
+* Screenshots of the project documentation
+* Screenshots of the homepage interface
 
-These deliverables provide the **foundation required to begin technical development in the following sprint**.
-
----
-
-# Challenges Encountered
-
-During the first sprint, the team faced the following challenges:
-
-* Deciding the most appropriate **technology stack**
-* Defining a **clear and achievable project scope**
-* Organizing documentation in a structured format
-
-These challenges were addressed through team discussions and collaborative planning.
+This ensures that the progress made during the sprint can still be clearly presented.
 
 ---
 
-# Lessons Learned
+# Board Snapshot
 
-Through the planning phase, the team learned the importance of:
+### To Do
 
-* Clear **project documentation**
-* Organized **repository structure**
-* Defined **team roles and responsibilities**
-* Structured **development workflow**
+* Configure frontend development environment
+* Set up backend project structure
+* Create GitHub project board
 
-These lessons will help the team maintain **efficient collaboration throughout the project lifecycle**.
+### Doing
+
+* Preparing project documentation
+* Planning system architecture
+
+### Done
+
+* Team repository created
+* Project idea pitch issue opened
+* Team agreement started
+* Initial homepage interface created
 
 ---
 
-# Next Sprint Plan (Week 2)
+# Owners
 
-The focus of Sprint 2 will be **initial system development**.
+Responsibilities for this sprint are assigned as follows:
+
+| Responsibility                    | Owner              |
+| --------------------------------- | ------------------ |
+| Sprint coordination               | Sujan Shrestha     |
+| Documentation and notes           | Sujan Tamang       |
+| Quality review and verification   | Swarnim Jung Karki |
+| Demo preparation and presentation | Ram Pathak         |
+| Homepage interface development    | Mohan Khadka       |
+
+---
+
+# Definition of Done
+
+Sprint 1 is considered complete when the following conditions are met:
+
+* The **team repository has been created**
+* The **team agreement has been started**
+* The **project idea pitch issue has been opened**
+* The **Sprint Packet Issue has been created**
+* A **small working technical artifact (homepage interface)** has been added to the repository
+* Each team member submits **contribution receipts**
+
+---
+
+# Sprint Notes
+
+## What Shipped
+
+During Sprint 1, the team successfully completed the onboarding phase of the project. The Free Sewaa project idea was finalized and the GitHub repository was created to enable collaboration and version control.
+
+The team also prepared the initial documentation and developed a **basic homepage interface using HTML and CSS**, representing the first technical progress of the platform.
+
+---
+
+## What Broke
+
+During repository setup, a synchronization conflict occurred when pushing files to GitHub because the remote repository already contained files.
+
+The issue was resolved by synchronizing the local repository with the remote repository and pushing the changes successfully.
+
+---
+
+## Next Sprint Plan
+
+During Sprint 2 (Reset Week), the team will focus on improving the repository workflow and preparing for feature development.
 
 Planned tasks include:
 
-* Designing the **homepage user interface**
-* Creating the **item listing layout**
-* Implementing basic **frontend components**
-* Setting up the **backend server environment**
+* Creating and organizing the GitHub project board
+* Setting up issue templates
+* Configuring frontend and backend development environments
+* Beginning development of the item listing interface
 
 ---
 
-# Sprint Summary
+## Risks / Blockers
 
-Sprint 1 successfully established the **foundation of the Free Sewaa platform** by defining the project scope, organizing the repository, and preparing essential documentation.
+Possible challenges for the next sprint include:
 
-With these elements in place, the team is prepared to begin **active development in the next sprint**.
+* Some team members may require assistance configuring development environments
+* Coordinating team meeting schedules
+* Finalizing backend technology decisions
+
+The team will address these challenges through communication and collaborative troubleshooting.
+
+---
+
+# Individual Contribution Receipts
+
+Each team member must comment on this Sprint Packet Issue with **2–3 pieces of evidence** demonstrating their contributions.
+
+Examples include:
+
+* Pull requests
+* Git commits
+* Issues created or completed
+* Documentation updates
+* Screenshots of development progress
+
+---
+
+# Example Receipt Comment
+
+Contribution Receipts
+
+Commit:
+[https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa/commit/example](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa/commit/example)
+
+Issue Created:
+[https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa/issues/example](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa/issues/example)
+
+Documentation Update:
+Updated PROJECT.md and TEAM_AGREEMENT.md
+
+---
+
+# Instructor Notes
+
+Comments:
+
+Suggestions:
+
