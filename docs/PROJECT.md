@@ -1,217 +1,230 @@
-# PROJECT.md - Capstone Design Project Overview
 
-This document presents the concept, purpose, and development plan for the **Free Sewaa** capstone project.
+# PROJECT.md — Free Sewaa
 
-It is intended to remain concise, clear, and realistic throughout the semester.
+## Project Title
+**Free Sewaa — A Community Donation and Resource Sharing Platform**
 
-This project description may evolve as development progresses, but it should always answer three key questions:
+---
 
-1. What problem are we solving?
-2. What will the system do?
-3. What will the final demonstration show?
+## Project Overview
 
-* * *
+Free Sewaa is a community-focused platform designed to reduce waste and encourage resource sharing by allowing individuals to donate usable items instead of discarding them.
 
-# Team Information
+Every day, many functional items such as clothing, books, furniture, and electronics are thrown away even though they could still benefit others. At the same time, many people struggle to access these essential items due to financial or accessibility barriers.
 
-## Team Name
+Free Sewaa aims to bridge this gap by providing a simple digital platform where donors can list items they no longer need and others in the community can easily find and request those items.
 
-Free Sewaa Team
+The platform promotes sustainability, encourages reuse, and strengthens community support by making it easier to share resources.
 
-## Repository
+---
 
-CapstoneDesign-Spring2026-UlsanCollege/freesewaa
+## Problem Statement
 
-## Team Members
+A significant number of usable goods are discarded each year even though they remain functional. This creates two major issues:
 
-| Name | Role Rotation (First Week) |
-|------|-----------------------------|
-| Karki Swarnim Jung | Project Manager |
-| Shrestha Sujan | Scribe |
-| Tamang Sujan | QA Lead |
-| Pathak Ram | Demo Driver |
-| Khadka Mohan | Developer |
+1. **Unnecessary Waste**  
+   Many items that could still be useful are sent to landfills.
 
-Roles may rotate throughout the development cycle so that each team member contributes to planning, implementation, testing, and documentation.
+2. **Limited Access to Resources**  
+   Individuals who need these items often struggle to find affordable or free alternatives.
 
-* * *
+Currently, there is no simple and centralized platform that allows people to easily donate items and connect with those who need them.
 
-# Project Title
+As a result:
 
-Free Sewaa — Community Donation and Resource Sharing Platform
+- Usable items are wasted
+- People in need cannot easily find resources
+- Opportunities for community sharing are lost
 
-* * *
+Free Sewaa addresses this issue by providing a platform that connects donors and recipients in a simple and organized way.
 
-# Problem Statement
+---
 
-Many usable items such as clothing, books, furniture, electronics, and household goods are often discarded even though they remain functional. At the same time, many individuals and families face financial challenges that make it difficult to obtain essential items.
+## Project Vision
 
-Currently, there is no simple and accessible platform that effectively connects people who wish to donate usable items with those who need them. This gap leads to unnecessary waste, missed opportunities for community support, and reduced environmental sustainability.
+The vision of Free Sewaa is to create a platform that encourages communities to **reuse, share, and support one another**. By reducing waste and making resources more accessible, the platform contributes to both environmental sustainability and social support.
 
-The Free Sewaa project aims to address this issue by providing a centralized digital platform that enables donors and recipients to connect in a practical and organized way.
+---
 
-* * *
+## Target Users
 
-# Target Users
+The platform is designed for individuals who want to share or access resources within their community.
 
-The main users of this system are:
+Primary users include:
 
-- students
-- low-income individuals or families
-- community members who want to donate usable items
-- individuals searching for free reusable goods
+- Students
+- Community members who want to donate items
+- Individuals searching for reusable goods
+- People interested in reducing waste
+- Individuals who cannot afford new items but could benefit from donated goods
 
-These users will be able to connect through the platform to share resources within their local community.
+---
 
-* * *
+## Project Goal
 
-# Project Goal
+The main goal of Free Sewaa is to develop a web-based system that allows users to:
 
-The goal of this project is to develop a web-based platform that connects donors with individuals who need reusable items. The system will allow users to post donation items, browse available listings, request items, and contact donors to arrange pickup or delivery.
+- Post items they wish to donate
+- Browse available donation listings
+- Request items they are interested in
+- Contact donors to arrange pickup
 
-By supporting these interactions, the platform aims to promote resource reuse, strengthen community support, and encourage environmental sustainability.
+The platform should be simple, accessible, and easy to use, allowing users to quickly share and obtain resources.
 
-* * *
+---
 
-# Core Features (First Version)
+## Core Features (Minimum Viable Product)
 
-The first version of the system will focus on the following essential features:
+The first version of the system will focus on the essential features required to demonstrate the platform concept.
 
-- Post a donation item with title, description, category, and location
-- Browse available donated items
-- Request an item
-- Contact the donor
-- View detailed item information
+### Post Donation Item
+Users can create a listing for items they want to donate by providing information such as item name, description, category, and location.
 
-These features represent the core functionality required for the initial working version of the system.
+### Browse Available Items
+Users can view a list of all available donated items posted on the platform.
 
-* * *
+### Item Details
+Each listing will display:
 
-# Demo Scenario (Very Important)
+- Item name
+- Category
+- Description
+- Location
+- Contact information
 
-The final demonstration will present a complete and realistic interaction with the system.
+### Request an Item
+Users can express interest in an item they would like to receive.
 
-Step 1: A user opens the Free Sewaa website.  
-Step 2: A donor posts a new donation item, such as a used textbook.  
-Step 3: Another user browses the available listings.  
-Step 4: The user selects the item, submits a request, and contacts the donor to arrange pickup.
+### Contact the Donor
+Users can contact donors directly to arrange pickup or delivery.
 
-This demo will show how the platform successfully connects donors with recipients through a simple and effective digital workflow.
+---
 
-* * *
+## Demo Scenario
 
-# Minimum Viable Product (MVP)
+The demonstration will show how the Free Sewaa platform connects donors with recipients.
 
-The MVP is the smallest functional version of the system that still demonstrates the core project idea.
+**Step 1**  
+A user opens the Free Sewaa website and sees a list of available donated items.
 
-It must:
+**Step 2**  
+A donor posts a new item for donation, such as a used textbook or clothing item.
 
-- run reliably without major failures
-- demonstrate the core workflow
-- support a short but complete final demo
+**Step 3**  
+Another user browses the available items and selects one they are interested in.
 
-The MVP for Free Sewaa will allow a user to post a donation item, browse available items, request an item, and contact the donor.
+**Step 4**  
+The user contacts the donor to arrange a pickup time.
 
-* * *
+This demo demonstrates the complete workflow of the platform.
 
-# Stretch Goals (Optional)
+---
 
-Possible stretch goals include:
+## Minimum Viable Product (MVP)
 
-- user registration and login
-- search functionality
-- category filters
-- notification system for requests
-- mobile-friendly responsive design
+The MVP focuses on demonstrating the core functionality of the platform.
 
-These features are optional and will only be considered after the MVP is working reliably.
+The MVP will include:
 
-* * *
+- Posting donation items
+- Viewing available items
+- Accessing item details
+- Contacting donors
 
-# Technology Stack
+The MVP will prioritize **simplicity, reliability, and usability** over advanced features.
 
-The team currently plans to use the following tools:
+---
 
-| Area | Tool |
-|------|------|
+## Stretch Goals (Future Features)
+
+If time permits, the following features may be added:
+
+- User account system with login functionality
+- Search and filtering options for items
+- Notifications for item requests
+- Mobile-friendly responsive design improvements
+- Enhanced user interface and user experience
+- Item categorization and sorting options
+
+---
+
+## Technology Stack
+
+| Area | Technology |
+|-----|-------------|
 | Frontend | HTML, CSS, JavaScript |
-| Backend | Node.js |
-| Database | MongoDB or MySQL |
-| Hosting | GitHub / Vercel |
+| Backend | Node.js / Express (planned) |
+| Database | MongoDB or MySQL (planned) |
+| Version Control | Git and GitHub |
 
-The technology stack may change as development progresses.
+---
 
-* * *
+## Project Scope
 
-# Project Scope Rules
+To ensure the project remains manageable, the team will focus on building the core system before expanding functionality.
 
-To keep the project realistic and manageable:
+The project will prioritize:
 
-- start with a small and functional system
-- add features gradually
-- focus on working software and a clear demo
+- A clear and working demonstration
+- Clean and maintainable code
+- A simple and reliable user interface
 
-Avoid projects that are:
+Complex features will only be added after the core platform is stable.
 
-- too large
-- unclear
-- difficult to demonstrate
+---
 
-A good project is:
+## Development Process
 
-- Demoable
-- Feasible
-- Well-scoped
+The team will follow a sprint-based development process.
 
-* * *
+Typical workflow:
 
-# Weekly Development Process
+Idea → Issue → Branch → Pull Request → Review → Merge → Demo
 
-The team will work in weekly sprints.
+Each sprint will include:
 
-Typical cycle:
+- Planning
+- Development tasks
+- Testing
+- Sprint packet submission
+- Demo preparation
 
-    Idea
-    ↓
-    Issue
-    ↓
-    Branch
-    ↓
-    Pull Request
-    ↓
-    Code Review
-    ↓
-    Merge
-    ↓
-    Demo
+---
 
-Each week ends with a Sprint Packet submission documenting the team’s progress.
+## Future Development
 
-* * *
+Future development may include:
 
-# Project Evolution
+- Mobile-friendly improvements
+- User authentication system
+- Search and filtering improvements
+- Notification features
+- Enhanced item management tools
 
-The project may change during the semester.
+---
 
-This document should be updated when:
+## Project Evolution
 
-- the scope changes
-- new features are added
-- the demo scenario evolves
-- technology decisions change
+This document may evolve throughout the semester as the project develops.
 
-Git commits will be used to track those changes.
+Updates may occur when:
 
-* * *
+- New features are introduced
+- Technology decisions change
+- The scope of the project is refined
+- The demo scenario evolves
 
-# What a Good Project Looks Like
+All updates will be tracked through Git commits.
 
-Strong projects usually:
+---
 
-- solve a clear and meaningful problem
-- provide a simple and reliable demonstration
-- grow gradually over time
-- focus on working software
-- maintain clear documentation
+## What a Successful Project Looks Like
 
-The goal is not to build an overly large or complex system. The goal is to develop a functional platform that demonstrates sound engineering practices, effective collaboration, and practical problem-solving.
+A strong project should:
+
+- Solve a clear and meaningful problem
+- Be simple and easy to demonstrate
+- Grow gradually through development
+- Maintain organized documentation
+- Provide a working and reliable system
+
