@@ -128,7 +128,7 @@ Team communication will occur through:
 * Weekly team meetings
 * Group communication platforms
 
-Timely communication helps ensure smooth project development.
+Timely communication helps ensure smooth project development..
 
 ---
 
