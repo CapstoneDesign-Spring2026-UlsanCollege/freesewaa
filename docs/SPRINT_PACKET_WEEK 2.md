@@ -5,7 +5,7 @@
 **Sprint:** Week 2  
 **Repository:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa  
 
-**Sprint PM:** Sujan Shrestha  
+**Sprint PM:** SWARNIM JUNG KARKI
 
 ---
 
