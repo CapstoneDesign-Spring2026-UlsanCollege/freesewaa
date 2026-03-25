@@ -1,103 +1,93 @@
-
-
-**Sprint Packet — Sprint 1 (Onboarding Week)**
-
----
-
 # Sprint Packet — Sprint 1
 
 ## Team
 
-**Team Name:** Free Sewaa
-**Repository:** [https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa)
+**Team Name:** Free Sewaa  
+**Repository:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa  
 **Sprint:** Sprint 1 — Week 1 (Onboarding)
 
 ### Sprint Roles
 
 | Role            | Team Member        |
-| --------------- | ------------------ |
-| Project Manager | Sujan Shrestha     |
-| Scribe          | Sujan Tamang       |
-| QA Lead         | Swarnim Jung Karki |
-| Demo Driver     | Ram Pathak         |
-| Developer       | Mohan Khadka       |
+|-----------------|-------------------|
+| Project Manager | Sujan Shrestha    |
+| Scribe          | Sujan Tamang      |
+| QA Lead         | Swarnim Jung Karki|
+| Demo Driver     | Ram Pathak        |
+| Developer       | Mohan Khadka      |
 
-The Project Manager coordinates the sprint activities and prepares the Sprint Packet submission.
+The Project Manager coordinates sprint activities and prepares the Sprint Packet submission.
 
 ---
 
 # Demo
 
-**Demo Link:** TBD
+**Demo Link:** [Add working demo link here]  
+**Backup Demo:** [Add video link or screenshots folder here]
 
 ### Demo Script
 
-• Introduce the **Free Sewaa platform**, a community-based system designed to reduce waste by allowing people to donate reusable items instead of discarding them.
-
-• Show the **GitHub repository and documentation** created during this sprint, including the project overview and team agreement.
-
-• Demonstrate the **initial homepage interface** built using HTML and CSS, which represents the first technical artifact of the project.
+- Introduce **Free Sewaa**, a community donation and resource-sharing platform that helps reduce waste by connecting donors with people who need reusable items.
+- Show the **GitHub repository**, including the project structure and documentation files prepared during Sprint 1.
+- Show the **project idea pitch issue** and **team agreement** as evidence of onboarding progress.
+- Demonstrate the **initial homepage interface** built with HTML and CSS as the team’s first technical artifact.
 
 ---
 
 # Backup Demo Plan
 
-If the live demonstration cannot be shown, the team will present:
+If the live demo does not work, the team will present:
 
-* Screenshots of the GitHub repository structure
-* Screenshots of the project documentation
-* Screenshots of the homepage interface
-
-This ensures that the progress made during the sprint can still be clearly presented.
+- Screenshot of the GitHub repository
+- Screenshot of the project idea pitch issue
+- Screenshot of the team agreement
+- Screenshot of the homepage interface
+- Recorded walkthrough video if available
 
 ---
 
 # Board Snapshot
 
 ### To Do
-
-* Configure frontend development environment
-* Set up backend project structure
-* Create GitHub project board
+- Configure frontend development environment
+- Set up backend project structure
+- Prepare issue templates
 
 ### Doing
-
-* Preparing project documentation
-* Planning system architecture
+- Preparing project documentation
+- Planning system architecture
 
 ### Done
-
-* Team repository created
-* Project idea pitch issue opened
-* Team agreement started
-* Initial homepage interface created
+- Team repository created
+- Project idea pitch issue opened
+- Team agreement started
+- Sprint Packet Issue created
+- Initial homepage interface created
 
 ---
 
 # Owners
 
-Responsibilities for this sprint are assigned as follows:
-
-| Responsibility                    | Owner              |
-| --------------------------------- | ------------------ |
-| Sprint coordination               | Sujan Shrestha     |
-| Documentation and notes           | Sujan Tamang       |
-| Quality review and verification   | Swarnim Jung Karki |
-| Demo preparation and presentation | Ram Pathak         |
-| Homepage interface development    | Mohan Khadka       |
+| Responsibility                    | Owner               |
+|----------------------------------|---------------------|
+| Sprint coordination              | Sujan Shrestha      |
+| Documentation and notes          | Sujan Tamang        |
+| Quality review and verification  | Swarnim Jung Karki  |
+| Demo preparation and presentation| Ram Pathak          |
+| Homepage interface development   | Mohan Khadka        |
 
 ---
 
 # Definition of Done
 
-Sprint 1 is considered complete when the following conditions are met:
+Sprint 1 is considered complete when:
 
-* The **team repository has been created**
-* The **team agreement has been started**
-* The **project idea pitch issue has been opened**
-* The **Sprint Packet Issue has been created**
-* A **small working technical artifact (homepage interface)** has been added to the repository
-* Each team member submits **contribution receipts**
+- The team repository has been created
+- The team agreement has been started
+- The project idea pitch issue has been opened
+- The Sprint Packet Issue has been created
+- A small working technical artifact has been added to the repository
+- Each team member has posted at least 2 contribution receipts
 
 ---
 
@@ -105,78 +95,75 @@ Sprint 1 is considered complete when the following conditions are met:
 
 ## What Shipped
 
-During Sprint 1, the team successfully completed the onboarding phase of the project. The Free Sewaa project idea was finalized and the GitHub repository was created to enable collaboration and version control.
+During Sprint 1, the team successfully completed the onboarding phase of the Free Sewaa project.
 
-The team also prepared the initial documentation and developed a **basic homepage interface using HTML and CSS**, representing the first technical progress of the platform.
+Completed work includes:
+- Creating the team repository
+- Opening the project idea pitch issue
+- Starting the team agreement
+- Creating the Sprint Packet Issue
+- Building an initial homepage interface using HTML and CSS
 
----
+This sprint established the foundation for future feature development and team collaboration.
 
 ## What Broke
 
-During repository setup, a synchronization conflict occurred when pushing files to GitHub because the remote repository already contained files.
+During repository setup, the team faced a synchronization conflict while pushing files to GitHub because the remote repository already contained existing files.
 
-The issue was resolved by synchronizing the local repository with the remote repository and pushing the changes successfully.
+## How It Was Fixed
 
----
+The issue was resolved by pulling the latest remote changes, syncing the local repository, and then pushing the updated files successfully.
 
 ## Next Sprint Plan
 
-During Sprint 2 (Reset Week), the team will focus on improving the repository workflow and preparing for feature development.
+During Sprint 2 (Reset Week), the team will focus on:
 
-Planned tasks include:
-
-* Creating and organizing the GitHub project board
-* Setting up issue templates
-* Configuring frontend and backend development environments
-* Beginning development of the item listing interface
-
----
+- Organizing the GitHub project board
+- Setting up issue templates
+- Finalizing frontend and backend development environments
+- Beginning development of the item listing interface
 
 ## Risks / Blockers
 
-Possible challenges for the next sprint include:
+Possible challenges include:
+- Some team members may need help configuring development environments
+- Scheduling team meetings may be difficult
+- Backend technology decisions may take additional discussion
 
-* Some team members may require assistance configuring development environments
-* Coordinating team meeting schedules
-* Finalizing backend technology decisions
-
-The team will address these challenges through communication and collaborative troubleshooting.
+The team will manage these risks through communication and collaborative troubleshooting.
 
 ---
 
 # Individual Contribution Receipts
 
-Each team member must comment on this Sprint Packet Issue with **2–3 pieces of evidence** demonstrating their contributions.
+Each team member must comment on this Sprint Packet Issue with 2–3 pieces of evidence of their work.
 
-Examples include:
+Examples:
+- Pull requests
+- Git commits
+- Issues created or completed
+- Documentation updates
+- Screenshots of progress
 
-* Pull requests
-* Git commits
-* Issues created or completed
-* Documentation updates
-* Screenshots of development progress
+### Example Format
 
----
+**Contribution Receipts**
 
-# Example Receipt Comment
+**Commit:**  
+[Add commit link here]
 
-Contribution Receipts
+**Issue Created / Updated:**  
+[Add issue link here]
 
-Commit:
-[https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa/commit/example](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa/commit/example)
-
-Issue Created:
-[https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa/issues/example](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa/issues/example)
-
-Documentation Update:
-Updated PROJECT.md and TEAM_AGREEMENT.md
+**Documentation Update:**  
+Updated PROJECT.md / TEAM_AGREEMENT.md / README.md
 
 ---
 
 # Instructor Notes
 
-Comments:
+**Comments:**  
+[To be filled by instructor]
 
-Suggestions:
-
-
+**Suggestions:**  
+[To be filled by instructor]
