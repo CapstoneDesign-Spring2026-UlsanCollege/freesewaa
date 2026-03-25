@@ -1,77 +1,37 @@
-# GUIDE - Design Doc v1
+# Design Document V1 for Free Sewaa Project
 
-## Purpose
-Design Doc v1 is the **shared build reference** for Sprint 1.
+## Project Purpose
+The Free Sewaa project aims to provide a user-friendly platform for managing sewing projects, allowing users to track, organize, and execute sewing tasks efficiently.
 
-It is not a long report. It is a short, useful planning document that helps your team agree on what you are building first.
+## Target Users
+Our primary target users include:
+- Hobbyist seamstresses
+- Small business owners in the sewing industry
+- Educational institutions teaching sewing courses
 
-## What this doc should do
-A good Design Doc v1 should make these things clear:
-- what the product does
-- who it is for
-- what the MVP includes right now
-- how the main system fits together
-- what the main screens are
-- what Sprint 1 will build first
-- what is deliberately out of scope
+## MVP Scope
+The minimum viable product (MVP) will include the following features:
+- User registration and login
+- Project management dashboard
+- Task tracking with due dates
+- Resource library for sewing materials and patterns
 
-## Required sections
-### 1) Project purpose
-One short paragraph.
+## Architecture Sketch (C4-lite Diagram)
+The architecture will be represented in a C4-lite diagram showing the interaction between the front-end, back-end, and database components. 
+![C4-lite Diagram](https://example.com/c4-lite-diagram-link)
 
-### 2) Target users
-Who uses it? Keep it concrete.
+## Wireframes Reference
+Wireframes will be provided via link:
+![Wireframes](https://example.com/wireframes-link)
 
-### 3) MVP scope
-What is included now? What is not included now?
+## Sprint 1 Plan
+- **Week 1:** User registration and login
+- **Week 2:** Dashboard design and implementation
+- **Week 3-4:** Task management features development
 
-### 4) Architecture sketch
-Use your C4-lite diagram.
+## Risks/Assumptions
+- Risk of low user engagement in initial weeks.
+- Assumption that all targeted users have basic tech literacy.
 
-### 5) Wireframes
-Use your 3 low-fi screens.
-
-### 6) Sprint 1 plan
-List the first issues or work chunks.
-
-### 7) Risks / assumptions
-Name the real risks early.
-
-## What good looks like
-A strong Design Doc v1 is:
-- short
-- specific
-- connected to actual Sprint 1 work
-- clear enough for a teammate to start building from it
-
-## What weak docs look like
-Weak docs are:
-- vague
-- full of future features
-- disconnected from the board
-- not linked to issues
-- written like a sales pitch instead of a build plan
-
-## Submission method
-Save this as:
-- `/docs/design-doc-v1.md`
-
-Then link it in:
-- the Weekly Sprint Packet
-- related Sprint 1 issues if useful
-
-## Quick checklist
-- [ ] project purpose is clear
-- [ ] target users are named
-- [ ] MVP scope is small and realistic
-- [ ] architecture sketch is included
-- [ ] 3 wireframes are included
-- [ ] Sprint 1 work is named clearly
-- [ ] risks / assumptions are honest
-- [ ] the doc is short enough to scan quickly
-
-## Final reminder
-Design Doc v1 is supposed to help your team build.
-
-If it only sounds impressive, it failed.
- create doc v1 based on these
+---
+*This document will be updated throughout the project lifecycle as new features and feedback are integrated.*
