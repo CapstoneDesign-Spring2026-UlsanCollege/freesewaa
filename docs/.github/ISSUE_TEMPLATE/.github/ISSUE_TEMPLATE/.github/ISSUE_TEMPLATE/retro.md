@@ -13,11 +13,11 @@ Write the things that went well for the team.
 Examples:
 - Clear task division helped us finish faster
 - GitHub issues made work easier to track
-- Team communication was better this week
+- Team communication improved this week
 
-- 
-- 
-- 
+-
+-
+-
 
 ---
 
@@ -30,9 +30,9 @@ Examples:
 - Merge conflicts or GitHub confusion slowed progress
 - UI bugs took longer than expected
 
-- 
-- 
-- 
+-
+-
+-
 
 ---
 
@@ -45,9 +45,9 @@ Examples:
 - Update issues with better evidence
 - Test features before demo day
 
-- 
-- 
-- 
+-
+-
+-
 
 ---
 
@@ -55,8 +55,7 @@ Examples:
 
 Write one clear action the team will actually do next sprint.
 
-Example:
-We will assign every issue to one owner and add proof before closing it.
+Example: We will assign every issue to one owner and add proof before closing it.
 
 [Write one clear action here]
 
@@ -69,6 +68,6 @@ Add anything else the team wants to record.
 Examples:
 - Team members who contributed extra
 - Demo preparation notes
-- Communication or workflow reminders
+- Communication reminders
 
-- 
+-
