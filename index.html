@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Sewaa — Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-noise"></div>
+    <div class="grid-overlay"></div>
+    <div class="bg-orb orb-one"></div>
+    <div class="bg-orb orb-two"></div>
+    <div class="bg-orb orb-three"></div>
+
+    <main class="auth-page">
+      <section class="auth-shell">
+        <!-- Left Side -->
+        <div class="auth-left">
+          <div class="brand-row">
+            <div class="brand-logo">FS</div>
+            <div class="brand-meta">
+              <h2>Free Sewaa</h2>
+              <p>Give more. Waste less.</p>
+            </div>
+          </div>
+
+          <div class="hero-content">
+            <span class="tag-pill">
+              <i data-lucide="sparkles"></i>
+              Trusted item sharing
+            </span>
+
+            <h1>Share useful things with people who truly need them.</h1>
+
+            <p class="hero-text">
+              Free Sewaa helps people donate, receive, and connect through a
+              respectful, simple, and modern community platform.
+            </p>
+          </div>
+
+          <div class="feature-list">
+            <article class="feature-card">
+              <div class="feature-icon">
+                <i data-lucide="gift"></i>
+              </div>
+              <div>
+                <h3>Easy donations</h3>
+                <p>Post useful items quickly and help reduce waste locally.</p>
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">
+                <i data-lucide="message-circle-heart"></i>
+              </div>
+              <div>
+                <h3>Simple connections</h3>
+                <p>Coordinate safely with people who need your shared items.</p>
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">
+                <i data-lucide="earth"></i>
+              </div>
+              <div>
+                <h3>Community impact</h3>
+                <p>Turn unused items into meaningful help for someone nearby.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-box">
+              <strong>1,200+</strong>
+              <span>Items shared</span>
+            </div>
+            <div class="stat-box">
+              <strong>340+</strong>
+              <span>People helped</span>
+            </div>
+            <div class="stat-box">
+              <strong>28</strong>
+              <span>Active areas</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="auth-right">
+          <div class="auth-card">
+            <div class="auth-card-header">
+              <p class="welcome-text">Welcome back</p>
+              <h2>Sign in to continue</h2>
+              <p class="auth-subtext">
+                Use your phone number to receive an OTP, or continue with Google.
+              </p>
+            </div>
+
+            <form class="auth-form" id="loginForm" novalidate>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+
+                <div class="phone-field" id="phoneField">
+                  <button type="button" class="country-code">+82</button>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="10-1234-5678"
+                    autocomplete="tel"
+                    inputmode="numeric"
+                  />
+                </div>
+
+                <p class="field-note">
+                  We will send a 6-digit verification code to this number.
+                </p>
+                <p class="error-text" id="phoneError"></p>
+              </div>
+
+              <button type="button" class="btn btn-primary ripple-btn" id="sendOtpBtn">
+                <span class="btn-text">Send OTP</span>
+                <span class="loader hidden"></span>
+              </button>
+
+              <div class="otp-panel hidden" id="otpPanel">
+                <div class="otp-panel-top">
+                  <div>
+                    <label class="otp-title">Enter OTP</label>
+                    <p class="otp-note">
+                      Check your messages and enter the code below.
+                    </p>
+                  </div>
+
+                  <button type="button" class="timer-badge timer-button" id="timerText" disabled>
+                    Resend in 00:30
+                  </button>
+                </div>
+
+                <div class="otp-inputs">
+                  <input type="text" maxlength="1" class="otp-box" inputmode="numeric" />
+                  <input type="text" maxlength="1" class="otp-box" inputmode="numeric" />
+                  <input type="text" maxlength="1" class="otp-box" inputmode="numeric" />
+                  <input type="text" maxlength="1" class="otp-box" inputmode="numeric" />
+                  <input type="text" maxlength="1" class="otp-box" inputmode="numeric" />
+                  <input type="text" maxlength="1" class="otp-box" inputmode="numeric" />
+                </div>
+
+                <p class="error-text otp-error" id="otpError"></p>
+
+                <button type="button" class="btn btn-dark ripple-btn" id="verifyBtn">
+                  <span class="btn-text">Verify OTP</span>
+                  <span class="loader hidden"></span>
+                </button>
+              </div>
+
+              <div class="divider">
+                <span>or</span>
+              </div>
+
+              <button type="button" class="btn btn-google ripple-btn" id="googleBtn">
+                <span class="google-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 48 48"
+                    width="20"
+                    height="20"
+                  >
+                    <path
+                      fill="#FFC107"
+                      d="M43.611 20.083H42V20H24v8h11.303C33.655 32.659 29.195 36 24 36c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.27 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"
+                    />
+                    <path
+                      fill="#FF3D00"
+                      d="M6.306 14.691l6.571 4.819C14.655 16.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.27 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"
+                    />
+                    <path
+                      fill="#4CAF50"
+                      d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.141 35.091 26.715 36 24 36c-5.174 0-9.627-3.328-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"
+                    />
+                    <path
+                      fill="#1976D2"
+                      d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.084 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"
+                    />
+                  </svg>
+                </span>
+                <span>Continue with Google</span>
+              </button>
+            </form>
+
+            <p class="terms-text">
+              By continuing, you agree to the platform’s Terms and Privacy
+              guidelines.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast">
+      <div class="toast-icon" id="toastIcon">
+        <i data-lucide="check"></i>
+      </div>
+      <div class="toast-content">
+        <strong id="toastTitle">Success</strong>
+        <p id="toastMessage">Action completed successfully.</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
