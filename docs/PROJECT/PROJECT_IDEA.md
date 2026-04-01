@@ -1,3 +1,4 @@
+
 # Free Sewaa — Project Idea Pitch
 
 > A community-centered platform for sharing reusable items through donation, promoting sustainability, reducing waste, and supporting people in need.
