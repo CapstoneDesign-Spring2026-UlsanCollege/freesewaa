@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Sewaa — Community Donation Platform</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <div class="bg-noise"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+      <div class="toast-icon">
+        <i data-lucide="sparkles"></i>
+      </div>
+      <div class="toast-body">
+        <strong id="toastTitle">Success</strong>
+        <p id="toastMessage">Action completed.</p>
+      </div>
+      <button class="toast-close" id="toastClose" aria-label="Close toast">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+
+    <!-- Item Modal -->
+    <div class="modal" id="itemModal" aria-hidden="true">
+      <div class="modal-panel">
+        <button class="modal-close" id="closeModal" aria-label="Close modal">
+          <i data-lucide="x"></i>
+        </button>
+
+        <div class="modal-media">
+          <img id="modalImage" src="" alt="Item image" />
+        </div>
+
+        <div class="modal-content">
+          <div class="modal-tags">
+            <span class="tag" id="modalCategory">Books</span>
+            <span class="tag tag-muted" id="modalCondition">Good</span>
+          </div>
+
+          <h3 id="modalTitle">Item title</h3>
+
+          <p class="modal-location">
+            <i data-lucide="map-pin"></i>
+            <span id="modalLocation">Ulsan</span>
+          </p>
+
+          <p class="modal-description" id="modalDescription">
+            Description goes here.
+          </p>
+
+          <div class="modal-meta">
+            <div class="meta-card">
+              <i data-lucide="user-round"></i>
+              <div>
+                <span>Donor</span>
+                <strong id="modalDonor">Anonymous</strong>
+              </div>
+            </div>
+            <div class="meta-card">
+              <i data-lucide="clock-3"></i>
+              <div>
+                <span>Posted</span>
+                <strong id="modalPosted">Today</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <button class="btn btn-primary ripple-btn" id="requestBtn">
+              <i data-lucide="heart-handshake"></i>
+              Request Item
+            </button>
+            <button class="btn btn-outline ripple-btn" id="saveBtn">
+              <i data-lucide="bookmark"></i>
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div class="page-shell">
+      <header class="header" id="header">
+        <div class="container header-inner">
+          <a href="#hero" class="brand">
+            <div class="brand-mark">FS</div>
+            <div class="brand-copy">
+              <span class="brand-title">Free Sewaa</span>
+              <span class="brand-sub">Give more. Waste less.</span>
+            </div>
+          </a>
+
+          <nav class="nav desktop-nav">
+            <a href="#hero" class="nav-link active">Home</a>
+            <a href="#discover" class="nav-link">Browse</a>
+            <a href="#categories" class="nav-link">Categories</a>
+            <a href="#impact" class="nav-link">Impact</a>
+            <a href="#" class="nav-link fake-link" data-action="profile">Profile</a>
+          </nav>
+
+          <div class="header-right">
+            <div class="nav-search desktop-only">
+              <i data-lucide="search"></i>
+              <input
+                type="text"
+                id="navSearch"
+                placeholder="Search books, clothes, furniture..."
+              />
+            </div>
+
+            <button class="btn btn-ghost ripple-btn fake-link desktop-only" data-action="upload">
+              <i data-lucide="plus"></i>
+              Upload
+            </button>
+
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+              <i data-lucide="menu"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+          <div class="mobile-menu-inner">
+            <div class="nav-search">
+              <i data-lucide="search"></i>
+              <input
+                type="text"
+                id="mobileSearch"
+                placeholder="Search items..."
+              />
+            </div>
+
+            <div class="mobile-links">
+              <a href="#hero" class="mobile-link active">Home</a>
+              <a href="#discover" class="mobile-link">Browse</a>
+              <a href="#categories" class="mobile-link">Categories</a>
+              <a href="#impact" class="mobile-link">Impact</a>
+              <a href="#" class="mobile-link fake-link" data-action="profile">Profile</a>
+              <a href="#" class="mobile-link fake-link" data-action="upload">Upload Item</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <!-- Hero -->
+        <section class="hero section" id="hero">
+          <div class="container hero-grid">
+            <div class="hero-left reveal">
+              <div class="eyebrow">
+                <i data-lucide="sparkles"></i>
+                Trusted community sharing platform
+              </div>
+
+              <h1>
+                Give useful things a
+                <span>second life</span>
+              </h1>
+
+              <p class="hero-text">
+                Free Sewaa connects people who want to donate usable items with
+                people who need them — through a clean, respectful, and modern community experience.
+              </p>
+
+              <div class="hero-search-row">
+                <div class="hero-search">
+                  <i data-lucide="search"></i>
+                  <input
+                    type="text"
+                    id="heroSearch"
+                    placeholder="Search books, clothes, chairs, electronics..."
+                  />
+                </div>
+
+                <button class="btn btn-primary ripple-btn" id="searchBtn">
+                  Explore
+                </button>
+              </div>
+
+              <div class="hero-actions">
+                <button class="btn btn-primary ripple-btn" id="browseBtn">
+                  <i data-lucide="layout-grid"></i>
+                  Browse Items
+                </button>
+                <button class="btn btn-outline ripple-btn fake-link" data-action="upload">
+                  <i data-lucide="upload-cloud"></i>
+                  Upload Item
+                </button>
+              </div>
+
+              <div class="hero-stats">
+                <div class="stat-card">
+                  <strong class="counter" data-target="1200">0</strong>
+                  <span>Items Shared</span>
+                </div>
+                <div class="stat-card">
+                  <strong class="counter" data-target="340">0</strong>
+                  <span>Receivers Helped</span>
+                </div>
+                <div class="stat-card">
+                  <strong class="counter" data-target="28">0</strong>
+                  <span>Active Areas</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-right reveal delay-1">
+              <div class="hero-showcase glass-card">
+                <div class="showcase-top">
+                  <div class="showcase-status">
+                    <span class="live-dot"></span>
+                    <p>Live item activity</p>
+                  </div>
+                  <span class="soft-chip">Community</span>
+                </div>
+
+                <div class="showcase-card card-one">
+                  <img
+                    src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=900&q=80"
+                    alt="Books"
+                  />
+                  <div>
+                    <strong>Books Bundle</strong>
+                    <p>Education • Ulsan</p>
+                  </div>
+                </div>
+
+                <div class="showcase-card card-two">
+                  <img
+                    src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80"
+                    alt="Chair"
+                  />
+                  <div>
+                    <strong>Wooden Chair</strong>
+                    <p>Furniture • Busan</p>
+                  </div>
+                </div>
+
+                <div class="showcase-card card-three">
+                  <img
+                    src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80"
+                    alt="Jacket"
+                  />
+                  <div>
+                    <strong>Winter Jacket</strong>
+                    <p>Clothes • Seoul</p>
+                  </div>
+                </div>
+
+                <div class="showcase-bottom">
+                  <div class="mini-metric">
+                    <strong>98%</strong>
+                    <span>Positive interactions</span>
+                  </div>
+                  <div class="mini-metric">
+                    <strong>Fast</strong>
+                    <span>Easy local discovery</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="section" id="categories">
+          <div class="container">
+            <div class="section-head reveal">
+              <span class="section-badge">Categories</span>
+              <h2>Find what matters faster</h2>
+              <p>Filter donations by type and discover useful items near you.</p>
+            </div>
+
+            <div class="filters reveal delay-1" id="categoryFilters">
+              <button class="filter-chip active" data-category="all">
+                <i data-lucide="layers-3"></i>
+                All
+              </button>
+              <button class="filter-chip" data-category="Books">
+                <i data-lucide="book-open"></i>
+                Books
+              </button>
+              <button class="filter-chip" data-category="Clothes">
+                <i data-lucide="shirt"></i>
+                Clothes
+              </button>
+              <button class="filter-chip" data-category="Furniture">
+                <i data-lucide="armchair"></i>
+                Furniture
+              </button>
+              <button class="filter-chip" data-category="Electronics">
+                <i data-lucide="monitor-smartphone"></i>
+                Electronics
+              </button>
+              <button class="filter-chip" data-category="Toys">
+                <i data-lucide="blocks"></i>
+                Toys
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Discover -->
+        <section class="section" id="discover">
+          <div class="container">
+            <div class="section-head reveal">
+              <span class="section-badge">Featured Items</span>
+              <h2>Recently shared in the community</h2>
+              <p>
+                Explore modern, image-rich cards with better clarity, interaction, and detail.
+              </p>
+            </div>
+
+            <div class="toolbar reveal delay-1">
+              <div class="toolbar-search">
+                <i data-lucide="search"></i>
+                <input type="text" id="itemsSearch" placeholder="Search featured items..." />
+              </div>
+
+              <button class="sort-btn ripple-btn" id="sortBtn">
+                <i data-lucide="arrow-up-down"></i>
+                Sort: Newest
+              </button>
+            </div>
+
+            <div class="skeleton-grid" id="skeletonGrid">
+              <div class="skeleton-card"></div>
+              <div class="skeleton-card"></div>
+              <div class="skeleton-card"></div>
+              <div class="skeleton-card"></div>
+              <div class="skeleton-card"></div>
+              <div class="skeleton-card"></div>
+            </div>
+
+            <div class="items-grid hidden" id="itemsGrid"></div>
+
+            <div class="empty-state hidden" id="emptyState">
+              <div class="empty-icon">
+                <i data-lucide="inbox"></i>
+              </div>
+              <h3>No items found</h3>
+              <p>Try another keyword or reset your filters to see more items.</p>
+              <button class="btn btn-outline ripple-btn" id="resetFiltersBtn">
+                Reset Filters
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Impact -->
+        <section class="section" id="impact">
+          <div class="container impact-grid">
+            <div class="impact-left reveal">
+              <span class="section-badge">Impact</span>
+              <h2>Built for meaningful giving, not just listing</h2>
+              <p>
+                Free Sewaa helps reduce waste, support people locally, and create
+                a better culture of generosity through simple digital experiences.
+              </p>
+
+              <div class="impact-points">
+                <div class="impact-item">
+                  <i data-lucide="shield-check"></i>
+                  <div>
+                    <strong>Trust-focused design</strong>
+                    <p>Cleaner flows, respectful presentation, and clear actions.</p>
+                  </div>
+                </div>
+
+                <div class="impact-item">
+                  <i data-lucide="recycle"></i>
+                  <div>
+                    <strong>Sustainable reuse</strong>
+                    <p>Useful things stay useful instead of becoming waste.</p>
+                  </div>
+                </div>
+
+                <div class="impact-item">
+                  <i data-lucide="users-round"></i>
+                  <div>
+                    <strong>Community connection</strong>
+                    <p>People help each other through local sharing and care.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="impact-right glass-card reveal delay-1">
+              <div class="impact-feature">
+                <i data-lucide="gift"></i>
+                <div>
+                  <strong>Post in minutes</strong>
+                  <p>Quick upload flow for images, category, condition, and location.</p>
+                </div>
+              </div>
+
+              <div class="impact-feature">
+                <i data-lucide="message-circle-heart"></i>
+                <div>
+                  <strong>Better donor experience</strong>
+                  <p>Cleaner interactions help people trust the platform more.</p>
+                </div>
+              </div>
+
+              <div class="impact-feature">
+                <i data-lucide="map-pinned"></i>
+                <div>
+                  <strong>Local discovery</strong>
+                  <p>See nearby shared items in a simple, useful interface.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section">
+          <div class="container">
+            <div class="cta reveal">
+              <div class="cta-copy">
+                <span class="section-badge">Start Sharing</span>
+                <h2>One unused item can help someone today</h2>
+                <p>
+                  Turn unused books, clothes, furniture, and daily essentials into meaningful support.
+                </p>
+              </div>
+
+              <div class="cta-actions">
+                <button class="btn btn-primary ripple-btn fake-link" data-action="upload">
+                  <i data-lucide="plus-circle"></i>
+                  Post an Item
+                </button>
+                <button class="btn btn-outline ripple-btn" id="scrollBrowseBtn">
+                  <i data-lucide="arrow-down-circle"></i>
+                  Browse Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer-inner">
+          <div class="footer-brand">
+            <div class="brand-mark small">FS</div>
+            <div>
+              <strong>Free Sewaa</strong>
+              <p>Community donation and resource-sharing platform.</p>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <a href="#hero">Home</a>
+            <a href="#discover">Browse</a>
+            <a href="#categories">Categories</a>
+            <a href="#impact">Impact</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="home.js"></script>
+  </body>
+</html>
