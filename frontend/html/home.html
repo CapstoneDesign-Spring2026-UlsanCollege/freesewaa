@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Sewaa — Home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-noise"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <div class="toast" id="toast">
+      <div class="toast-icon">
+        <i data-lucide="sparkles"></i>
+      </div>
+      <div class="toast-body">
+        <strong id="toastTitle">Success</strong>
+        <p id="toastMessage">Action completed successfully.</p>
+      </div>
+    </div>
+
+    <main class="home-page home-camp-page">
+      <header class="camp-header">
+        <div class="container camp-header-inner">
+          <a href="home.html" class="camp-logo">
+            <span class="camp-logo-text">Free Sewaa</span>
+            <span class="camp-logo-mark">/</span>
+          </a>
+
+          <nav class="camp-nav">
+            <a href="home.html" class="active">Home</a>
+            <a href="browse.html">Browse</a>
+            <a href="donate.html">Donate</a>
+            <a href="chat.html">Chat</a>
+          </nav>
+
+          <div class="camp-header-actions">
+            <div class="notif-wrap">
+              <button class="notif-btn" id="notifBtn" aria-label="Notifications">
+                <i data-lucide="bell"></i>
+                <span class="notif-count" id="notifCount">0</span>
+              </button>
+
+              <div class="notif-dropdown hidden" id="notifDropdown">
+                <div class="notif-head">
+                  <strong>Notifications</strong>
+                  <button class="mark-read-btn" id="markReadBtn">Mark all read</button>
+                </div>
+                <div class="notif-list" id="notifList"></div>
+              </div>
+            </div>
+
+            <a href="signup.html" class="camp-signup-btn">Sign up</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="camp-hero">
+        <div class="container camp-hero-grid">
+          <div class="camp-hero-copy">
+            <span class="camp-soft-badge">Community sharing platform</span>
+
+            <h1>
+              Give what you can.
+              <span>Take what you need.</span>
+            </h1>
+
+            <p>
+              A modern donation platform where people can post useful items,
+              discover community support, and connect with kindness.
+            </p>
+
+            <form class="camp-hero-form">
+              <input
+                type="text"
+                placeholder="Search items, categories, or locations"
+              />
+              <a href="browse.html" class="camp-hero-form-btn">Explore</a>
+            </form>
+
+            <div class="camp-hero-stats">
+              <div class="camp-stat">
+                <h3>23</h3>
+                <p>Items shared this week across local communities.</p>
+              </div>
+              <div class="camp-stat">
+                <h3>8</h3>
+                <p>Active categories ready for browsing and donation.</p>
+              </div>
+              <div class="camp-stat">
+                <h3>11</h3>
+                <p>New conversations helping donors and receivers connect.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="camp-hero-visual">
+            <div class="camp-bubble bubble-1"></div>
+            <div class="camp-bubble bubble-2"></div>
+
+            <div class="camp-flame-wrap">
+              <div class="camp-flame-glow"></div>
+              <div class="camp-flame"></div>
+              <div class="camp-log log-1"></div>
+              <div class="camp-log log-2"></div>
+              <div class="camp-log log-3"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-feature-strip">
+        <div class="container feature-strip-grid">
+          <article class="feature-strip-card glass-card">
+            <i data-lucide="gift"></i>
+            <h3>Post donations easily</h3>
+            <p>Share furniture, books, clothing, and more in a few simple steps.</p>
+          </article>
+
+          <article class="feature-strip-card glass-card">
+            <i data-lucide="search"></i>
+            <h3>Browse by need</h3>
+            <p>Find useful items near you with smart categories and quick filters.</p>
+          </article>
+
+          <article class="feature-strip-card glass-card">
+            <i data-lucide="messages-square"></i>
+            <h3>Connect directly</h3>
+            <p>Use chat and notifications to make pickup and communication easy.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="notification.js"></script>
+    <script src="home.js"></script>
+  </body>
+</html>
