@@ -76,38 +76,27 @@ The goal of Free Sewaa is to reduce waste and support the community by making it
 
 ```text
 Free_Sewaa/
-├── .github/                # GitHub configs (issue templates, workflows)
-│   └── ISSUE_TEMPLATE/
-│
-├── docs/                  # Project documentation
-│   ├── PROJECT.md
-│   ├── TEAM_AGREEMENT.md
-│   ├── USER_STORIES.md
-│   ├── SYSTEM_ARCHITECTURE.md
-│   ├── SPRINT_PACKET_WEEK1.md
-│   ├── SPRINT_PACKET_WEEK3.md
-│
-├── frontend/              # React frontend application
+├── .github/
+├── docs/
+│   ├── DESIGN/
+│   ├── ISSUES/
+│   ├── PROGRESS/
+│   ├── PROJECT/
+│   └── WEEKLY_GUIDES/
+├── backend/
+│   └── src/
+│       ├── routes/
+│       ├── controllers/
+│       ├── models/
+│       └── config/
+├── frontend/
 │   ├── public/
-│   ├── src/
-│   │   ├── components/    # Reusable UI components
-│   │   │   └── PostItem.js
-│   │   │
-│   │   ├── pages/         # Page-level components (future expansion)
-│   │   │
-│   │   ├── App.js
-│   │   ├── index.js
-│   │   └── App.css
-│   │
-│   ├── package.json
-│   └── package-lock.json
-│
-├── backend/               # Backend (planned for future development)
-│   └── README.md
-│
-├── .gitignore
+│   └── src/
+│       ├── components/
+│       ├── pages/
+│       └── assets/
 ├── README.md
-└── LICENSE (optional)
+└── CONTRIBUTING.md
 ```
 
 ---
