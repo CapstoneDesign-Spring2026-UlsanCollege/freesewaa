@@ -78,6 +78,7 @@ This ensures proper collaboration, code quality, and organized development.
 
 ## Repository Structure
 
+```
 Free_Sewaa/
 ├── .github/              # GitHub workflows, issue/PR templates
 ├── docs/                 # project documents, weekly guides, progress files
@@ -86,6 +87,7 @@ Free_Sewaa/
 ├── CONTRIBUTING.md       # contribution guide
 ├── CODE_OF_CONDUCT.md    # team/community rules
 └── .gitignore
+```
 
 ## Key Features Implemented
 
