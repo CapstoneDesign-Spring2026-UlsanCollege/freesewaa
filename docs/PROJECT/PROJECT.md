@@ -7,7 +7,7 @@
 
 ---
 
-# Project Overview
+# Project Overview 
 
 Free Sewaa is a web platform that helps people share reusable items with others instead of throwing them away. Many items such as books, clothes, furniture, and electronics are often discarded even though they are still usable.
 
