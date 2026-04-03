@@ -7,7 +7,7 @@
 
 ## Overview
 
-**Free Sewaa** is a web-based community donation platform designed to connect people who want to give away usable items with those who need them. The project focuses on creating a simple, practical, and accessible system that encourages the reuse of functional goods instead of letting them go to waste.
+**Free Sewaa** is a web-based community donation platform designed to connect people who want to give away usable items with those who need them. The project focuses on creating a simple, practical, and accessible system that encourages the reuse of functional goods instead of letting them go to waste. 
 
 Many items such as clothes, books, furniture, electronics, and household goods are often discarded even though they are still useful. At the same time, many individuals and families struggle to afford essential items. Free Sewaa aims to bridge this gap by providing a digital platform where communities can share resources more effectively.
 
