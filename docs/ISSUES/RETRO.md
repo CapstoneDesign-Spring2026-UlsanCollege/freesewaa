@@ -1,6 +1,6 @@
 ---
 name: Retro
-about: Reflect on the sprint for Free Sewaa
+about: Reflect on the sprint for Free Sewaa 
 title: "[Retro] Sprint "
 labels: retro
 assignees: ""
