@@ -1,7 +1,7 @@
 # Sprint 1 Document — Free Sewaa
 
 
-## 1) Sprint goal (one clear goal)
+## 1) Sprint goal 
 **Sprint 1 Goal:**  
 A community user can **browse donated items and open an item detail view** in the Free Sewaa web app (frontend MVP).
 
