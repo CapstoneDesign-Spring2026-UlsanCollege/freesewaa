@@ -1,30 +1,4 @@
-Below is your **Week 2 (March 23–29, 2026)** Sprint Packet updated to include **real commit links** from your repo during that date range, and the **PR link that falls in that window**.
-
-## Verified Week 2 date range
-**Week 2 = 2026-03-23 to 2026-03-29**
-
-### PRs in that Week 2 window (from repo data)
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/32 — **[WIP] Add browse page for Free Sewaa application** (merged **2026-03-28**)
-
-> Note: Most other PRs you showed in your Week 3 packet (PR #34, #36, #37, etc.) were merged on **April 1, 2026**, so they are **Week 3/Week 4 timeframe**, not Week 2.
-
-### Commits in that Week 2 window 
-(These commit links are from your repo’s default branch commit list for that date range.)
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/f0e80848f9af3296a5a03cdba3b30872f860d3c5  
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/a2d17deef19ac10038abaa496483649eb24ae526  
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/8f326d5e4609b6b15e7d06e80e670e3bf5f02a5e  
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/ed5bce3d033330ee550c794c7c7c70a26af5290c  
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/326c2a3af330332b5565cd5a9cf61637010acfe6  
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/ab4d0318acee662d5fd02d063b2c822540d59c61  
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/5546c5f5b987fd00c87f5fb9e87e95563cb549c9  
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/45214517e4daf9ce9d2ddcba4f1c0415d6c180d3  
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/e2b9e9858b24befc45dcca97e5afb2b82d36b773  
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/1258b54ec1ac217d34be73eb741f4c5db1feb73b  
- 
-
----
-
-# Weekly Sprint Packet — Week 2 (2026-03-23 to 2026-03-29)
+# Weekly Sprint Packet — Week 2
 
 ## Team Information
 **Team Name:** Free Sewaa Team  
