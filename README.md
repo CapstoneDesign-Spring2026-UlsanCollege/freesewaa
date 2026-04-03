@@ -79,15 +79,13 @@ This ensures proper collaboration, code quality, and organized development.
 ## Repository Structure
 
 Free_Sewaa/
-├── .github/
-├── Free_Sewaa/
-├── backend/
-├── docs/
-├── .gitignore
-├── CONTRIBUTING.md
-└── README.md
-
----
+├── .github/              # GitHub workflows, issue/PR templates
+├── docs/                 # project documents, weekly guides, progress files
+├── homework/             # class or course-related files
+├── README.md             # project overview
+├── CONTRIBUTING.md       # contribution guide
+├── CODE_OF_CONDUCT.md    # team/community rules
+└── .gitignore
 
 ## Key Features Implemented
 
