@@ -160,10 +160,3 @@ Updated PROJECT.md / TEAM_AGREEMENT.md / README.md
 
 ---
 
-# Instructor Notes
-
-**Comments:**  
-[To be filled by instructor]
-
-**Suggestions:**  
-[To be filled by instructor]
