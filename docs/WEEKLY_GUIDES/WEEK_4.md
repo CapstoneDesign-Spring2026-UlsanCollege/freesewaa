@@ -178,7 +178,7 @@ https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa
 
 **PM for this Sprint**
 
-Swarnim Jung Karki
+SUJAN TAMANG
 # Instructor Notes
 
 **Comments:**
