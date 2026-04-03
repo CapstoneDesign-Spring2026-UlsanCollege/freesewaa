@@ -176,9 +176,17 @@ Week 2
 
 https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa
 
-**PM for this Sprint**
+***PM for this Sprint**
 
-SUJAN TAMANG
+Name: Sujan Tamang
+
+Contribution:
+- Updated donate page
+- Fixed CSS path issue
+
+Commit:
+https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/c2abbc8c647eef57c2db62cb2a338b00b907e1f
+
 # Instructor Notes
 
 **Commits:**
