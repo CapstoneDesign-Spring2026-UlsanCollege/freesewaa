@@ -5,7 +5,7 @@ Free Sewaa is a community-driven donation and resource-sharing platform that con
 
 The MVP focuses on a simple and efficient user flow:
 **Browse → View → Request**
-
+ 
 ---
 
 ## Screen 1 - Entry / Home  
