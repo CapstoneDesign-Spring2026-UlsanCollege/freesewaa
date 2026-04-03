@@ -22,8 +22,11 @@ The Project Manager coordinates sprint activities and prepares the Sprint Packet
 
 # Demo
 
-**Demo Link:** [Add working demo link here]  
-**Backup Demo:** [Add video link or screenshots folder here]
+**Demo Link:** <img width="1257" height="619" alt="image" src="https://github.com/user-attachments/assets/6803f2a3-8f07-4993-bc71-a8b70593c0a6" />
+  
+**Backup Demo:** 
+
+https://github.com/user-attachments/assets/88e673f3-80bf-4409-a4fc-7696fd4c65a7
 
 ### Demo Script
 
