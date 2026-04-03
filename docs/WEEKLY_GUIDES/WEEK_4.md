@@ -1,6 +1,6 @@
 # Sprint Packet — Sprint 4
 
-## Team
+ ## Team
 
 **Team Name:** Free Sewaa
 **Repository:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa
