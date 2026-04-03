@@ -6,7 +6,7 @@ Each story represents a specific user need and is used to guide development, tas
 Stories are written in a structured format and include priority, ownership, and clear acceptance criteria to ensure they are actionable and testable.
 
 ---
-
+ 
 ## Story 1 — Homepage Experience (Priority: High)
 
 **User Story**  
