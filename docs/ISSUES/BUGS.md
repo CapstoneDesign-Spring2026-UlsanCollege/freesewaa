@@ -3,7 +3,7 @@ name: Bug
 about: Report a problem in the Free Sewaa platform
 title: "[Bug] "
 labels: bug
-assignees: ""
+assignees: "" 
 ---
 
 ## Summary
