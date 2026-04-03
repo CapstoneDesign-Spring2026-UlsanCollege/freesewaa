@@ -6,7 +6,7 @@
 We wrote this document to explain what we built (and what we are planning to build) on the **Free Sewaa frontend**.  
 The goal is to keep our UI work clear for the team and easy to demo.
 
----
+--- 
 
 ## What we worked on (frontend)
 The frontend is focused on a simple user experience where someone can:
