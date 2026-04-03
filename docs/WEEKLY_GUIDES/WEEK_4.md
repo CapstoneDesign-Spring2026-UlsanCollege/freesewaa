@@ -165,7 +165,8 @@ The team will manage these risks through communication and collaborative trouble
 ## Swarnim Jung Karki
 
 **Pull Request:**
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/32
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/31
+- 
 
 **Commits:**
 - https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/a2d17deef19ac10038abaa496483649eb24ae526
