@@ -15,6 +15,12 @@ Establish a working frontend foundation and implement early authentication UI wo
 
 ## 🎬 Demo
 
+
+https://github.com/user-attachments/assets/6f94f453-29a9-438e-a745-9cc1d64caa91
+
+
+
+
 **Demo Link:**  
 https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa
 
