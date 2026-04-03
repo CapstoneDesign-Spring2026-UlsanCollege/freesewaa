@@ -155,34 +155,30 @@ The team will manage these risks through communication and collaborative trouble
 
 # Individual Contribution Receipts
 
-Each team member must comment on this Sprint Packet Issue with 2–3 pieces of evidence of their work.
-
-Examples:
-
-* Pull requests
-* Git commits
-* Issues created or completed
-* Documentation updates
-* Screenshots of progress
-
-### Example Format
-
-**Contribution Receipts**
-
-**Commit:**
-[Add commit link here]
+## Swarnim Jung Karki
 
 **Pull Request:**
-[Add PR link here]
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/32
 
-**Issue Created / Updated:**
-[Add issue link here]
+**Commits:**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/a2d17deef19ac10038abaa496483649eb24ae526
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/f0e80848f9af3296a5a03cdba3b30872f860d3c5
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/8f326d5e4609b6b15e7d06e80e670e3bf5f02a5e
 
-**Documentation Update:**
-Updated PROJECT.md / TEAM_AGREEMENT.md / README.md
+**Sprint Packet :**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/blob/main/docs/WEEKLY_GUIDES/WEEK_2.md
 
----
+**Sprint Number**
 
+Week 2
+
+**Repository**
+
+https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa
+
+**PM for this Sprint**
+
+Swarnim Jung Karki
 # Instructor Notes
 
 **Comments:**
