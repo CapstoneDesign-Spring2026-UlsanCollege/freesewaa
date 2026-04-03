@@ -1,7 +1,7 @@
 **Team Name**
 
 Free Sewaa Team
-# Sprint Packet — Week 3 (React Frontend MVP)
+# Sprint Packet — Week 3 (Frontend MVP)
 
 ## Team
 
@@ -29,7 +29,7 @@ Free Sewaa Team
 ## Demo Script (Short)
 
 1. Introduce **Free Sewaa** as a community donation and resource-sharing platform connecting donors with people who need reusable items.  
-2. Demonstrate the **React frontend** and navigation between core parts of the app.  
+2. Demonstrate the **frontend** and navigation between core parts of the app.  
 3. Show **Post Item** flow (validation + success message) and confirm data persistence via `localStorage`.  
 4. Show **Browse Items** with **category filtering**.  
 5. Click an item to open the **Item Detail Modal**, then demo **Request → Confirm → Donor contact reveal**.  
