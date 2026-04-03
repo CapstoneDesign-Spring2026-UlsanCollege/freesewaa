@@ -156,7 +156,7 @@ Examples:
 [Add commit link here]
 
 **Issue Created / Updated:**  
-[Add issue link here]
+[https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/9#issue-4092354028]
 
 **Documentation Update:**  
 Updated PROJECT.md / TEAM_AGREEMENT.md / README.md
