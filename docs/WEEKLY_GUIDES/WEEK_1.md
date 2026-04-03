@@ -153,9 +153,13 @@ Examples:
 **Contribution Receipts**
 
 **Commit:**  
-[Add commit link here]
+- Commit: https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/f0e8084
+- Commit: https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/0ce9d10
 
-**Issue Created / Updated:**  
+  **PR:**  
+- Pull Request: https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/13
+  
+**Issue Created / Updated:**
 [https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/9#issue-4092354028]
 
 **Documentation Update:**  
