@@ -96,6 +96,16 @@ If the live demo fails:
 
 PATHAK RAM
 - **PR:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/32  
-- **Commit:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/a2d17deef19ac10038abaa496483649eb24ae526  
+- **Commit:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/a2d17deef19ac10038abaa496483649eb24ae526
 
+SWARNIM JUNG KARKI
 
+PR: #32
+Commit: https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/f0e80848f9af3296a5a03cdba3b30872f860d3c5
+
+Work Done:
+- Helped continue the frontend foundation for Free Sewaa
+- Contributed to early authentication UI work
+- Followed GitHub workflow using commits and pull requests
+- Supported progress toward the browse/items page
+- Helped prepare demo evidence and repo updates
