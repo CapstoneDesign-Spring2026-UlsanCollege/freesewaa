@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/77d8bfd4-14a0-4fa5-b4ba-d4e21aed87bc
 # Sprint Packet — Sprint 4
 
  ## Team
@@ -22,8 +24,13 @@ The Project Manager coordinates sprint activities and prepares the Sprint Packet
 
 # Demo
 
-**Demo Link:** [Add working demo link here]
-**Backup Demo:** [Add video link or screenshots folder here]
+**Backup Demo:** 
+
+
+
+https://github.com/user-attachments/assets/4f0233cc-a389-409f-8327-92aad026868c
+
+
 
 ### Demo Script
 
@@ -168,10 +175,6 @@ The team will manage these risks through communication and collaborative trouble
 **Sprint Packet :**
 - https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/blob/main/docs/WEEKLY_GUIDES/WEEK_2.md
 
-**Sprint Number**
-
-Week 2
-
 **Repository**
 
 https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa
@@ -187,13 +190,11 @@ Contribution:
 Commit:
 https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/c2abbc8c647eef57c2db62cb2a338b00b907e1f
 
-# Instructor Notes
 
+## sujan shrestha 
+ 
 **Commits:**
--6f80b6f8399ce9ad24bda0a451d1090de4b74746
+- 62fcdd710061b9afa6aae5dcaf2e71e54da753a9
 
-**Comments:**
-[To be filled by instructor]
-
-**Suggestions:**
-[To be filled by instructor]
+**issue  :**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/54#issue-4198681805
