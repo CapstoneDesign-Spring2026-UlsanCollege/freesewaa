@@ -100,7 +100,7 @@ PATHAK RAM
 
 SWARNIM JUNG KARKI
 
-PR: #32
+PR: #31
 Commit: https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/f0e80848f9af3296a5a03cdba3b30872f860d3c5
 
 Work Done:
