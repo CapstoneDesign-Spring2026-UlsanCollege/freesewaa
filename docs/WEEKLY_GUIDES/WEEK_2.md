@@ -46,7 +46,7 @@ If the live demo fails:
 **PR Evidence (Week 2 range):**
 - https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/32 — [WIP] Add browse page for Free Sewaa application (merged 2026-03-28)
 
-**Commit Evidence (Week 2 range):**
+**Commit Evidence :**
 - https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/a2d17deef19ac10038abaa496483649eb24ae526  
 - https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/f0e80848f9af3296a5a03cdba3b30872f860d3c5  
 - https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/8f326d5e4609b6b15e7d06e80e670e3bf5f02a5e  
@@ -86,14 +86,10 @@ If the live demo fails:
 
 ---
 
-## 👥 Individual Contribution Receipts (Template)
-Each team member must comment below with **2–3 proofs** such as PRs, commits, issues, screenshots.
+## 👥 Individual Contribution 
 
-**Example:**
+PATHAK RAM
 - **PR:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/32  
 - **Commit:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/a2d17deef19ac10038abaa496483649eb24ae526  
 
----
 
-### One thing I can improve if you want
-Right now I **could not fetch the Week 2 issues list** due to a tool query formatting error. If you want me to include **Week 2 issue links** (created/closed between **2026-03-23 and 2026-03-29**), tell me and I’ll pull them and insert them into the packet.
