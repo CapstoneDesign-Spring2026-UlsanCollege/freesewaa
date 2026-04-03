@@ -1,9 +1,5 @@
 # Sprint 1 Document — Free Sewaa
 
-> This document is separate from the weekly sprint packet.  
-> Evidence rule: if it isn’t linked, it didn’t happen.
-
----
 
 ## 1) Sprint goal (one clear goal)
 **Sprint 1 Goal:**  
