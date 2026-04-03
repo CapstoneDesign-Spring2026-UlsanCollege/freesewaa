@@ -199,3 +199,11 @@ https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/c2ab
 
 **issue  :**
 - https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/54#issue-4198681805
+
+
+
+## Contributor links (Ram Pathak)
+
+- GitHub profile: https://github.com/Rampathak12
+- My commits in this repo: https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits?author=Rampathak12
+- My pull requests in this repo: https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pulls?q=is%3Apr+author%3ARampathak12
