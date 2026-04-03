@@ -24,7 +24,13 @@ Free Sewaa Team
 # Demo
 
 **Demo Link:** *(add working demo link or deployed URL here)*  
-**Backup Demo:** *(add short demo video link / screenshots folder link here)*
+**Backup Demo:** *
+
+
+
+https://github.com/user-attachments/assets/f67b2697-de85-41bf-ada3-402867a672c2
+
+
 
 ## Demo Script (Short)
 
@@ -217,17 +223,16 @@ Ram Pathak
 **Sprint Packet :**
 - https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/22#issuecomment-4107425718
 
-**Sprint Number**
+## sujan shrestha 
 
-Week 3
+**Pull Request:**
+-https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/40#issue-4183576663
 
-**Repository**
+**issue**
+- [https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/24](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/10#issue-4092373697)
 
-https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa
-
-**PM for this Sprint**
-
-Ram Pathak
+**Commits:**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/fcf97f9
 
 ---
 
@@ -235,121 +240,11 @@ Ram Pathak
 
 Provide a **working demo link or short video**.
 
-https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa
-
-
-## Demo Script
-\
-
-Step 1: Open the Free Sewaa application and briefly introduce it as a community donation platform that connects people who want to give away usable items with people who need them.  
-Step 2: Demonstrate the React frontend and show the Post Item component integrated into the main application.  
-Step 3: Present the current progress on item listing, request workflow, and ongoing user interface improvements.  
-Step 4: Show the team’s GitHub issues, pull requests, and project board as evidence of sprint progress and workflow.
-
----
-
-## Backup Plan
-
-If the live demo fails, what will you show instead?
-
-- recorded demo
-- screenshots of the React application
-- screenshots of the project board
-- GitHub issues, pull requests, and commits as supporting evidence
-
----
-
-# Project Board Snapshot
-
-https://github.com/orgs/CapstoneDesign-Spring2026-UlsanCollege/projects/14/views/1
 
 
 
-
-### To Do
-
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/19
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/20
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/21
-
-### Doing
-
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/22
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/26
-
-### Done
-
-- React frontend setup
-- Project structure organized
-- Post Item component implemented
-- Integrated PostItem into the main App
-- Initial documentation completed
+https://github.com/user-attachments/assets/9f6c1e9b-d3c7-449e-bbc9-97d46b6d07a7
 
 
 
-# Sprint Notes
-
-## What Shipped
-
-What actually worked by the end of the sprint?
-
-- React frontend setup was completed
-- Project structure was organized and improved
-- The Post Item component was implemented
-- The PostItem component was integrated into the main App
-- Initial project documentation was completed
-
-
-
-## What Broke
-
-
-- The item listing page is still incomplete
-- The request item workflow is not fully finished
-- User interface improvements are still in progress
-- Backend development has not started yet
-
-
-
-## Next Sprint Plan
-
-
-
-- Complete the item detail view
-- Improve item posting form validation
-- Implement the request and contact donor confirmation flow
-
-
-## Risks or Blockers
-
-Anything that might slow down the project.
-
-- Several frontend features are still incomplete
-- The project remains frontend-heavy at this stage
-- A live demo failure would require reliance on backup evidence
-
-
-
-# Engineering Practice 
-
-
-- testing
-- CI checks
-- deployment
-- logging
-- performance
-- accessibility
-
-Evidence:
-
-Issue-driven GitHub workflow and sprint evidence tracking
-
-https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/22  
-https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/13  
-https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/23  
-https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/24  
-
----
-
----
 
