@@ -1,7 +1,32 @@
-# Weekly Sprint Packet
+Below is your **Week 2 (March 23–29, 2026)** Sprint Packet updated to include **real commit links** from your repo during that date range, and the **PR link that falls in that window**.
+
+## Verified Week 2 date range
+**Week 2 = 2026-03-23 to 2026-03-29**
+
+### PRs in that Week 2 window (from repo data)
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/32 — **[WIP] Add browse page for Free Sewaa application** (merged **2026-03-28**)
+
+> Note: Most other PRs you showed in your Week 3 packet (PR #34, #36, #37, etc.) were merged on **April 1, 2026**, so they are **Week 3/Week 4 timeframe**, not Week 2.
+
+### Commits in that Week 2 window 
+(These commit links are from your repo’s default branch commit list for that date range.)
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/f0e80848f9af3296a5a03cdba3b30872f860d3c5  
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/a2d17deef19ac10038abaa496483649eb24ae526  
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/8f326d5e4609b6b15e7d06e80e670e3bf5f02a5e  
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/ed5bce3d033330ee550c794c7c7c70a26af5290c  
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/326c2a3af330332b5565cd5a9cf61637010acfe6  
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/ab4d0318acee662d5fd02d063b2c822540d59c61  
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/5546c5f5b987fd00c87f5fb9e87e95563cb549c9  
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/45214517e4daf9ce9d2ddcba4f1c0415d6c180d3  
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/e2b9e9858b24befc45dcca97e5afb2b82d36b773  
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/1258b54ec1ac217d34be73eb741f4c5db1feb73b  
+ 
+
+---
+
+# Weekly Sprint Packet — Week 2 (2026-03-23 to 2026-03-29)
 
 ## Team Information
-
 **Team Name:** Free Sewaa Team  
 **Sprint:** Week 2  
 **Repository:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa  
@@ -10,8 +35,7 @@
 ---
 
 ## 🎯 Sprint Goal
-
-Establish a working frontend foundation and implement a functional authentication interface, including the homepage and login system, while following a proper GitHub workflow.
+Establish a working frontend foundation and implement early authentication UI work, while following a proper GitHub workflow (issues, commits, PRs).
 
 ---
 
@@ -22,15 +46,14 @@ https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa
 
 ### Demo Script (3 steps)
 1. Open the Free Sewaa homepage and briefly explain the platform purpose.  
-2. Navigate to the login page and show the Email and Phone login options.  
-3. Demonstrate the OTP simulation flow and successful login interface.  
+2. Navigate to the login/auth UI (if present in the Week 2 build) and show Email/Phone options or the designed interface.  
+3. Demonstrate OTP simulation flow / login UI behavior and explain what is still frontend-only.
 
 ### Backup Plan
 If the live demo fails:
-
-- Show screenshots of the homepage and login page  
-- Show GitHub commits and repository file structure  
-- Explain the login flow manually  
+- Show screenshots of homepage/login UI
+- Show repo structure and GitHub PR/commit evidence
+- Walk through the Week 2 changes using commits
 
 ---
 
@@ -45,78 +68,58 @@ If the live demo fails:
 - Refining login UI/UX  
 - Improving validation and error handling  
 
-### 🟢 Done
-- Repository setup completed  
-- Team agreement created  
-- Project idea pitch created  
-- Sprint Packet Week 1 completed  
-- Homepage created using HTML and CSS  
-- Login page implemented with Email and Phone OTP option  
-- Basic frontend structure established  
+### 🟢 Done (Evidence)
+**PR Evidence (Week 2 range):**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/32 — [WIP] Add browse page for Free Sewaa application (merged 2026-03-28)
 
----
+**Commit Evidence (Week 2 range):**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/a2d17deef19ac10038abaa496483649eb24ae526  
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/f0e80848f9af3296a5a03cdba3b30872f860d3c5  
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/8f326d5e4609b6b15e7d06e80e670e3bf5f02a5e  
+
+
 
 ## 📝 Sprint Notes
 
 ### ✅ What Shipped
-- Fully functional homepage interface  
-- Login system with:
-  - Email/password login
-  - Phone number OTP simulation  
-- Responsive UI design  
-- Basic project structure  
-- GitHub workflow followed through commits, pushes, and issues  
+- Continued frontend foundation work (commits to main in Week 2)
+- Progress delivered through PR workflow and merges
+- Work moved toward a browse/items experience (see PR #32)
 
 ### ⚠️ What Broke
-- Minor UI alignment issues on small screens  
-- No backend integration yet  
-- OTP system is frontend-only and currently simulated  
+- UI still not fully consistent across pages
+- Backend integration not started yet
+- Some features remain “in progress/WIP” during this week
 
-### 🔜 Next Sprint Plan
-- Build the registration page  
-- Start backend setup using Node.js and database  
-- Connect the login system with the backend  
-- Improve overall UI consistency  
+### �� Next Sprint Plan
+- Finalize browse/items flow
+- Complete authentication UI and improve validation
+- Continue improving UI responsiveness and consistency
 
 ### 🚧 Risks / Blockers
-- Team learning curve with backend development  
-- Time management across team members  
-- Frontend and backend integration challenges  
+- Frontend-heavy progress without backend support yet
+- Merge conflicts possible as more features land
+- Demo reliability (need screenshots/video backup)
 
 ---
 
 ## 🧪 Definition of Done (Checklist)
-
 - [x] Demo prepared or backup ready  
-- [x] Sprint goal achieved  
+- [x] Sprint goal documented  
+- [x] Evidence included (PR + commits)  
 - [x] Project board updated  
-- [x] Sprint notes completed  
-- [x] Issues created and tracked  
 - [ ] Individual receipts added by all members  
 
 ---
 
-## 👥 Individual Contribution Receipts
+## 👥 Individual Contribution Receipts (Template)
+Each team member must comment below with **2–3 proofs** such as PRs, commits, issues, screenshots.
 
-Each team member must comment below with a minimum of **2–3 proofs** such as:
-
-- Pull Requests  
-- Commits  
-- Issues completed  
-- Code contributions  
-- Screenshots  
+**Example:**
+- **PR:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/32  
+- **Commit:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/a2d17deef19ac10038abaa496483649eb24ae526  
 
 ---
 
-## 📌 Example Receipt Comment
-
-**Contribution Receipts**
-
-**Commit:**  
-https://github.com/.../commit/xxxx  
-
-**Issue Completed:**  
-https://github.com/.../issues/xx  
-
-**Screenshot:**  
-(attach UI work or feature)  
+### One thing I can improve if you want
+Right now I **could not fetch the Week 2 issues list** due to a tool query formatting error. If you want me to include **Week 2 issue links** (created/closed between **2026-03-23 and 2026-03-29**), tell me and I’ll pull them and insert them into the packet.
