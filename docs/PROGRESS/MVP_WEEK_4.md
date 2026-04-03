@@ -1,4 +1,4 @@
-# Week 3 MVP Specifications
+# Week 4 MVP Specifications
 
 ## Overview
 The third week of the MVP development focuses on refining the core features based on feedback from previous iterations.
