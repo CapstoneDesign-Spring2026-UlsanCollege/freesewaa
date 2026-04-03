@@ -200,6 +200,34 @@ https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa
 
 Ram Pathak
 
+## Swarnim Jung Karki
+
+**Pull Request:**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/23
+
+**Pull Request:**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/24
+
+**Commits:**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/fcf97f9
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/eb65659
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/883c600
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/b729d35
+
+**Sprint Packet :**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/22#issuecomment-4107425718
+
+**Sprint Number**
+
+Week 3
+
+**Repository**
+
+https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa
+
+**PM for this Sprint**
+
+Ram Pathak
 
 ---
 
