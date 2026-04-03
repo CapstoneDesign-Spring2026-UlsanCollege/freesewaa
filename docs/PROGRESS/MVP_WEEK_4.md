@@ -30,4 +30,4 @@ The third week of the MVP development focuses on refining the core features base
 - User feedback reports.
 
 ## Conclusion
-The focus of Week 3 is to make the MVP ready for user testing, ensuring that all foundational elements are in place and functioning correctly.
+The focus of Week 4 is to make the MVP ready for user testing, ensuring that all foundational elements are in place and functioning correctly.
