@@ -1,33 +1,55 @@
-# Week 4 MVP Specifications
+# 📌 Week 4 MVP Specifications – Free Sewaa
 
 ## Overview
-The third week of the MVP development focuses on refining the core features based on feedback from previous iterations.
+Week 4 focuses on **refining and stabilizing the MVP** based on feedback from earlier iterations. The goal is to prepare the application for **user testing and backend readiness**.
 
-## Objectives
-1. Incorporate user feedback into the design.
-2. Ensure all critical features are functional.
-3. Prepare for user testing.
+---
 
-## Features to Implement
-### Feature 1: User Authentication
-- Implement secure login/logout functionality.
-- Ensure validation of user inputs.
+## 🎯 Objectives
+- Incorporate feedback into UI/UX improvements  
+- Ensure all core features are fully functional  
+- Prepare a stable version for user testing  
 
-### Feature 2: Enhanced User Interface
-- Redesign homepage layout based on user feedback.
-- Improve navigation flow between sections.
+---
 
-### Feature 3: Core Functionalities
-- Ensure that all primary features work seamlessly together.
-- Conduct integration tests to validate collaboration between features.
+## 🔹 Core Features
 
-## User Testing Plan
-- Schedule user testing sessions by the end of Week 3.
-- Collect feedback and prioritize adjustments for Week 4.
+### 1. User Authentication
+- Implement login and logout functionality  
+- Add input validation and basic session handling  
 
-## Deliverables
-- A working version of the site with all critical features implemented.
-- User feedback reports.
+---
 
-## Conclusion
-The focus of Week 4 is to make the MVP ready for user testing, ensuring that all foundational elements are in place and functioning correctly.
+### 2. Enhanced User Interface
+- Improve homepage layout based on feedback  
+- Refine navigation flow across all pages  
+- Ensure consistent design and usability  
+
+---
+
+### 3. Core Feature Integration
+- Ensure all main features work together smoothly:
+  - Browse Items  
+  - Post Item  
+  - Request Flow  
+- Perform integration testing to validate interactions  
+
+---
+
+## 🧪 User Testing Plan
+- Conduct user testing sessions  
+- Collect usability feedback  
+- Identify and prioritize improvements  
+
+---
+
+## 📦 Deliverables
+- Stable MVP with integrated core features  
+- Basic authentication system  
+- UI/UX improvements applied  
+- User feedback summary/report  
+
+---
+
+## ✅ Conclusion
+Week 4 prepares Free Sewaa for **real user testing** by improving usability, ensuring feature integration, and strengthening the overall stability of the MVP.
