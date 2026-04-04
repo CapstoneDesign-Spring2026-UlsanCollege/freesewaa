@@ -1,81 +1,139 @@
-For Week 2, the team needs to decide what minimum features will be included in the demo version of the Free Sewa App. Since this is an early stage of the capstone project, it is important to focus on building a simple but working prototype rather than trying to implement all possible features.
+# 📌 Free Sewaa – Week 2 MVP Decision
 
-The goal of the demo is to clearly show the main idea of the platform: allowing users to donate unused items and allowing others to request them.
-Constraints
+## 🧠 Overview
 
-Limited time before the Week 2 demo
+For Week 2, the team focused on defining a **Minimum Viable Product (MVP)** for the Free Sewaa platform. At this early stage of development, the priority is to build a **simple, functional prototype** that clearly demonstrates the core idea of the application.
 
-Team members are still setting up the development environment
+The primary goal of the demo is to showcase how users can:
+- Donate unused items  
+- Browse available items  
+- Request items from others  
+- Connect with donors  
 
-The project has not yet started full development
+---
 
-The demo must clearly show the main concept of the application
+## ⚠️ Constraints
 
-Deadline / Demo Impact
+The team considered the following limitations while defining the MVP:
 
-If the scope is too large, the team may not be able to complete the features before the demo. Therefore, we must focus only on the core functions of the Free Sewa platform.
+- Limited time before the Week 2 demo  
+- Development environment setup is still in progress  
+- Full development has not yet started  
+- The demo must clearly communicate the main concept of the platform  
 
-Options considered
-Option A – Build many features at once
-Pros
+---
 
-The app would look more complete
+## 🎯 Demo Goal
 
-More functionality could be demonstrated
+The Week 2 demo should:
+- Present a **working prototype**
+- Clearly demonstrate the **core user flow**
+- Focus on **functionality over complexity**
+- Provide a **strong foundation** for future development  
 
-Cons
+---
 
-High risk of unfinished features
+## 🔍 Options Considered
 
-Development may become confusing for the team
+### Option A – Build Multiple Features
 
-Hard to finish before the demo deadline
+**Pros**
+- More complete-looking application  
+- Broader functionality demonstration  
 
-Option B – Focus on a Minimum Viable Product (MVP)
-Pros
+**Cons**
+- High risk of incomplete or broken features  
+- Increased development complexity  
+- Difficult to complete within the deadline  
+- Potential confusion within the team  
 
-Easier to complete within the demo deadline
+---
 
-Allows the team to focus on core functionality
+### Option B – Focus on MVP (Selected)
 
-Reduces development complexity
+**Pros**
+- Achievable within the demo timeline  
+- Clear focus on core functionality  
+- Reduced development complexity  
+- Easier to test and demonstrate  
 
-Cons
+**Cons**
+- Limited feature set in the initial version  
+- Advanced features postponed to future sprints  
 
-The application will have limited features initially
+---
 
-Some advanced features will be postponed to later sprint
+## ✅ Decision
 
-Decision (what we chose)
-We decided to focus on a Minimum Viable Product (MVP) for the Week 2 demo.
+The team decided to adopt **Option B: Minimum Viable Product (MVP)**.
 
-The demo version of the Free Sewa App will include the following core features:
+The Week 2 demo version of Free Sewaa will include the following **core features**:
 
-User can post an item for donation
+### 🔹 Core MVP Features
 
-Users can view a list of available donated items
+1. **Post Donation Item**
+   - Users can add items they want to donate  
+   - Includes title, description, category, and basic details  
 
-Users can request an item
+2. **Browse Available Items**
+   - Users can view a list of donated items  
+   - Items displayed in a simple, structured layout  
 
-Users can contact the donor
+3. **Request an Item**
+   - Users can send a request for an item  
+   - Basic interaction flow (no advanced approval system yet)  
 
-This decision ensures that the team can deliver a working prototype that clearly demonstrates the idea of the Free Sewa platform.
+4. **Contact Donor**
+   - Simple method to communicate with the donor  
+   - Basic messaging or contact option  
 
-Consequences / follow-ups
-What changes now?
+---
 
-The team will prioritize building the core MVP features first.
+## 🎯 Why This Decision?
 
-Advanced features will be added in later sprints.
+This approach ensures that:
+- The team delivers a **working and stable prototype**
+- The core concept of Free Sewaa is clearly demonstrated  
+- Development remains **organized and manageable**  
+- The foundation is ready for **future feature expansion**  
 
-Next Tasks
+---
 
-Create the page for posting donation items
+## 🔄 Consequences & Follow-ups
 
-Build the page to display available donated items
+### What Changes Now?
 
-Implement the request item feature
+- Focus shifts entirely to **core feature development**
+- Avoid adding non-essential or advanced features
+- Emphasis on **stability and usability** over complexity  
 
-Add a simple method for contacting the donor
+---
 
-Prepare the demo flow for presentation
+## 🛠️ Next Tasks
+
+To complete the MVP, the team will:
+
+- Build the **Post Item page**
+- Develop the **Browse Items page**
+- Implement the **Request Item functionality**
+- Add a **basic contact/chat system**
+- Prepare a **clear demo flow** for presentation  
+
+---
+
+## 🚀 Demo Flow (Presentation Plan)
+
+During the demo, the team will demonstrate:
+
+1. User posts a donation item  
+2. Another user browses available items  
+3. User selects and requests an item  
+4. User contacts the donor  
+
+This flow will clearly communicate the **value and purpose** of the Free Sewaa platform.
+
+---
+
+## 🏁 Conclusion
+
+By focusing on a Minimum Viable Product, the team ensures a **successful Week 2 demo** while laying a strong foundation for future development. This approach balances **quality, clarity, and feasibility**, which are critical at this stage of the project.
