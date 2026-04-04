@@ -21,11 +21,13 @@
 
 # 🎬 Demo
 
-**Demo Link:**
-(Insert your latest working UI / video / deployed link here)
 
 **Backup Demo:**
-(Recorded walkthrough video / screenshots)
+
+
+https://github.com/user-attachments/assets/740ed33f-8386-43cc-9bf0-b88507fe020b
+
+
 
 ---
 
