@@ -11,11 +11,11 @@
 
 | Role            | Team Member        |
 | --------------- | ------------------ |
-| Project Manager | Sujan Shrestha     |
+| Project Manager | mohan khadka     |
 | Scribe          | Sujan Tamang       |
 | QA Lead         | Swarnim Jung Karki |
 | Demo Driver     | Ram Pathak         |
-| Developer       | Mohan Khadka       |
+| Developer       | sujan shrestha      |
 
 ---
 
