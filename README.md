@@ -28,7 +28,8 @@
 - ✅ Documentation templates
 
 ### In Progress
-- 🔄 MongoDB Atlas setup (follow [setup guide](docs/DESIGN/MONGODB_SETUP.md))
+- 🔄 MongoDB Atlas setup
+- 🔄 Frontend-backend integration testing
 - 🔄 Demo preparation
 
 ### Planned
