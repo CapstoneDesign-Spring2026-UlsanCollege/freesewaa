@@ -108,6 +108,10 @@ sujan shrestha
 - **PR:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/45#issue-4192630346 
 - **Commit:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/52
 
+MOHAN KHADKA
+- Commits:
+https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/4e0b8f2
+
 Work Done:
 - Helped continue the frontend foundation for Free Sewaa
 - Contributed to early authentication UI work
