@@ -119,7 +119,7 @@ function handleSubmit(e) {
     location: locationInput.value.trim(),
     image: uploadedImage || "",
     donor: "You",
-    posted: "Just now"
+    timestamp: Date.now()
   };
 
   saveItem(itemData);
