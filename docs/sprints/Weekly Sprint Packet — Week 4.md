@@ -6,6 +6,7 @@ https://github.com/user-attachments/assets/77d8bfd4-14a0-4fa5-b4ba-d4e21aed87bc
 
 **Team Name:** Free Sewaa
 **Repository:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa
+
 **Sprint:** Sprint 4 — Week 4 (Frontend Development)
 
 ### Sprint Roles
@@ -189,7 +190,7 @@ Contribution:
 - Fixed CSS path issue
 
 Commit:
-https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/c2abbc8c647eef57c2db62cb2a338b00b907e1f
+https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/c2abbc84c647eef57c2db62cb2a338b00b907e1f
 
 
 ## sujan shrestha 
