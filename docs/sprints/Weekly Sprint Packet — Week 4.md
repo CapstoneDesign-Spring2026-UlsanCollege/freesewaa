@@ -186,7 +186,7 @@ https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa
 Name: Sujan Tamang
 
 **Pull Request**
-#47
+[#47](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/12)
 
 **Contribution:**
 - Updated donate page
