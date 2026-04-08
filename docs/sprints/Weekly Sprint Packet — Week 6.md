@@ -1,207 +1,198 @@
-# Sprint Packet — Sprint 6 (Week 6)
-
----
+# Weekly Sprint Packet — Week 6
 
 ## Team
 
-**Team Name:** Free Sewaa
-
-**Repository:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa
-
-**Sprint:** Sprint 6 — Week 6 (Backend Integration & Core System Features)
+**Team Name:** Free Sewaa  
+**Repository:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa  
+**Sprint:** Week 6 — Backend Setup & Feature Integration
 
 ---
 
-### Sprint Roles
+### Sprint Roles (Week 6)
 
 | Role            | Team Member        |
 | --------------- | ------------------ |
-| Project Manager | Sujan Shrestha     |
-| Scribe          | Mohan Khadka       |
-| QA Lead         | Ram Pathak         |
-| Demo Driver     | Swarnim Jung Karki |
+| Project Manager | Ram Pathak         |
+| Scribe          | Swarnim Jung Karki |
+| QA Lead         | Sujan Shrestha     |
+| Demo Driver     | Mohan Khadka       |
 | Developer       | Sujan Tamang       |
 
 ---
 
-#  Demo
+# Demo
 
-**Backup Demo:**
+**Demo Link:** *(add working demo link here)*
 
-(Add demo video or screenshots here)
-
----
-
-###  Demo Script
-
-* Introduce Free Sewaa as a community-based donation platform
-* Explain transition from frontend-only to backend-supported system
-
-**Demonstrate:**
-
-* Backend integration (Node.js / Firebase)
-* Data handling for item posting
-* Real-time chat system (UI or concept)
-* User profile dashboard (My Items / My Requests)
-* Notification system design
-* Security improvements (validation and authentication)
-* GitHub workflow (Issue → Branch → Commit → PR)
+**Backup Demo:** *(add backup video or screenshots here)*
 
 ---
 
-#  Backup Demo Plan
+### Demo Script
 
-If live demo fails:
-
-* Show screenshots of:
-
-  * Backend structure
-  * Form data flow
-  * Chat/profile UI
-* Show GitHub commits and pull requests
-* Explain system architecture
+1. Introduce **Free Sewaa**, a community donation platform connecting donors with people who need reusable items.
+2. Show the **homepage** with premium UI design.
+3. Demonstrate **user authentication** (login/logout flow).
+4. Show the **browse page** with item cards and category filtering.
+5. Demonstrate **posting a donation item** with live preview.
+6. Show the **chat system** for donor-receiver communication.
+7. Highlight GitHub evidence: **issues, pull requests, and commits**.
 
 ---
 
-#  Board Snapshot
+# Backup Demo Plan
+
+If the live demo fails, present:
+
+- Screenshots of all pages (Home, Browse, Donate, Chat)
+- Recorded demo video
+- GitHub commits and pull requests
+
+---
+
+# Project Board Snapshot
+
+**Project Board:** https://github.com/orgs/CapstoneDesign-Spring2026-UlsanCollege/projects/14/views/1
+
+---
+
+# Current Board State
 
 ### To Do
 
-* Complete backend API integration
-* Fully implement real-time chat system
-* Finalize notification system
-* Improve authentication and validation
+- Backend API integration planning
+- Database schema design
+- User authentication with JWT
 
 ### Doing
 
-* Backend setup (Node.js / Firebase)
-* Connecting frontend to backend
-* Designing chat and profile system
-* Testing data flow
+- Frontend-backend connection setup
+- API endpoints development
+- Code review and testing
 
 ### Done
 
-* Planned backend architecture
-* Initial backend integration setup
-* Designed user profile dashboard
-* Defined notification system structure
-* Improved validation logic
-* Practiced GitHub workflow
+- Premium frontend UI completed
+- Browse page with filtering
+- Donate page with image upload
+- Chat system UI
+- All documentation templates updated
 
 ---
 
-#  Owners
+# Sprint Notes
 
-| Responsibility          | Owner              |
-| ----------------------- | ------------------ |
-| Sprint coordination     | Sujan Shrestha     |
-| Documentation & notes   | Mohan Khadka       |
-| QA testing & validation | Ram Pathak         |
-| Demo presentation       | Swarnim Jung Karki |
-| Backend & development   | Sujan Tamang       |
+## What Shipped
 
----
+- Completed premium frontend redesign
+- Fixed all broken links (browse.html now working)
+- Updated documentation templates
+- Fixed sprint packet filenames
+- Added bug_report.yml template
+- Added browse page with search, filtering, and modal view
 
-#  Definition of Done
+## What Broke / Problems
 
-Sprint 6 is complete when:
+- Missing browse.html caused navigation issues
+- Documentation files had inconsistent naming
+- Some sprint packets had incomplete receipts
 
-* Backend is connected (partial or full)
-* Data flow between frontend and backend works
-* Chat system is designed or partially implemented
-* User profile dashboard structure exists
-* Security validation is improved
-* GitHub workflow completed
+## How It Was Fixed
 
----
+- Created browse.html with full functionality
+- Standardized file naming across documentation
+- Updated templates to match capstone requirements
 
-#  Sprint Notes
+## Next Sprint Plan
 
-##  What Shipped
+- Set up Node.js/Express backend
+- Connect frontend to API
+- Implement real authentication
+- Add database integration
 
-* Backend integration concept (Node.js / Firebase)
-* System architecture planning
-* Real-time chat system design
-* User profile dashboard design
-* Notification system planning
-* Improved validation and security basics
-* Full GitHub workflow practice
+## Risks / Blockers
 
----
-
-##  What Broke
-
-* Backend not fully integrated
-* Chat system incomplete
-* Data not stored permanently
-* Some features still in design phase
+- Backend integration complexity
+- Time constraints for feature development
+- Team coordination for merging
 
 ---
 
-##  How It Was Fixed
+# Individual Contribution Receipts
 
-* Improved system planning
-* Tested basic backend connections
-* Fixed validation issues
-* Broke work into smaller tasks
+Each member must add a comment with 2-3 evidence links.
 
 ---
 
-##  Next Sprint Plan (Sprint 7)
+### Ram Pathak
 
-* Complete backend integration
-* Fully implement chat system
-* Connect dashboard with real data
-* Add notifications
-* Improve authentication
+**Commits:**
+- *(add commit links)*
 
----
+**Pull Requests:**
+- *(add PR links)*
 
-##  Risks / Blockers
-
-* Backend complexity
-* Real-time chat challenges
-* Time constraints
-* Integration issues
+**Issues:**
+- *(add issue links)*
 
 ---
 
-#  Individual Contribution Receipts
+### Swarnim Jung Karki
 
-Each member must provide:
+**Commits:**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/07288ffe257548a3b0433f71c51dd230331549f6
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/b716c3974cf4ef5b91400ab15409931378c187a8
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/56905ddeea9c0358c0b9bbcd449545d807c5ab2e
 
-* GitHub commits
-* Pull Requests
-* Issues
-* Screenshots
+**Pull Requests:**
+- *(add PR links)*
+
+**Issues:**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/26
+
+**Work Done:**
+- Updated SYSTEM_ARCHITECTURE.md
+- Added Frontend_Design.md documentation
+- Updated DESIGN_DOC-V1.md
+- QA testing and documentation review
+
+---
+
+### Sujan Shrestha
+
+**Commits:**
+- *(add commit links)*
+
+**Pull Requests:**
+- *(add PR links)*
+
+**Issues:**
+- *(add issue links)*
 
 ---
 
 ### Mohan Khadka
 
-* Commits: (add links)
-* PR: (add link)
-* Issues: (add link)
+**Commits:**
+- *(add commit links)*
 
-### Sujan Tamang
+**Pull Requests:**
+- *(add PR links)*
 
-* Commits: (add links)
-* PR: (add link)
-
-### Ram Pathak
-
-* QA testing
-* Validation
-
-### Swarnim Jung Karki
-
-* Demo
-* Presentation
-
-### Sujan Shrestha
-
-* Sprint coordination
-* Project management
+**Issues:**
+- *(add issue links)*
 
 ---
 
+### Sujan Tamang
+
+**Commits:**
+- *(add commit links)*
+
+**Pull Requests:**
+- *(add PR links)*
+
+**Issues:**
+- *(add issue links)*
+
+---
