@@ -20,6 +20,70 @@
 
 ---
 
+# Current Status Overview
+
+## ✅ DONE
+
+- Premium frontend UI (Home, Browse, Donate, Chat pages)
+- Browse page with search and category filtering
+- Donate page with image upload and live preview
+- User authentication flow (login/logout)
+- Documentation templates and sprint packets
+- Bug fixes (timestamp, chat button)
+
+## 🚧 IN PROGRESS
+
+- Backend API development
+- Database integration planning
+
+---
+
+# ❌ REMAINING WORK (Apart from Backend)
+
+### High Priority - Open Issues
+
+| # | Issue | Tasks Left |
+|---|-------|------------|
+| **#26** | Category Filter | - Complete UI update on filter select<br>- Mark "Done when" items as complete |
+| **#21** | Request/Contact Flow | - Frontend confirmation message<br>- Donor contact display<br>- Request button feedback |
+| **#20** | Form Validation | - Required field indicators<br>- Better placeholders/labels<br>- Clear success messages |
+
+### Medium Priority - UI Polish
+
+| Task | Details |
+|------|---------|
+| **UI Consistency** | - Spacing uniformity<br>- Button style consistency<br>- Page layout alignment<br>- Responsive/mobile view check |
+| **Navigation Clarity** | - Easy movement between Home, Browse, Post Item, Profile<br>- Consistent nav bar across pages |
+| **Demo Polish** | - Clean demo path (3-5 steps)<br>- No broken buttons<br>- No dummy/placeholder text in key areas |
+| **README Cleanup** | - Remove outdated "planned" wording<br>- Match features to actual app<br>- Add Week 6 progress |
+
+### Low Priority - Project Board
+
+| Task | Action |
+|------|--------|
+| **Board Cleanup** | - Move finished cards to Done<br>- Keep only real tasks in In Progress |
+| **Close Stale Issues** | - Close issues already completed |
+
+---
+
+# Open GitHub Issues
+
+| # | Issue | Priority | Owner |
+|---|-------|----------|-------|
+| #26 | Category filter for item listings | High | (assign) |
+| #21 | Request/contact donor confirmation | High | (assign) |
+| #20 | Item posting form validation | High | (assign) |
+
+---
+
+# Full Vertical Slice Target
+
+```
+Post Item → Browse Item → Request Item → Contact/Confirmation
+```
+
+---
+
 # Demo
 
 **Demo Link:** *(add working demo link here)*
@@ -30,7 +94,7 @@
 
 ### Demo Script
 
-1. Introduce **Free Sewaa**, a community donation platform connecting donors with people who need reusable items.
+1. Introduce **Free Sewaa**, a community donation platform.
 2. Show the **homepage** with premium UI design.
 3. Demonstrate **user authentication** (login/logout flow).
 4. Show the **browse page** with item cards and category filtering.
@@ -50,116 +114,9 @@ If the live demo fails, present:
 
 ---
 
-# Project Board Snapshot
+# Project Board
 
 **Project Board:** https://github.com/orgs/CapstoneDesign-Spring2026-UlsanCollege/projects/14/views/1
-
----
-
-# Current Board State
-
-### To Do
-
-- Backend API integration planning
-- Database schema design
-- User authentication with JWT
-
-### Doing
-
-- Frontend-backend connection setup
-- API endpoints development
-- Code review and testing
-
-### Done
-
-- Premium frontend UI completed
-- Browse page with filtering
-- Donate page with image upload
-- Chat system UI
-- All documentation templates updated
-
----
-
-# Current Status Overview
-
-## ✅ DONE
-
-- Premium frontend UI (Home, Browse, Donate, Chat pages)
-- Browse page with search and category filtering
-- Donate page with image upload and live preview
-- User authentication flow (login/logout)
-- Documentation templates and sprint packets
-- Bug fixes (timestamp, chat button)
-
-## 🚧 IN PROGRESS
-
-- Backend API development
-- Database integration planning
-
-## ❌ REMAINING (Priority Order)
-
-### High Priority
-
-1. **Backend Setup**
-   - Set up Node.js/Express server
-   - Create database schema (Users, Items, Messages)
-   - Implement REST API endpoints
-
-2. **User Authentication**
-   - Connect frontend to backend auth
-   - JWT token implementation
-   - Password hashing
-
-3. **Request/Contact Flow** (Issue #21)
-   - Implement item request functionality
-   - Add donor confirmation step
-   - Contact confirmation flow
-
-4. **Form Validation** (Issue #20)
-   - Complete form validation improvements
-   - Error handling and user feedback
-
-### Medium Priority
-
-5. **Category Filter Completion** (Issue #26)
-   - Finish category filter implementation
-   - Update UI dynamically
-
-6. **Real Database Integration**
-   - MongoDB setup
-   - Connect localStorage to database
-
-7. **Real-time Chat**
-   - Socket.io or Firebase integration
-   - Live message updates
-
-### Low Priority
-
-8. **Update README**
-   - Remove "planned" status from completed features
-   - Update project status
-
----
-
-# Open GitHub Issues
-
-| # | Issue | Status | Owner |
-|---|-------|--------|-------|
-| #26 | Implement category filter for item listings | Open | (assign) |
-| #21 | Implement request and contact donor confirmation flow | Open | (assign) |
-| #20 | Improve item posting form validation | Open | (assign) |
-
----
-
-# Full Vertical Slice Target
-
-The core user flow to complete:
-
-```
-Post Item → Browse Item → Request Item → Contact/Confirmation
-```
-
-This is the main goal outlined in the README.
 
 ---
 
@@ -187,228 +144,14 @@ This is the main goal outlined in the README.
 
 - Changed donate.js to save timestamp as number instead of string
 - Updated browse.html to pass item ID to chat via URL parameter
-- Created browse.html with full functionality
 
 ## Next Sprint Plan
 
 - Set up Node.js/Express backend
+- Complete frontend polish (issues #20, #21, #26)
 - Connect frontend to API
 - Implement real authentication
 - Add database integration
-
-  # 🚀 Sprint Packet — Sprint 6 (Week 6)
-
----
-
-## Team
-
-**Team Name:** Free Sewaa
-**Repository:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa
-**Sprint:** Sprint 6 — Week 6 (Backend Integration & Core System Features)
-
----
-
-### Sprint Roles
-
-| Role            | Team Member        |
-| --------------- | ------------------ |
-| Project Manager | Sujan Shrestha     |
-| Scribe          | Mohan Khadka       |
-| QA Lead         | Ram Pathak         |
-| Demo Driver     | Swarnim Jung Karki |
-| Developer       | Sujan Tamang       |
-
----
-
-# 🎬 Demo
-
-**Backup Demo:**
-
-(Add demo video or screenshots here)
-
----
-
-### 🎯 Demo Script
-
-* Introduce Free Sewaa as a community-based donation platform
-* Explain transition from frontend-only to backend-supported system
-
-**Demonstrate:**
-
-* Backend integration (Node.js / Firebase)
-* Data handling for item posting
-* Real-time chat system (UI or concept)
-* User profile dashboard (My Items / My Requests)
-* Notification system design
-* Security improvements (validation and authentication)
-* GitHub workflow (Issue → Branch → Commit → PR)
-
----
-
-# 🧯 Backup Demo Plan
-
-If live demo fails:
-
-* Show screenshots of:
-
-  * Backend structure
-  * Form data flow
-  * Chat/profile UI
-* Show GitHub commits and pull requests
-* Explain system architecture
-
----
-
-# 📊 Board Snapshot
-
-### To Do
-
-* Complete backend API integration
-* Fully implement real-time chat system
-* Finalize notification system
-* Improve authentication and validation
-
-### Doing
-
-* Backend setup (Node.js / Firebase)
-* Connecting frontend to backend
-* Designing chat and profile system
-* Testing data flow
-
-### Done
-
-* Planned backend architecture
-* Initial backend integration setup
-* Designed user profile dashboard
-* Defined notification system structure
-* Improved validation logic
-* Practiced GitHub workflow
-
----
-
-# 👥 Owners
-
-| Responsibility          | Owner              |
-| ----------------------- | ------------------ |
-| Sprint coordination     | Sujan Shrestha     |
-| Documentation & notes   | Mohan Khadka       |
-| QA testing & validation | Ram Pathak         |
-| Demo presentation       | Swarnim Jung Karki |
-| Backend & development   | Sujan Tamang       |
-
----
-
-# ✅ Definition of Done
-
-* [ ] Backend is set up (Node.js or Firebase)
-* [ ] Frontend is connected to backend
-* [ ] Form data is handled correctly
-* [ ] Chat system is designed or partially implemented
-* [ ] User profile dashboard is created
-* [ ] Validation is working properly
-* [ ] Basic authentication is implemented
-* [ ] No major errors in system
-* [ ] Code is committed and pushed
-* [ ] Pull Request is created
-
-
-
----
-
-# 🧠 Sprint Notes
-
-## 🚀 What Shipped
-
-* Backend integration concept (Node.js / Firebase)
-* System architecture planning
-* Real-time chat system design
-* User profile dashboard design
-* Notification system planning
-* Improved validation and security basics
-* Full GitHub workflow practice
-
----
-
-## ❌ What Broke
-
-* Backend not fully integrated
-* Chat system incomplete
-* Data not stored permanently
-* Some features still in design phase
-
----
-
-## 🔧 How It Was Fixed
-
-* Improved system planning
-* Tested basic backend connections
-* Fixed validation issues
-* Broke work into smaller tasks
-
----
-
-## 🔜 Next Sprint Plan (Sprint 7)
-
-* Complete backend integration
-* Fully implement chat system
-* Connect dashboard with real data
-* Add notifications
-* Improve authentication
-
----
-
-## ⚠️ Risks / Blockers
-
-* Backend complexity
-* Real-time chat challenges
-* Time constraints
-* Integration issues
-
----
-
-# 📌 Individual Contribution Receipts
-
-Each member must provide:
-
-* GitHub commits
-* Pull Requests
-* Issues
-* Screenshots
-
----
-
-### Mohan Khadka
-
-* Commits: (add links)
-* PR: (add link)
-* Issues: (add link)
-
-### Sujan Tamang
-
-* Commits: (add links)
-* PR: (add link)
-
-### Ram Pathak
-
-* QA testing
-* Validation
-
-### Swarnim Jung Karki
-
-* Demo
-* Presentation
-
-### Sujan Shrestha
-
-* Sprint coordination
-* Project management
-
----
-
-## 📍 Save File As
-
-docs/sprints/Weekly Sprint Packet — Week 6.md
-
 
 ## Risks / Blockers
 
@@ -425,13 +168,12 @@ docs/sprints/Weekly Sprint Packet — Week 6.md
 ### Swarnim Jung Karki (Scribe)
 
 **Commits:**
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/07288ffe257548a3b0433f71c51dd230331549f6 (Update SYSTEM_ARCHITECTURE.md)
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/b716c3974cf4ef5b91400ab15409931378c187a8 (Add Frontend Notes document)
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/56905ddeea9c0358c0b9bbcd449545d807c5ab2e (Update Design Doc V1)
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/e331937 (Add Week 6 sprint packet)
-
-**Pull Requests:**
-- *(add PR links)*
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/07288ffe257548a3b0433f71c51dd230331549f6
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/b716c3974cf4ef5b91400ab15409931378c187a8
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/56905ddeea9c0358c0b9bbcd449545d807c5ab2e
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/e331937
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/e5c7db2
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/22da582
 
 **Issues:**
 - https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/26
@@ -445,6 +187,7 @@ docs/sprints/Weekly Sprint Packet — Week 6.md
 - Updated DESIGN_DOC-V1.md
 - Created Week 6 Sprint Packet
 - Updated QUESTIONS.md document
+- Added remaining work status to sprint packet
 - QA testing and bug reporting
 
 ---
