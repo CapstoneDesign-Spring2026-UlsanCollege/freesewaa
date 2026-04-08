@@ -234,6 +234,17 @@ Ram Pathak
 **Commits:**
 - https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/fcf97f9
 
+
+MOHAN KHADKA 
+
+Commits:
+https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/520169a
+https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/c569313
+https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/ca3cc6d
+
+Issue :
+https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/20
+
 ---
 
 # Demo
