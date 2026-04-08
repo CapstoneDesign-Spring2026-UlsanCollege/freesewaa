@@ -181,11 +181,14 @@ The team will manage these risks through communication and collaborative trouble
 
 https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa
 
-***PM for this Sprint**
+**PM for this Sprint**
 
 Name: Sujan Tamang
 
-Contribution:
+**Pull Request**
+#47
+
+**Contribution:**
 - Updated donate page
 - Fixed CSS path issue
 
