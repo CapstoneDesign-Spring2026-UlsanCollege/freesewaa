@@ -5,7 +5,9 @@
 ## Team
 
 **Team Name:** Free Sewaa
+
 **Repository:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa
+
 **Sprint:** Sprint 6 — Week 6 (Backend Integration & Core System Features)
 
 ---
