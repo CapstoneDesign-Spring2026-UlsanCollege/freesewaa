@@ -1,129 +1,170 @@
 # Free Sewaa
 
-Free Sewaa is a community-based donation and resource-sharing platform that connects people who want to give away usable items with those who need them, completely free of cost.
+> A community donation platform connecting donors with people who need reusable items.
 
-The mission of the platform is to reduce waste, support communities, and make helping others simple and accessible.
-
----
-
-## Project Overview
-
-The goal of Free Sewaa is to create a simple and effective platform where users can:
-
-- Post items for donation  
-- Browse available items  
-- Request items  
-- Connect with donors for pickup  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Status: In Progress](https://img.shields.io/badge/Status-In%20Progress-blue)](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa)
 
 ---
 
-## Target Users
+## 🎯 About
 
-- Students  
-- Low-income individuals and families  
-- Donors  
-- Anyone looking for reusable free items  
+**Free Sewaa** is a community-based donation platform that enables people to give away usable items for free to those who need them. The mission is to reduce waste, support communities, and make helping others simple and accessible.
 
 ---
 
-## Current Project Status
+## ✅ Current Status
 
 ### Completed
-- Repository setup  
-- Initial project documentation  
-- Core frontend development  
-- GitHub Issues, Pull Requests, and Sprint workflow setup  
+- ✅ Premium frontend UI (Home, Browse, Donate, Chat pages)
+- ✅ User authentication flow (login/logout)
+- ✅ Browse page with search and category filtering
+- ✅ Donate page with image upload and live preview
+- ✅ Chat system UI
+- ✅ Node.js/Express backend API (PR #61)
+- ✅ MongoDB models and schemas
+- ✅ JWT authentication
+- ✅ REST API endpoints
+- ✅ Documentation templates
 
 ### In Progress
-- Improving frontend structure and page flow  
-- Refining UI and navigation  
-- Preparing a demo-ready vertical slice  
+- 🔄 MongoDB Atlas setup
+- 🔄 Frontend-backend connection
+- 🔄 Demo preparation
 
 ### Planned
-- Backend development  
-- Database integration  
-- User authentication  
-- Item request and contact workflow  
+- 📋 Real-time chat (Socket.io)
+- 📋 User profile dashboard
+- 📋 Request/contact flow completion
+- 📋 Deployment
 
 ---
 
-## Tech Stack
+## 🚀 Quick Start
 
 ### Frontend
-- HTML  
-- CSS  
-- JavaScript  
+```bash
+# Open in browser
+open home.html
+```
 
-### Backend (Planned)
-- Node.js  
-- Express.js  
-
-### Database (Planned)
-- MongoDB or MySQL  
-
-### Hosting (Planned)
-- GitHub Pages / Vercel  
+### Backend
+```bash
+cd backend
+npm install
+npm run dev
+```
 
 ---
 
-## Development Workflow
+## 🛠 Tech Stack
 
-This project follows a structured development process:
-
-Issue → Branch → Pull Request → Review → Merge
-
-This ensures proper collaboration, code quality, and organized development.
+| Layer | Technology |
+|-------|------------|
+| **Frontend** | HTML5, CSS3, JavaScript |
+| **Backend** | Node.js, Express.js |
+| **Database** | MongoDB |
+| **Auth** | JWT (JSON Web Tokens) |
+| **Hosting** | Vercel / Railway |
 
 ---
 
-## Repository Structure
+## 📁 Project Structure
 
 ```
 Free_Sewaa/
-├── .github/              # GitHub workflows, issue/PR templates
-├── docs/                 # project documents, weekly guides, progress files
-├── homework/             # class or course-related files
-├── README.md             # project overview
-├── CONTRIBUTING.md       # contribution guide
-├── CODE_OF_CONDUCT.md    # team/community rules
-└── .gitignore
+├── .github/                    # GitHub templates
+│   ├── ISSUE_TEMPLATE/        # Issue templates
+│   └── PULL_REQUEST_TEMPLATE.md
+├── backend/                    # Node.js/Express API
+│   ├── src/
+│   │   ├── config/           # Database config
+│   │   ├── controllers/      # Route handlers
+│   │   ├── middleware/       # Auth middleware
+│   │   ├── models/           # Mongoose schemas
+│   │   └── routes/           # API routes
+│   ├── package.json
+│   └── README.md
+├── docs/                      # Documentation
+│   ├── DESIGN/                # Design documents
+│   ├── ISSUES/                # Issue tracking
+│   ├── PROGRESS/              # MVP progress
+│   ├── PROJECT/               # Project docs
+│   └── sprints/               # Sprint packets
+├── css/                       # Stylesheets
+├── js/                        # Frontend scripts
+├── *.html                     # Frontend pages
+├── README.md
+├── CONTRIBUTING.md
+└── CODE_OF_CONDUCT.md
 ```
 
-## Key Features Implemented
+---
 
-- Improved item posting form usability  
-- Added validation for required fields  
-- Enhanced labels and placeholders  
-- Implemented success messages after submission  
-- Organized sprint-based development workflow  
+## 👥 Team
+
+| Role | Name |
+|------|------|
+| Project Manager | Ram Pathak |
+| Scribe | Swarnim Jung Karki |
+| QA Lead | Sujan Shrestha |
+| Demo Driver | Mohan Khadka |
+| Developer | Sujan Tamang |
 
 ---
 
-## Future Enhancements
+## 📄 Documentation
 
-- Donation system (Support Us feature)  
-- NGO and corporate partnerships  
-- Logistics and distribution tracking  
-- Impact tracking (e.g., number of people helped)  
-
----
-
-## Team
-
-- Shrestha Sujan
-- Pathak Ram
-- Tamang Sujan
-- Karki Jung Swarnim
-- Khadka Mohan
+| Document | Description |
+|----------|-------------|
+| [PROJECT_IDEA_PITCH.md](docs/PROJECT/PROJECT_IDEA_PITCH.md) | Project concept and goals |
+| [USER_STORIES.md](docs/PROJECT/USER_STORIES.md) | User stories and flows |
+| [SYSTEM_ARCHITECTURE.md](docs/DESIGN/SYSTEM_ARCHITECTURE.md) | System architecture |
+| [BACKEND_PLAN.md](docs/DESIGN/BACKEND_PLAN.md) | Backend development plan |
+| [Weekly Sprint Packets](docs/sprints/) | Weekly progress tracking |
 
 ---
 
-## Mission
+## 🔗 Links
 
-To build a platform that connects communities, reduces waste, and helps people in need by making sharing simple and accessible.
+- **Repository:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa
+- **Project Board:** https://github.com/orgs/CapstoneDesign-Spring2026-UlsanCollege/projects/14
+- **Pull Requests:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pulls
+- **Issues:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues
 
 ---
 
-## Repository
+## 📋 Development Workflow
 
-https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa
+```
+Issue → Branch → Code → PR → Review → Merge
+```
+
+1. Create an issue
+2. Create a branch: `git checkout -b feature/your-feature`
+3. Make changes
+4. Create PR with description
+5. Team reviews and merges
+
+---
+
+## 📅 Weekly Sprints
+
+- [Week 1 Sprint Packet](docs/sprints/Weekly%20Sprint%20Packet%20—%20Week%201.md)
+- [Week 2 Sprint Packet](docs/sprints/Weekly%20Sprint%20Packet%20—%20Week%202.md)
+- [Week 3 Sprint Packet](docs/sprints/Weekly%20Sprint%20Packet%20—%20Week%203.md)
+- [Week 4 Sprint Packet](docs/sprints/Weekly%20Sprint%20Packet%20—%20Week%204.md)
+- [Week 5 Sprint Packet](docs/sprints/Weekly%20Sprint%20Packet%20—%20Week%205.md)
+- [Week 6 Sprint Packet](docs/sprints/Weekly%20Sprint%20Packet%20—%20Week%206.md)
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 🙏 Mission
+
+> To build a platform that connects communities, reduces waste, and helps people in need by making sharing simple and accessible.
