@@ -1,4 +1,5 @@
 const ITEM_KEY = "freeSewaaItems";
+const USE_BACKEND = true;
 
 const form = document.getElementById("form");
 const titleInput = document.getElementById("title");
@@ -38,6 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
   bindEvents();
   updatePreview();
   updateCounts();
+  
+  if (!isLoggedIn() && USE_BACKEND) {
+    alert("Please login to post items.");
+    window.location.href = "index.html";
+  }
 });
 
 function bindEvents() {
@@ -102,7 +108,7 @@ function updatePreview() {
   }
 }
 
-function handleSubmit(e) {
+async function handleSubmit(e) {
   e.preventDefault();
 
   if (!validateForm()) {
@@ -110,30 +116,45 @@ function handleSubmit(e) {
     return;
   }
 
-  const itemData = {
-    id: Date.now(),
-    title: titleInput.value.trim(),
-    description: descInput.value.trim(),
-    category: categoryInput.value,
-    condition: conditionInput.value,
-    location: locationInput.value.trim(),
-    image: uploadedImage || "",
-    donor: "You",
-    timestamp: Date.now()
-  };
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalText = submitBtn.innerHTML;
+  submitBtn.innerHTML = '<span>Posting...</span>';
+  submitBtn.disabled = true;
 
-  saveItem(itemData);
-  addNotification(`New item posted: ${itemData.title}`, "item");
+  try {
+    const itemData = {
+      title: titleInput.value.trim(),
+      description: descInput.value.trim(),
+      category: categoryInput.value,
+      condition: conditionInput.value,
+      location: locationInput.value.trim(),
+      image: uploadedImage || ""
+    };
 
-  showToast("Item Posted", "Your donation item has been posted successfully.");
+    if (USE_BACKEND && isLoggedIn()) {
+      const data = await api.items.create(itemData);
+      showToast("Success!", "Your item has been posted successfully.");
+    } else {
+      saveItemToLocalStorage(itemData);
+      showToast("Success!", "Your item has been posted successfully.");
+    }
 
-  form.reset();
-  uploadedImage = "";
-  imagePreview.src = "";
-  imagePreview.classList.add("hidden");
-  updatePreview();
-  updateCounts();
-  clearAllErrors();
+    addNotification(`New item posted: ${itemData.title}`, "item");
+
+    form.reset();
+    uploadedImage = "";
+    imagePreview.src = "";
+    imagePreview.classList.add("hidden");
+    updatePreview();
+    updateCounts();
+    clearAllErrors();
+  } catch (error) {
+    console.error('Submit error:', error);
+    showToast("Error", error.message || "Failed to post item. Please try again.");
+  } finally {
+    submitBtn.innerHTML = originalText;
+    submitBtn.disabled = false;
+  }
 }
 
 function validateForm() {
@@ -170,9 +191,16 @@ function clearAllErrors() {
   });
 }
 
-function saveItem(item) {
+function saveItemToLocalStorage(item) {
+  const newItem = {
+    ...item,
+    id: Date.now(),
+    donor: "You",
+    timestamp: Date.now()
+  };
+  
   const existingItems = JSON.parse(localStorage.getItem(ITEM_KEY)) || [];
-  existingItems.unshift(item);
+  existingItems.unshift(newItem);
   localStorage.setItem(ITEM_KEY, JSON.stringify(existingItems));
 }
 

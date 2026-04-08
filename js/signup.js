@@ -40,67 +40,50 @@ signupPasswordToggles.forEach((icon) => {
 });
 
 if (signupForm) {
-  signupForm.addEventListener("submit", function (e) {
+  signupForm.addEventListener("submit", async function (e) {
     e.preventDefault();
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<span>Creating account...</span>';
+    submitBtn.disabled = true;
 
-    const isEmailMode = !signupEmailForm.classList.contains("hidden");
+    try {
+      const isEmailMode = !signupEmailForm.classList.contains("hidden");
 
-    if (isEmailMode) {
-      const fullName = document.getElementById("fullName").value.trim();
-      const email = document.getElementById("signupEmail").value.trim();
-      const password = document.getElementById("signupPassword").value.trim();
-      const confirmPassword = document.getElementById("confirmPassword").value.trim();
+      if (isEmailMode) {
+        const fullName = document.getElementById("fullName").value.trim();
+        const email = document.getElementById("signupEmail").value.trim();
+        const password = document.getElementById("signupPassword").value.trim();
+        const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
-      if (!fullName || !email || !password || !confirmPassword) {
-        alert("Please fill in all fields.");
-        return;
+        if (!fullName || !email || !password || !confirmPassword) {
+          alert("Please fill in all fields.");
+          return;
+        }
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match.");
+          return;
+        }
+
+        const data = await api.auth.register({
+          name: fullName,
+          email: email,
+          password: password
+        });
+
+        saveAuth(data.token, data.user);
+        alert("Account created successfully!");
+        window.location.href = "home.html";
+      } else {
+        alert("Phone registration requires backend setup. Please use email registration.");
       }
-
-      if (password !== confirmPassword) {
-        alert("Passwords do not match.");
-        return;
-      }
-
-      localStorage.setItem(
-        "freeSewaaUser",
-        JSON.stringify({
-          fullName,
-          email,
-          password,
-        })
-      );
-
-      alert("Account created successfully! Please sign in.");
-      window.location.href = "index.html";
-    } else {
-      const fullName = document.getElementById("phoneFullName").value.trim();
-      const countryCode = document.getElementById("signupCountryCode").value.trim();
-      const phone = document.getElementById("signupPhone").value.trim();
-      const password = document.getElementById("phoneSignupPassword").value.trim();
-      const confirmPassword = document.getElementById("phoneConfirmPassword").value.trim();
-
-      if (!fullName || !countryCode || !phone || !password || !confirmPassword) {
-        alert("Please fill in all fields.");
-        return;
-      }
-
-      if (password !== confirmPassword) {
-        alert("Passwords do not match.");
-        return;
-      }
-
-      localStorage.setItem(
-        "freeSewaaPhoneUser",
-        JSON.stringify({
-          fullName,
-          countryCode,
-          phone,
-          password,
-        })
-      );
-
-      alert("Phone account created successfully! Please sign in.");
-      window.location.href = "index.html";
+    } catch (error) {
+      console.error('Signup error:', error);
+      alert(error.message || "Failed to create account. Please try again.");
+    } finally {
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
     }
   });
 }

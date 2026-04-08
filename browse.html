@@ -558,6 +558,7 @@
       }
     </style>
 
+    <script src="js/api.js"></script>
     <script src="js/notification.js"></script>
     <script>
       const itemsGrid = document.getElementById('itemsGrid');
@@ -583,9 +584,22 @@
         'Other': '📦'
       };
 
-      function getItems() {
-        const items = localStorage.getItem('freeSewaaItems');
-        return items ? JSON.parse(items) : [];
+      const USE_BACKEND = true;
+
+      async function getItems() {
+        if (USE_BACKEND && isLoggedIn()) {
+          try {
+            const data = await api.items.getAll();
+            return data.items || [];
+          } catch (error) {
+            console.log('Using localStorage fallback');
+            const items = localStorage.getItem('freeSewaaItems');
+            return items ? JSON.parse(items) : [];
+          }
+        } else {
+          const items = localStorage.getItem('freeSewaaItems');
+          return items ? JSON.parse(items) : [];
+        }
       }
 
       function timeAgo(timestamp) {
@@ -728,8 +742,13 @@
         if (e.key === 'Escape') closeModal();
       });
 
-      renderItems(getItems());
-      lucide.createIcons();
+      async function initBrowse() {
+        const items = await getItems();
+        renderItems(items);
+        lucide.createIcons();
+      }
+
+      initBrowse();
     </script>
   </body>
 </html>

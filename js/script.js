@@ -41,44 +41,42 @@ passwordToggles.forEach((icon) => {
 const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
-  loginForm.addEventListener("submit", function (e) {
+  loginForm.addEventListener("submit", async function (e) {
     e.preventDefault();
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<span>Signing in...</span>';
+    submitBtn.disabled = true;
 
-    const isEmailMode = !emailForm.classList.contains("hidden");
+    try {
+      const isEmailMode = !emailForm.classList.contains("hidden");
 
-    if (isEmailMode) {
-      const email = document.getElementById("loginEmail").value.trim();
-      const password = document.getElementById("loginPassword").value.trim();
+      if (isEmailMode) {
+        const email = document.getElementById("loginEmail").value.trim();
+        const password = document.getElementById("loginPassword").value.trim();
 
-      const savedUser = JSON.parse(localStorage.getItem("freeSewaaUser"));
+        if (!email || !password) {
+          alert("Please enter email and password.");
+          return;
+        }
 
-      if (!savedUser) {
-        alert("No account found. Please sign up first.");
-        return;
-      }
+        const data = await api.auth.login({
+          email: email,
+          password: password
+        });
 
-      if (savedUser.email === email && savedUser.password === password) {
+        saveAuth(data.token, data.user);
         alert("Login successful!");
         window.location.href = "home.html";
       } else {
-        alert("Invalid email or password.");
+        alert("Phone login requires backend setup. Please use email login.");
       }
-    } else {
-      const code = document.getElementById("countryCode").value.trim();
-      const phone = document.getElementById("phoneNumber").value.trim();
-      const savedPhoneUser = JSON.parse(localStorage.getItem("freeSewaaPhoneUser"));
-
-      if (!savedPhoneUser) {
-        alert("No phone account found. Please sign up first.");
-        return;
-      }
-
-      if (savedPhoneUser.countryCode === code && savedPhoneUser.phone === phone) {
-        alert("Phone login successful!");
-        window.location.href = "home.html";
-      } else {
-        alert("Invalid phone number.");
-      }
+    } catch (error) {
+      console.error('Login error:', error);
+      alert(error.message || "Invalid email or password.");
+    } finally {
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
     }
   });
 }
