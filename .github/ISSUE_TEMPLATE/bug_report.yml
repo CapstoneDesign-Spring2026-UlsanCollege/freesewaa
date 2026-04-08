@@ -1,1 +1,99 @@
+---
+name: Bug Report
+about: Report something that is not working in Free Sewaa
+title: "[Bug] "
+labels: bug
+assignees: ''
+---
 
+## What is the problem?
+
+Describe what is not working.
+
+Example:
+The item cards on the Browse page are not displaying images correctly.
+
+---
+
+## Steps to Reproduce
+
+1. Go to: (page or URL)
+2. Click on: (what you clicked)
+3. See error: (what went wrong)
+
+---
+
+## Expected Behavior
+
+What should happen?
+
+Example:
+Item cards should display with images, title, location, and a "View Details" button.
+
+---
+
+## Actual Behavior
+
+What actually happens?
+
+Example:
+Images are not loading and the card layout looks broken.
+
+---
+
+## Screenshots / Evidence
+
+Add proof if available.
+
+- Screenshot: (link or description)
+- Screen recording: (link if available)
+- Console error: (paste error message)
+- Related commit: (link to commit)
+- Related PR: (link to PR)
+- Related issue: (link to issue)
+
+---
+
+## Demo Impact
+
+Does this bug affect the team demo?
+
+- [ ] Yes
+- [ ] No
+
+If yes, explain how it affects the demo:
+
+---
+
+## Possible Cause
+
+What do you think is causing this?
+
+Example:
+The image URL format may be incorrect or the CSS class names don't match the HTML.
+
+---
+
+## Suggested Fix
+
+How should this be fixed?
+
+Example:
+Check the image src attribute format and ensure CSS classes are applied correctly.
+
+---
+
+## Owner
+
+Who will work on this bug?
+
+- Name:
+- Role:
+
+---
+
+## Notes
+
+Add any extra context here.
+
+- 
