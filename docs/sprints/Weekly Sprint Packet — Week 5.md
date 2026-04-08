@@ -11,7 +11,7 @@
 
 | Role            | Team Member        |
 | --------------- | ------------------ |
-| Project Manager | mohan khadka     |
+| Project Manager | Mohan khadka     |
 | Scribe          | Sujan Tamang       |
 | QA Lead         | Swarnim Jung Karki |
 | Demo Driver     | Ram Pathak         |
