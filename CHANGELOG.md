@@ -25,6 +25,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - REST API endpoints for all features
 - Backend README and documentation
 - PR #61 - Backend implementation
+- Frontend-backend connection (js/api.js)
+- MongoDB Atlas setup guide
+- Repository organization (README, CHANGELOG, ROADMAP)
+- GitHub issues for project board (#62-71)
 
 ### Fixed
 - Timestamp bug in donate/browse flow
@@ -35,9 +39,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - README.md with current project status
 - Sprint Packet with backend work documented
 - GitHub issues created for project board
+- CHANGELOG.md with complete history
 
 ### Changed
-- Backend status: Planned → In Progress/Complete structure
+- Frontend now connected to backend API
+- Backend status: Planned → Complete structure
 
 ---
 

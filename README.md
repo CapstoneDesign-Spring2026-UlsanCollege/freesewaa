@@ -28,8 +28,7 @@
 - ✅ Documentation templates
 
 ### In Progress
-- 🔄 MongoDB Atlas setup
-- 🔄 Frontend-backend connection
+- 🔄 MongoDB Atlas setup (follow [setup guide](docs/DESIGN/MONGODB_SETUP.md))
 - 🔄 Demo preparation
 
 ### Planned
@@ -121,6 +120,7 @@ Free_Sewaa/
 | [USER_STORIES.md](docs/PROJECT/USER_STORIES.md) | User stories and flows |
 | [SYSTEM_ARCHITECTURE.md](docs/DESIGN/SYSTEM_ARCHITECTURE.md) | System architecture |
 | [BACKEND_PLAN.md](docs/DESIGN/BACKEND_PLAN.md) | Backend development plan |
+| [MONGODB_SETUP.md](docs/DESIGN/MONGODB_SETUP.md) | MongoDB Atlas setup guide |
 | [Weekly Sprint Packets](docs/sprints/) | Weekly progress tracking |
 
 ---
