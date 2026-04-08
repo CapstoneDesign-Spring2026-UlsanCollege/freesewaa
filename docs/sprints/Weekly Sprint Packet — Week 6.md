@@ -30,15 +30,17 @@
 - User authentication flow (login/logout)
 - Documentation templates and sprint packets
 - Bug fixes (timestamp, chat button)
+- **Backend API (Node.js/Express + MongoDB)**
+- **PR #61: Backend API merged**
 
 ## 🚧 IN PROGRESS
 
-- Backend API development
-- Database integration planning
+- Database integration (MongoDB Atlas setup)
+- Frontend-backend connection
 
 ---
 
-# ❌ REMAINING WORK (Apart from Backend)
+# ❌ REMAINING WORK
 
 ### High Priority - Open Issues
 
@@ -57,12 +59,13 @@
 | **Demo Polish** | - Clean demo path (3-5 steps)<br>- No broken buttons<br>- No dummy/placeholder text in key areas |
 | **README Cleanup** | - Remove outdated "planned" wording<br>- Match features to actual app<br>- Add Week 6 progress |
 
-### Low Priority - Project Board
+### Backend Next Steps
 
-| Task | Action |
-|------|--------|
-| **Board Cleanup** | - Move finished cards to Done<br>- Keep only real tasks in In Progress |
-| **Close Stale Issues** | - Close issues already completed |
+| Task | Details |
+|------|---------|
+| **MongoDB Setup** | Create free MongoDB Atlas cluster |
+| **Connect Frontend** | Replace localStorage with API calls |
+| **Test API** | Verify all endpoints work with Postman |
 
 ---
 
@@ -73,6 +76,14 @@
 | #26 | Category filter for item listings | High | (assign) |
 | #21 | Request/contact donor confirmation | High | (assign) |
 | #20 | Item posting form validation | High | (assign) |
+
+---
+
+# Pull Requests
+
+| # | PR | Status | Author |
+|---|-----|--------|--------|
+| #61 | Backend API (Node.js/Express) | Open | Swarnim Jung Karki |
 
 ---
 
@@ -133,31 +144,37 @@ If the live demo fails, present:
 - Updated QUESTIONS.md document
 - Fixed time display bug in browse page
 - Fixed chat button to pass item ID
+- **Created complete Node.js/Express backend API**
+- **PR #61: Backend API submitted**
 
 ## What Broke / Problems
 
 - Browse page items showed "Just now" forever (timestamp issue)
 - Chat button didn't pass item context to chat page
 - Some documentation files had inconsistent naming
+- Backend not connected to frontend yet
 
 ## How It Was Fixed
 
 - Changed donate.js to save timestamp as number instead of string
 - Updated browse.html to pass item ID to chat via URL parameter
+- Created backend API with all necessary endpoints
 
 ## Next Sprint Plan
 
-- Set up Node.js/Express backend
+- ~~Set up Node.js/Express backend~~ ✅ DONE
+- Merge PR #61
+- Set up MongoDB Atlas
+- Connect frontend to backend API
 - Complete frontend polish (issues #20, #21, #26)
-- Connect frontend to API
 - Implement real authentication
 - Add database integration
 
 ## Risks / Blockers
 
-- Backend integration complexity
-- Time constraints for feature development
-- Team coordination for merging
+- MongoDB Atlas setup required
+- Frontend-backend connection complexity
+- Team coordination for merging PRs
 
 ---
 
@@ -174,6 +191,12 @@ If the live demo fails, present:
 - https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/e331937
 - https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/e5c7db2
 - https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/22da582
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/2ec0476
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/0f52ea2
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/585cc74
+
+**Pull Requests:**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/61
 
 **Issues:**
 - https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/26
@@ -188,7 +211,9 @@ If the live demo fails, present:
 - Created Week 6 Sprint Packet
 - Updated QUESTIONS.md document
 - Added remaining work status to sprint packet
-- QA testing and bug reporting
+- Created BACKEND_PLAN.md
+- **Created complete Node.js/Express backend API**
+- **Created PR #61 for backend implementation**
 
 ---
 
