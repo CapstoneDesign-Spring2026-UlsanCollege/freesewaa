@@ -80,6 +80,89 @@ If the live demo fails, present:
 
 ---
 
+# Current Status Overview
+
+## ✅ DONE
+
+- Premium frontend UI (Home, Browse, Donate, Chat pages)
+- Browse page with search and category filtering
+- Donate page with image upload and live preview
+- User authentication flow (login/logout)
+- Documentation templates and sprint packets
+- Bug fixes (timestamp, chat button)
+
+## 🚧 IN PROGRESS
+
+- Backend API development
+- Database integration planning
+
+## ❌ REMAINING (Priority Order)
+
+### High Priority
+
+1. **Backend Setup**
+   - Set up Node.js/Express server
+   - Create database schema (Users, Items, Messages)
+   - Implement REST API endpoints
+
+2. **User Authentication**
+   - Connect frontend to backend auth
+   - JWT token implementation
+   - Password hashing
+
+3. **Request/Contact Flow** (Issue #21)
+   - Implement item request functionality
+   - Add donor confirmation step
+   - Contact confirmation flow
+
+4. **Form Validation** (Issue #20)
+   - Complete form validation improvements
+   - Error handling and user feedback
+
+### Medium Priority
+
+5. **Category Filter Completion** (Issue #26)
+   - Finish category filter implementation
+   - Update UI dynamically
+
+6. **Real Database Integration**
+   - MongoDB setup
+   - Connect localStorage to database
+
+7. **Real-time Chat**
+   - Socket.io or Firebase integration
+   - Live message updates
+
+### Low Priority
+
+8. **Update README**
+   - Remove "planned" status from completed features
+   - Update project status
+
+---
+
+# Open GitHub Issues
+
+| # | Issue | Status | Owner |
+|---|-------|--------|-------|
+| #26 | Implement category filter for item listings | Open | (assign) |
+| #21 | Implement request and contact donor confirmation flow | Open | (assign) |
+| #20 | Improve item posting form validation | Open | (assign) |
+
+---
+
+# Full Vertical Slice Target
+
+The core user flow to complete:
+
+```
+Post Item → Browse Item → Request Item → Contact/Confirmation
+```
+
+This is the main goal outlined in the README.
+
+---
+
 # Sprint Notes
 
 ## What Shipped
