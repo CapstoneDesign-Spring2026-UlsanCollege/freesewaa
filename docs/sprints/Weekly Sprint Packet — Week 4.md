@@ -1,5 +1,3 @@
-
-https://github.com/user-attachments/assets/77d8bfd4-14a0-4fa5-b4ba-d4e21aed87bc
 # Sprint Packet — Sprint 4
 
 ## MVP Week 4
@@ -31,10 +29,11 @@ The Project Manager coordinates sprint activities and prepares the Sprint Packet
 **Backup Demo:** 
 
 
-
+**1**
 https://github.com/user-attachments/assets/4f0233cc-a389-409f-8327-92aad026868c
 
-
+**2**
+https://github.com/user-attachments/assets/77d8bfd4-14a0-4fa5-b4ba-d4e21aed87bc
 
 ### Demo Script
 
