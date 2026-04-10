@@ -2,7 +2,10 @@
 https://github.com/user-attachments/assets/77d8bfd4-14a0-4fa5-b4ba-d4e21aed87bc
 # Sprint Packet — Sprint 4
 
- ## Team
+## MVP Link
+https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/releases/tag/v1.0
+
+## Team
 
 **Team Name:** Free Sewaa
 **Repository:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa

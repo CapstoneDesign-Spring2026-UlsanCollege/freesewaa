@@ -1,5 +1,8 @@
 # Weekly Sprint Packet — Week 6
 
+## MVP Link
+https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/releases/tag/v1.0
+
 ## Team
 
 **Team Name:** Free Sewaa  
@@ -97,7 +100,7 @@ Post Item → Browse Item → Request Item → Contact/Confirmation
 
 # Demo
 
-**Demo Link:** *(add working demo link here)*
+**Demo Link:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/releases/tag/v1.0
 
 **Backup Demo:** *(add backup video or screenshots here)*
 
