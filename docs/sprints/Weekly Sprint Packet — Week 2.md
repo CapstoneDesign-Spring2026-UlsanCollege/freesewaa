@@ -1,7 +1,7 @@
 # Weekly Sprint Packet — Week 2
 
 ## MVP Week 2
-https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/releases/tag/v1.0](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/blob/9000e164525de9c5cdba954002e6409ec2a6986a/docs/PROGRESS/MVP_WEEK_2.md)
+https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/blob/ffbaaccdba5fcc53becb9ea980304614cbdc19df/docs/PROGRESS/MVP_WEEK_2.md
 
 ## Team Information
 **Team Name:** Free Sewaa Team  
