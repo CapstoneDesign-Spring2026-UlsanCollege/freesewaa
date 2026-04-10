@@ -2,8 +2,8 @@
 
 Free Sewaa Team
 
-## MVP Link
-https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/releases/tag/v1.0
+## MVP Week 3
+https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/blob/ffbaaccdba5fcc53becb9ea980304614cbdc19df/docs/PROGRESS/MVP_WEEK_3.md
 
 # Sprint Packet — Week 3 (Frontend MVP)
 
