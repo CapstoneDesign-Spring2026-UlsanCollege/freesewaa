@@ -2,8 +2,8 @@
 https://github.com/user-attachments/assets/77d8bfd4-14a0-4fa5-b4ba-d4e21aed87bc
 # Sprint Packet — Sprint 4
 
-## MVP Link
-https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/releases/tag/v1.0
+## MVP Week 4
+https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/blob/ffbaaccdba5fcc53becb9ea980304614cbdc19df/docs/PROGRESS/MVP_WEEK_4.md
 
 ## Team
 
