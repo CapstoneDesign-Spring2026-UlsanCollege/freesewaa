@@ -1,7 +1,7 @@
 # Sprint Packet — Sprint 1
 
 ## MVP Week 1
-docs/PROGRESS/MVP_WEEK_1.md
+[docs/PROGRESS/MVP_WEEK_1.md](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/blob/9000e164525de9c5cdba954002e6409ec2a6986a/docs/PROGRESS/MVP_WEEK_1.md)
 
 ## Team
 
