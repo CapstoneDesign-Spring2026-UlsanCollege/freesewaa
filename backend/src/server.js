@@ -7,6 +7,7 @@ dotenv.config();
 
 const connectDB = require('./config/db');
 const swaggerSpec = require('./config/swagger');
+const logger = require('./middleware/logger');
 const { authLimiter, apiLimiter } = require('./middleware/rateLimit');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/users');
@@ -18,6 +19,7 @@ connectDB();
 
 const app = express();
 
+app.use(logger);
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
