@@ -16,6 +16,13 @@ Free Sewaa is a community donation platform that allows users to share reusable 
 
 ## Development Workflow
 
+### Testing
+Run backend tests:
+```bash
+cd backend
+npm test
+```
+
 All development contributions should follow the standard Git workflow used by the team:
 
 Issue → Branch → Commit → Pull Request → Review → Merge
