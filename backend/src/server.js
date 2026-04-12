@@ -9,6 +9,7 @@ const connectDB = require('./config/db');
 const swaggerSpec = require('./config/swagger');
 const logger = require('./middleware/logger');
 const { authLimiter, apiLimiter } = require('./middleware/rateLimit');
+const corsOptions = require('./config/cors');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/users');
 const itemRoutes = require('./routes/items');
@@ -20,7 +21,7 @@ connectDB();
 const app = express();
 
 app.use(logger);
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
