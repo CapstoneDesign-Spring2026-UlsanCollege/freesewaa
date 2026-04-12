@@ -5,6 +5,16 @@ const API_BASE = isDevelopment ? 'http://localhost:3000' : 'https://free-sewaa-a
 const API_URL = `${API_BASE}/api/v1`;
 
 const api = {
+  async checkHealth() {
+    try {
+      const response = await fetch(`${API_BASE}/api/health`);
+      return await response.json();
+    } catch (error) {
+      console.error('Health check failed:', error);
+      return { status: 'offline', error: error.message };
+    }
+  },
+
   async request(endpoint, options = {}) {
     const token = localStorage.getItem('token');
     
