@@ -1,5 +1,9 @@
 const API_URL = 'http://localhost:3000/api';
 
+const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const API_BASE = isDevelopment ? 'http://localhost:3000' : 'https://free-sewaa-api.onrender.com';
+const API_URL = `${API_BASE}/api`;
+
 const api = {
   async request(endpoint, options = {}) {
     const token = localStorage.getItem('token');
