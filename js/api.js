@@ -46,6 +46,10 @@ const api = {
     }
   },
 
+  isOnline() {
+    return navigator.onLine;
+  },
+
   auth: {
     async register(userData) {
       return api.request('/auth/register', {
