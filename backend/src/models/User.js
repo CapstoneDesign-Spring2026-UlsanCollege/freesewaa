@@ -39,7 +39,11 @@ const userSchema = new mongoose.Schema({
     default: true
   }
 }, {
-  timestamps: true
+  timestamps: true,
+  indexes: [
+    { email: 1 },
+    { name: 1 }
+  ]
 });
 
 userSchema.pre('save', async function(next) {
