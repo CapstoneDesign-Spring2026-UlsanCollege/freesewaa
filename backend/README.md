@@ -9,6 +9,8 @@ A Node.js/Express backend API for Free Sewaa, a community donation platform.
 - **Database:** MongoDB with Mongoose
 - **Authentication:** JWT (JSON Web Tokens)
 - **Password Hashing:** bcryptjs
+- **Rate Limiting:** express-rate-limit
+- **API Docs:** Swagger/OpenAPI
 
 ## Getting Started
 
