@@ -11,6 +11,12 @@ exports.register = async (req, res) => {
   try {
     const { name, email, password, phone, location } = req.body;
 
+    if (!name || !email || !password) {
+      return res.status(400).json({
+        message: 'Please provide name, email, and password'
+      });
+    }
+
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({
@@ -34,76 +40,9 @@ exports.register = async (req, res) => {
       user: user.toJSON()
     });
   } catch (error) {
+    console.error(`Register Error: ${error.message}`);
     res.status(500).json({
-      message: error.message
+      message: 'Registration failed. Please try again.'
     });
   }
-};
-
-exports.login = async (req, res) => {
-  try {
-    const { email, password } = req.body;
-
-    if (!email || !password) {
-      return res.status(400).json({
-        message: 'Please provide email and password'
-      });
-    }
-
-    const user = await User.findOne({ email }).select('+password');
-
-    if (!user) {
-      return res.status(401).json({
-        message: 'Invalid credentials'
-      });
-    }
-
-    const isMatch = await user.matchPassword(password);
-
-    if (!isMatch) {
-      return res.status(401).json({
-        message: 'Invalid credentials'
-      });
-    }
-
-    const token = generateToken(user._id);
-
-    res.json({
-      success: true,
-      token,
-      user: user.toJSON()
-    });
-  } catch (error) {
-    res.status(500).json({
-      message: error.message
-    });
-  }
-};
-
-exports.getMe = async (req, res) => {
-  try {
-    const user = await User.findById(req.user.id);
-
-    if (!user) {
-      return res.status(404).json({
-        message: 'User not found'
-      });
-    }
-
-    res.json({
-      success: true,
-      user: user.toJSON()
-    });
-  } catch (error) {
-    res.status(500).json({
-      message: error.message
-    });
-  }
-};
-
-exports.logout = async (req, res) => {
-  res.json({
-    success: true,
-    message: 'Logged out successfully'
-  });
 };
