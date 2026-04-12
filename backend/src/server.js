@@ -7,6 +7,7 @@ dotenv.config();
 
 const connectDB = require('./config/db');
 const swaggerSpec = require('./config/swagger');
+const { authLimiter, apiLimiter } = require('./middleware/rateLimit');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/users');
 const itemRoutes = require('./routes/items');
@@ -23,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-app.use('/api/auth', authRoutes);
+app.use('/api/auth', authLimiter, authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/items', itemRoutes);
 app.use('/api/requests', requestRoutes);
