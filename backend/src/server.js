@@ -10,6 +10,7 @@ const swaggerSpec = require('./config/swagger');
 const logger = require('./middleware/logger');
 const { authLimiter, apiLimiter } = require('./middleware/rateLimit');
 const corsOptions = require('./config/cors');
+const { API_PREFIX } = require('./config/version');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/users');
 const itemRoutes = require('./routes/items');
@@ -27,11 +28,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-app.use('/api/auth', authLimiter, authRoutes);
-app.use('/api/users', apiLimiter, userRoutes);
-app.use('/api/items', apiLimiter, itemRoutes);
-app.use('/api/requests', requestRoutes);
-app.use('/api/messages', messageRoutes);
+app.use(`${API_PREFIX}/auth`, authLimiter, authRoutes);
+app.use(`${API_PREFIX}/users`, apiLimiter, userRoutes);
+app.use(`${API_PREFIX}/items`, apiLimiter, itemRoutes);
+app.use(`${API_PREFIX}/requests`, apiLimiter, requestRoutes);
+app.use(`${API_PREFIX}/messages`, apiLimiter, messageRoutes);
 
 app.get('/', (req, res) => {
   res.json({
