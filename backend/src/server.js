@@ -25,8 +25,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use('/api/auth', authLimiter, authRoutes);
-app.use('/api/users', userRoutes);
-app.use('/api/items', itemRoutes);
+app.use('/api/users', apiLimiter, userRoutes);
+app.use('/api/items', apiLimiter, itemRoutes);
 app.use('/api/requests', requestRoutes);
 app.use('/api/messages', messageRoutes);
 
