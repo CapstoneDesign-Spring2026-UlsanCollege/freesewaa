@@ -46,7 +46,14 @@ const itemSchema = new mongoose.Schema({
     default: 0
   }
 }, {
-  timestamps: true
+  timestamps: true,
+  indexes: [
+    { title: 'text', description: 'text' },
+    { category: 1 },
+    { status: 1 },
+    { donor: 1 },
+    { createdAt: -1 }
+  ]
 });
 
 itemSchema.index({ title: 'text', description: 'text' });
