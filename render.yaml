@@ -4,17 +4,12 @@ services:
     env: node
     region: oregon
     plan: free
-    rootDir: backend
     buildCommand: npm install
-    startCommand: npm start
+    startCommand: node server.js
     healthCheckPath: /api/health
     envVars:
-      - key: MONGODB_URI
+      - key: MONGO_URI
         value: mongodb+srv://swarnimkarki60_db_user:qcljLKasZ49L08Mq@free-sewaa.qtyv3z2.mongodb.net/?appName=Free-Sewaa
         sync: false
-      - key: JWT_SECRET
-        value: free-sewaa-jwt-secret-key-2026
-      - key: JWT_EXPIRES_IN
-        value: 7d
       - key: NODE_ENV
         value: production
