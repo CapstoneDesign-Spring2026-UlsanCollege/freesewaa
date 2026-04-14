@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Sewaa — Sign In</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="auth.css" />
+
+<script>
+if (localStorage.getItem('freesewaa-auth') === 'true' && localStorage.getItem('freesewaa-current-user-id')) {
+  window.location.replace('app.html');
+}
+</script>
+</head>
+<body class="auth-page">
+  <div class="auth-bg" style="--bg:url('https://images.unsplash.com/photo-1593113598332-cd59a93f9724?auto=format&fit=crop&w=1920&q=72')"></div>
+  <div class="auth-overlay"></div>
+  <canvas class="particles" id="particles"></canvas>
+
+  <header class="auth-header">
+    <a href="index.html" class="brand">Free Sewaa</a>
+    <nav class="auth-header__actions">
+      <a href="signin.html" class="mini-link is-active">Sign In</a>
+      <a href="signup.html" class="mini-link">Sign Up</a>
+    </nav>
+  </header>
+
+  <main class="auth-shell">
+    <section class="auth-left">
+      <p class="eyebrow">WELCOME BACK</p>
+      <h1>Sign in to continue sharing care.</h1>
+      <p class="auth-copy">Access your donations, requests, messages, and community activity in one calm, premium space.</p>
+    </section>
+
+    <section class="auth-card">
+      <div class="auth-card__top">
+        <p class="eyebrow">SIGN IN</p>
+        <h2>Welcome back</h2>
+        <p class="auth-card__text">Choose the way you want to sign in.</p>
+      </div>
+
+      <div class="social-row">
+        <button class="social-btn">
+          <span class="social-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.8 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.5c-.2 1.2-.9 2.3-2 3v2.5h3.3c1.9-1.8 3-4.4 3-7.2Z"/><path fill="currentColor" d="M12 22c2.7 0 5-.9 6.7-2.5l-3.3-2.5c-.9.6-2.1 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3v2.6A10 10 0 0 0 12 22Z"/><path fill="currentColor" d="M6.4 13.9a6 6 0 0 1 0-3.8V7.5H3a10 10 0 0 0 0 9l3.4-2.6Z"/><path fill="currentColor" d="M12 5.9c1.4 0 2.7.5 3.7 1.4l2.8-2.8A9.9 9.9 0 0 0 3 7.5l3.4 2.6c.8-2.4 3-4.2 5.6-4.2Z"/></svg>
+          </span>
+          Continue with Google
+        </button>
+      </div>
+
+      <div class="divider"><span>or</span></div>
+
+      <div class="auth-toggle">
+        <button class="toggle-btn is-active" data-panel-target="emailPanel">Email</button>
+        <button class="toggle-btn" data-panel-target="phonePanel">Phone Number</button>
+      </div>
+
+      <div class="auth-panel is-active" id="emailPanel">
+        <form class="auth-form">
+          <label class="field">
+            <span>Email address</span>
+            <input type="email" placeholder="you@example.com" />
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <input type="password" placeholder="Enter your password" />
+          </label>
+          <div class="form-row">
+            <label class="checkbox"><input type="checkbox" /><span>Remember me</span></label>
+            <a href="#" class="text-link">Forgot password?</a>
+          </div>
+          <button class="primary-btn" type="submit">Sign In</button>
+        </form>
+      </div>
+
+      <div class="auth-panel" id="phonePanel">
+        <form class="auth-form">
+          <label class="field">
+            <span>Phone number</span>
+            <div class="phone-group">
+              <select><option>+1</option><option>+82</option><option>+977</option><option>+44</option><option>+61</option></select>
+              <input type="tel" placeholder="Enter your phone number" />
+            </div>
+          </label>
+          <button class="secondary-btn" type="button">Send Verification Code</button>
+          <label class="field">
+            <span>Verification code</span>
+            <input type="text" placeholder="Enter 6-digit code" />
+          </label>
+          <button class="primary-btn" type="submit">Continue</button>
+        </form>
+      </div>
+
+      <p class="auth-footer">Don't have an account? <a href="signup.html">Create one</a></p>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>
