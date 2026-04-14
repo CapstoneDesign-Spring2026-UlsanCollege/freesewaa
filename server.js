@@ -2,27 +2,13 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const { URL } = require('url');
-const { MongoClient } = require('mongodb');
 
 const PORT = process.env.PORT || 3000;
 const ROOT = __dirname;
 const DB_PATH = path.join(ROOT, 'db.json');
 
-const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://swarnimkarki60_db_user:qcljLKasZ49L08Mq@free-sewaa.qtyv3z2.mongodb.net/?appName=Free-Sewaa';
-
-let db;
-const client = new MongoClient(MONGO_URI);
-
-async function connectDb() {
-  try {
-    await client.connect();
-    db = client.db('freesewaa');
-    console.log('Connected to MongoDB');
-  } catch (e) {
-    console.log('MongoDB connection failed, using JSON fallback');
-    db = null;
-  }
-}
+// Railway/MongoDB connection
+const MONGO_URI = process.env.MONGO_URI || process.env.RAILWAY_MONGO_URI || '';
 
 function defaultUserState(user) {
   const name = [user.firstName, user.lastName].filter(Boolean).join(' ').trim() || user.name || 'Free Sewaa Member';
@@ -51,6 +37,7 @@ function readDb() {
   return JSON.parse(fs.readFileSync(DB_PATH, 'utf8'));
 }
 
+function writeDb(db) { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); }
 function safeUser(user) { const { password, ...rest } = user; return rest; }
 
 function sendJson(res, statusCode, payload) {
@@ -83,7 +70,7 @@ const server = http.createServer(async (req, res) => {
   if (req.method === 'OPTIONS') { res.writeHead(204, { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': '*', 'Access-Control-Allow-Headers': '*' }); return res.end(); }
 
   try {
-    if (pathname === '/api/health') return sendJson(res, 200, { ok: true, db: db ? 'mongodb' : 'json' });
+    if (pathname === '/api/health') return sendJson(res, 200, { ok: true, service: 'freesewaa' });
 
     if (pathname === '/api/auth/signup' && req.method === 'POST') {
       const { firstName, lastName, email, password, phone } = await readBody(req);
@@ -93,7 +80,7 @@ const server = http.createServer(async (req, res) => {
       if (existing) return sendJson(res, 409, { error: 'Account exists' });
       const user = { id: `user-${Date.now()}`, firstName, lastName, email: email || '', password, phone: phone || '', city: 'Ulsan', region: 'Nam-gu', createdAt: new Date().toISOString() };
       db.users.push(user); db.states[user.id] = defaultUserState(user);
-      fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
+      writeDb(db);
       return sendJson(res, 201, { user: safeUser(user), auth: { userId: user.id, isAuthenticated: true } });
     }
 
@@ -118,7 +105,7 @@ const server = http.createServer(async (req, res) => {
       const payload = await readBody(req);
       const db = readDb();
       db.states[userId] = payload;
-      fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
+      writeDb(db);
       return sendJson(res, 200, { ok: true });
     }
 
@@ -136,5 +123,5 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(PORT, () => {
   console.log(`Free Sewaa running on http://localhost:${PORT}`);
+  if (MONGO_URI) console.log('MongoDB configured');
 });
-connectDb();
