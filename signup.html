@@ -3,134 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>Free Sewaa - Sign Up</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link
-  rel="stylesheet"
-   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  />
+  <title>Free Sewaa — Sign Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="auth.css" />
+
+<script>
+if (localStorage.getItem('freesewaa-auth') === 'true' && localStorage.getItem('freesewaa-current-user-id')) {
+  window.location.replace('app.html');
+}
+</script>
 </head>
-<body>
-  <div class="signup-wrapper">
-    <div class="signup-card">
-      <h1>Create account</h1>
-      <p class="subtitle">Join our community of kindness</p>
+<body class="auth-page">
+  <div class="auth-bg" style="--bg:url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1920&q=72')"></div>
+  <div class="auth-overlay"></div>
+  <canvas class="particles" id="particles"></canvas>
 
-      <div class="toggle">
-        <button class="toggle-btn active" id="signupEmailBtn" type="button">
-          <i class="fa-regular fa-envelope"></i>
-          <span>Email</span>
-        </button>
-        <button class="toggle-btn" id="signupPhoneBtn" type="button">
-          <i class="fa-solid fa-phone"></i>
-          <span>Phone</span>
+  <header class="auth-header">
+    <a href="index.html" class="brand">Free Sewaa</a>
+    <nav class="auth-header__actions">
+      <a href="signin.html" class="mini-link">Sign In</a>
+      <a href="signup.html" class="mini-link is-active">Sign Up</a>
+    </nav>
+  </header>
+
+  <main class="auth-shell">
+    <section class="auth-left">
+      <p class="eyebrow">JOIN THE COMMUNITY</p>
+      <h1>Create your account and start giving meaningfully.</h1>
+      <p class="auth-copy">Share useful items, support people with dignity, and connect through a platform designed to feel warm, safe, and modern.</p>
+    </section>
+
+    <section class="auth-card">
+      <div class="auth-card__top">
+        <p class="eyebrow">SIGN UP</p>
+        <h2>Create account</h2>
+        <p class="auth-card__text">Start with Google, email, or phone number.</p>
+      </div>
+
+      <div class="social-row">
+        <button class="social-btn">
+          <span class="social-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.8 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.5c-.2 1.2-.9 2.3-2 3v2.5h3.3c1.9-1.8 3-4.4 3-7.2Z"/><path fill="currentColor" d="M12 22c2.7 0 5-.9 6.7-2.5l-3.3-2.5c-.9.6-2.1 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3v2.6A10 10 0 0 0 12 22Z"/><path fill="currentColor" d="M6.4 13.9a6 6 0 0 1 0-3.8V7.5H3a10 10 0 0 0 0 9l3.4-2.6Z"/><path fill="currentColor" d="M12 5.9c1.4 0 2.7.5 3.7 1.4l2.8-2.8A9.9 9.9 0 0 0 3 7.5l3.4 2.6c.8-2.4 3-4.2 5.6-4.2Z"/></svg>
+          </span>
+          Continue with Google
         </button>
       </div>
 
-      <form class="signup-form" id="signupForm">
-        <div id="signupEmailForm">
-          <label>Full Name</label>
-          <div class="input-box">
-            <input type="text" id="fullName" placeholder="John Doe" />
-          </div>
+      <div class="divider"><span>or</span></div>
 
-          <label>Email Address</label>
-          <div class="input-box">
-            <i class="fa-regular fa-envelope input-icon left-icon"></i>
-            <input type="email" id="signupEmail" placeholder="you@example.com" />
-          </div>
-
-          <label>Password</label>
-          <div class="input-box">
-            <i class="fa-solid fa-lock input-icon left-icon"></i>
-            <input type="password" id="signupPassword" placeholder="••••••••" />
-            <i
-              class="fa-regular fa-eye input-icon right-icon toggle-password"
-              data-target="signupPassword"
-            ></i>
-          </div>
-
-          <label>Confirm Password</label>
-          <div class="input-box">
-            <i class="fa-solid fa-lock input-icon left-icon"></i>
-            <input type="password" id="confirmPassword" placeholder="••••••••" />
-            <i
-              class="fa-regular fa-eye input-icon right-icon toggle-password"
-              data-target="confirmPassword"
-            ></i>
-          </div>
-        </div>
-
-        <div id="signupPhoneForm" class="hidden">
-          <label>Full Name</label>
-          <div class="input-box">
-            <input type="text" id="phoneFullName" placeholder="John Doe" />
-          </div>
-
-          <label>Phone Number</label>
-          <div class="phone-box">
-            <select id="signupCountryCode">
-              <option value="+1">US +1</option>
-              <option value="+44">UK +44</option>
-              <option value="+91">IN +91</option>
-              <option value="+82">KR +82</option>
-              <option value="+81">JP +81</option>
-              <option value="+86">CN +86</option>
-              <option value="+977">NP +977</option>
-            </select>
-            <input type="text" id="signupPhone" placeholder="Phone number" />
-          </div>
-
-          <label>Password</label>
-          <div class="input-box">
-            <i class="fa-solid fa-lock input-icon left-icon"></i>
-            <input type="password" id="phoneSignupPassword" placeholder="••••••••" />
-            <i
-              class="fa-regular fa-eye input-icon right-icon toggle-password"
-              data-target="phoneSignupPassword"
-            ></i>
-          </div>
-
-          <label>Confirm Password</label>
-          <div class="input-box">
-            <i class="fa-solid fa-lock input-icon left-icon"></i>
-            <input type="password" id="phoneConfirmPassword" placeholder="••••••••" />
-            <i
-              class="fa-regular fa-eye input-icon right-icon toggle-password"
-              data-target="phoneConfirmPassword"
-            ></i>
-          </div>
-        </div>
-
-        <button class="create-btn" type="submit">
-          <span>Create Account</span>
-          <i class="fa-solid fa-arrow-right"></i>
-        </button>
-      </form>
-
-      <div class="divider">
-        <span>Or continue with</span>
+      <div class="auth-toggle">
+        <button class="toggle-btn is-active" data-panel-target="emailPanel">Email</button>
+        <button class="toggle-btn" data-panel-target="phonePanel">Phone Number</button>
       </div>
 
-      <div class="social-buttons">
-        <button type="button" class="social-btn">
-          <i class="fa-brands fa-google"></i>
-        </button>
-        <button type="button" class="social-btn">
-          <i class="fa-brands fa-facebook-f"></i>
-        </button>
-        <button type="button" class="social-btn">
-          <i class="fa-brands fa-instagram"></i>
-        </button>
+      <div class="auth-panel is-active" id="emailPanel">
+        <form class="auth-form">
+          <div class="field-grid">
+            <label class="field"><span>First name</span><input type="text" placeholder="First name" /></label>
+            <label class="field"><span>Last name</span><input type="text" placeholder="Last name" /></label>
+          </div>
+          <label class="field"><span>Email address</span><input type="email" placeholder="you@example.com" /></label>
+          <label class="field"><span>Password</span><input type="password" placeholder="Create password" /></label>
+          <label class="checkbox"><input type="checkbox" /><span>I agree to the Terms and Privacy Policy</span></label>
+          <button class="primary-btn" type="submit">Create Account</button>
+        </form>
       </div>
 
-      <p class="signin-text">
-        Already have an account? <a href="index.html">Sign in</a>
-      </p>
-    </div>
-  </div>
+      <div class="auth-panel" id="phonePanel">
+        <form class="auth-form">
+          <div class="field-grid">
+            <label class="field"><span>First name</span><input type="text" placeholder="First name" /></label>
+            <label class="field"><span>Last name</span><input type="text" placeholder="Last name" /></label>
+          </div>
+          <label class="field">
+            <span>Phone number</span>
+            <div class="phone-group">
+              <select><option>+1</option><option>+82</option><option>+977</option><option>+44</option><option>+61</option></select>
+              <input type="tel" placeholder="Enter your phone number" />
+            </div>
+          </label>
+          <button class="secondary-btn" type="button">Send Verification Code</button>
+          <label class="field"><span>Verification code</span><input type="text" placeholder="Enter 6-digit code" /></label>
+          <button class="primary-btn" type="submit">Create Account</button>
+        </form>
+      </div>
 
-  <script src="js/api.js"></script>
-  <script src="js/signup.js"></script>
+      <p class="auth-footer">Already have an account? <a href="signin.html">Sign in</a></p>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
 </body>
 </html>

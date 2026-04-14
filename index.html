@@ -3,136 +3,148 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free Sewaa - Login</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
- />
+  <title>Free Sewaa — Connected Premium</title>
+  <meta name="description" content="Free Sewaa community giving platform with connected homepage and auth pages." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="dns-prefetch" href="//images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+<script>
+if (localStorage.getItem('freesewaa-auth') === 'true' && localStorage.getItem('freesewaa-current-user-id')) {
+  window.location.replace('app.html');
+}
+</script>
+
 </head>
 <body>
-  <div class="container">
-    <div class="left">
-      <div class="brand">
-        <div class="brand-icon">
-          <i class="fa-solid fa-heart"></i>
-        </div>
-        <div>
-          <h3>Free Sewaa</h3>
-          <span>Community Donation Platform</span>
-        </div>
-      </div>
+  <div class="site-noise"></div>
+  <canvas id="particles" class="particles"></canvas>
 
-      <h1>Give what you can.</h1>
-      <h2>Take what you need.</h2>
-
-      <p>
-        Join our community of givers and receivers. Together, we make a
-        difference by sharing resources and spreading kindness.
-      </p>
-
-      <ul>
-        <li>Connect with your local community</li>
-        <li>Donate items you no longer need</li>
-        <li>Find things you're looking for</li>
-        <li>100% free, no hidden fees</li>
-      </ul>
-    </div>
-
-    <div class="right">
-      <h2>Welcome back!</h2>
-      <p>Sign in to continue your journey</p>
-
-      <div class="toggle">
-        <button id="emailBtn" class="active" type="button">
-          <i class="fa-regular fa-envelope"></i>
-          <span>Email</span>
-        </button>
-        <button id="phoneBtn" type="button">
-          <i class="fa-solid fa-phone"></i>
-          <span>Phone</span>
-        </button>
-      </div>
-
-      <form id="loginForm">
-        <div id="emailForm">
-          <label>Email Address</label>
-          <div class="input-box">
-            <i class="fa-regular fa-envelope input-icon left-icon"></i>
-            <input
-              type="email"
-              id="loginEmail"
-              placeholder="you@example.com"
-              required
-            />
-          </div>
-
-          <label>Password</label>
-          <div class="input-box">
-            <i class="fa-solid fa-lock input-icon left-icon"></i>
-            <input
-              type="password"
-              id="loginPassword"
-              placeholder="Enter your password"
-              required
-            />
-            <i
-              class="fa-regular fa-eye input-icon right-icon toggle-password"
-              data-target="loginPassword"
-            ></i>
-          </div>
-        </div>
-
-        <div id="phoneForm" class="hidden">
-          <label>Phone Number</label>
-          <div class="phone-box">
-            <select id="countryCode">
-              <option value="+1">US +1</option>
-              <option value="+44">UK +44</option>
-              <option value="+91">IN +91</option>
-              <option value="+82">KR +82</option>
-              <option value="+81">JP +81</option>
-              <option value="+86">CN +86</option>
-              <option value="+977">NP +977</option>
-            </select>
-            <input type="text" id="phoneNumber" placeholder="Phone number" />
-          </div>
-        </div>
-
-        <div class="options">
-          <label><input type="checkbox" /> Remember me</label>
-          <a href="#">Forgot password?</a>
-        </div>
-
-        <button class="login-btn" type="submit">
-          <span>Sign In</span>
-          <i class="fa-solid fa-arrow-right"></i>
-        </button>
-      </form>
-
-      <div class="divider">
-        <span>Or continue with</span>
-      </div>
-
-      <div class="social-buttons">
-        <button type="button" class="social-btn">
-          <i class="fa-brands fa-google"></i>
-        </button>
-        <button type="button" class="social-btn">
-          <i class="fa-brands fa-facebook-f"></i>
-        </button>
-        <button type="button" class="social-btn">
-          <i class="fa-brands fa-instagram"></i>
-        </button>
-      </div>
-
-      <p class="signup-text">
-        Don't have an account? <a href="signup.html">Sign up</a>
-      </p>
+  <div class="loader" id="loader">
+    <div class="loader__inner">
+      <div class="loader__brand">Free Sewaa</div>
+      <div class="loader__line"><span></span></div>
     </div>
   </div>
 
- <script src="js/api.js"></script>
- <script src="js/script.js"></script>
+  <header class="header" id="header">
+    <a href="index.html" class="brand">Free Sewaa</a>
+    <nav class="header__actions" aria-label="Authentication navigation">
+      <a href="signin.html" class="btn btn--ghost">Sign In</a>
+      <a href="signup.html" class="btn btn--solid">Sign Up</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero__slides">
+        <div class="hero__slide is-active" data-bg="https://images.unsplash.com/photo-1593113598332-cd59a93f9724?auto=format&fit=crop&w=1920&q=72"></div>
+        <div class="hero__slide" data-bg="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1920&q=72"></div>
+        <div class="hero__slide" data-bg="https://images.unsplash.com/photo-1601933471661-6f6eaa1f8b28?auto=format&fit=crop&w=1920&q=72"></div>
+      </div>
+
+      <div class="hero__overlay"></div>
+      <div class="hero__light"></div>
+
+      <div class="hero__content wrap">
+        <div class="hero__copy">
+          <p class="eyebrow reveal">COMMUNITY GIVING • DIGNITY • CARE</p>
+          <h1 class="hero__title reveal reveal--1">Give with heart.<br>Share with purpose.</h1>
+          <p class="hero__text reveal reveal--2">
+            Free Sewaa is a human-centered donation platform where extra belongings become real help.
+            This homepage is now directly connected with premium sign in and sign up pages.
+          </p>
+          <div class="hero__cta reveal reveal--3">
+            <a href="signup.html" class="btn btn--hero">Start Sharing</a>
+            <a href="#stories" class="text-link">Explore stories</a>
+          </div>
+        </div>
+
+        <aside class="hero__glass reveal reveal--4">
+          <div class="metric">
+            <span class="metric__label">Items shared</span>
+            <strong class="counter" data-target="8400">0</strong>
+          </div>
+          <div class="metric">
+            <span class="metric__label">Families supported</span>
+            <strong class="counter" data-target="1250">0</strong>
+          </div>
+          <div class="metric">
+            <span class="metric__label">Communities reached</span>
+            <strong class="counter" data-target="42">0</strong>
+          </div>
+          <div class="hero__note">
+            <span class="eyebrow">CONNECTED FLOW</span>
+            <p>Homepage buttons now route directly to the new authentication pages so the experience feels like one real product.</p>
+          </div>
+        </aside>
+      </div>
+
+      <div class="hero__controls wrap">
+        <div class="hero__progress"><span id="progressBar"></span></div>
+        <div class="hero__dots" id="heroDots">
+          <button class="dot is-active" aria-label="Hero slide 1"></button>
+          <button class="dot" aria-label="Hero slide 2"></button>
+          <button class="dot" aria-label="Hero slide 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro wrap reveal-block">
+      <div class="intro__left">
+        <p class="eyebrow">Connected user journey</p>
+        <h2 class="section-title">Homepage to auth flow now feels seamless.</h2>
+      </div>
+      <p class="section-copy">
+        Sign In, Sign Up, and the hero CTA are all linked so users can move naturally from discovery into account creation or login.
+      </p>
+    </section>
+
+    <section class="stories wrap" id="stories">
+      <article class="story-card tilt reveal-card">
+        <img loading="lazy" decoding="async" width="900" height="1200"
+             src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=900&q=72"
+             alt="Community resilience and support"
+             class="story-card__image" />
+        <div class="story-card__overlay"></div>
+        <div class="story-card__content">
+          <p class="story-card__tag">01 • RESILIENCE</p>
+          <h3>Support should feel human, not transactional.</h3>
+          <p>Free Sewaa turns donated items into thoughtful acts of care, presented with emotional depth and dignity.</p>
+        </div>
+      </article>
+
+      <article class="story-card tilt reveal-card">
+        <img loading="lazy" decoding="async" width="900" height="1200"
+             src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=900&q=72"
+             alt="Joyful human moment"
+             class="story-card__image" />
+        <div class="story-card__overlay"></div>
+        <div class="story-card__content">
+          <p class="story-card__tag">02 • JOY</p>
+          <h3>Every moment of kindness deserves a premium experience.</h3>
+          <p>Elegant typography, layered gradients, and soft motion make generosity feel warm, modern, and memorable.</p>
+        </div>
+      </article>
+
+      <article class="story-card tilt reveal-card">
+        <img loading="lazy" decoding="async" width="900" height="1200"
+             src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=72"
+             alt="Giving and community support"
+             class="story-card__image" />
+        <div class="story-card__overlay"></div>
+        <div class="story-card__content">
+          <p class="story-card__tag">03 • GIVING</p>
+          <h3>Giving should look intentional, trusted, and real.</h3>
+          <p>From first impression to first donation, the experience is designed to feel clear, premium, and emotionally grounded.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="index.js"></script>
 </body>
 </html>
