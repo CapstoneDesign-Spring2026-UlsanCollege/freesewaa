@@ -1,754 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Free Sewaa — Browse Items</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Sewaa — Browse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css" />
+</head>
+<body data-page="browse">
+  <div class="grain"></div>
+  <canvas id="particles" class="particles"></canvas>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <div class="bg-noise"></div>
-    <div class="bg-grid"></div>
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
-
-    <div class="toast" id="toast">
-      <div class="toast-icon">
-        <i data-lucide="sparkles"></i>
-      </div>
-      <div class="toast-body">
-        <strong id="toastTitle">Success</strong>
-        <p id="toastMessage">Action completed successfully.</p>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="app.html" class="brand">Free Sewaa</a>
+    <nav class="main-nav">
+      <a href="app.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="donate.html" class="nav-link">Donate</a>
+      <a href="browse.html" class="nav-link active">Browse</a>
+      <a href="donate-us.html" class="nav-link">Donate Us</a>
+    </nav>
+    <div class="header-actions">
+      <a href="notifications.html" class="icon-link"><span class="icon-badge"></span><span>Notifications</span></a>
+      <a href="messages.html" class="icon-link"><span class="icon-dot"></span><span>Messages</span></a>
+      <div class="settings-dropdown">
+        <button class="icon-link settings-trigger" type="button"><span class="icon-gear">⚙</span><span>Settings</span></button>
+        <div class="settings-menu">
+          <a href="my-posts.html">My Posts</a>
+          <a href="orders.html">Track Your Order</a>
+          <a href="premium.html">Premium Plans</a>
+          <a href="profile.html">Personal Information</a>
+          <a href="saved.html">Saved Items</a>
+          <a href="requests.html">My Requests</a>
+          <button type="button" data-theme-toggle="true">Toggle Dark Mode</button>
+          <a href="logout.html">Logout</a>
+        </div>
       </div>
     </div>
+  </div>
+</header>
 
-    <main class="browse-page">
-      <header class="camp-header">
-        <div class="container camp-header-inner">
-          <a href="home.html" class="camp-logo">
-            <span class="camp-logo-text">Free Sewaa</span>
-            <span class="camp-logo-mark">/</span>
-          </a>
+<main>
+  <section class="page-hero generic-hero browse-hero">
+    <div class="page-hero__bg browse-hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="page-hero__content wrap">
+      <div>
+        <p class="eyebrow reveal">DISCOVER LISTINGS</p>
+        <h1 class="page-title reveal reveal-1">Browse items<br>like a real marketplace.</h1>
+        <p class="page-text reveal reveal-2">Search, sort, save, request, and preview listings with a connected frontend flow.</p>
+      </div>
+      <div class="page-badge reveal reveal-3">
+        <span class="mini-label">LIVE FILTERS</span>
+        <strong id="browseResultsHeadline">0 listings available</strong>
+        <p>Updated instantly as you filter.</p>
+      </div>
+    </div>
+  </section>
 
-          <nav class="camp-nav">
-            <a href="home.html">Home</a>
-            <a href="browse.html" class="active">Browse</a>
-            <a href="donate.html">Donate</a>
-            <a href="chat.html">Chat</a>
-          </nav>
-
-          <div class="camp-header-actions">
-            <a href="signup.html" class="camp-signup-btn">Sign up</a>
+  <section class="browse-layout wrap">
+    <aside class="panel filters-panel reveal-card browse-sidebar">
+      <div class="panel-head">
+        <p class="eyebrow">SEARCH & FILTERS</p>
+        <h2 class="section-title small">Refine results</h2>
+      </div>
+      <div class="filters-stack">
+        <label class="field">
+          <span>Search</span>
+          <input type="text" id="browseSearch" placeholder="Search items, categories, or cities" />
+        </label>
+        <div>
+          <span class="field-label">Category</span>
+          <div class="chip-row" id="categoryChips">
+            <button class="chip active-chip" type="button" data-category="All">All</button>
+            <button class="chip" type="button" data-category="Clothing">Clothing</button>
+            <button class="chip" type="button" data-category="Books">Books</button>
+            <button class="chip" type="button" data-category="Food">Food</button>
+            <button class="chip" type="button" data-category="Essentials">Essentials</button>
+            <button class="chip" type="button" data-category="Home">Home</button>
           </div>
         </div>
-      </header>
-
-      <section class="browse-hero">
-        <div class="container">
-          <span class="camp-soft-badge">Community sharing platform</span>
-          <h1>Browse Available Items</h1>
-          <p>Find useful items donated by your community. Everything is free — just pick up what you need.</p>
+        <div class="field-grid two">
+          <label class="field">
+            <span>Condition</span>
+            <select id="conditionFilter">
+              <option value="All">Any condition</option>
+              <option value="Like new">Like new</option>
+              <option value="Good">Good</option>
+              <option value="Used">Used</option>
+              <option value="New">New</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Distance</span>
+            <select id="distanceFilter">
+              <option value="999">Anywhere</option>
+              <option value="5">Within 5 km</option>
+              <option value="15">Within 15 km</option>
+              <option value="30">Within 30 km</option>
+            </select>
+          </label>
         </div>
-      </section>
-
-      <section class="browse-section">
-        <div class="container">
-          <div class="browse-toolbar">
-            <div class="search-wrap">
-              <i data-lucide="search"></i>
-              <input type="text" id="searchInput" placeholder="Search items, categories, or locations..." />
-            </div>
-            <div class="filter-group">
-              <select id="categoryFilter">
-                <option value="">All Categories</option>
-                <option>Books</option>
-                <option>Furniture</option>
-                <option>Clothing</option>
-                <option>Electronics</option>
-                <option>Kitchen</option>
-                <option>Toys</option>
-                <option>Sports</option>
-                <option>Baby & Kids</option>
-                <option>Other</option>
-              </select>
-              <select id="conditionFilter">
-                <option value="">All Conditions</option>
-                <option>Like New</option>
-                <option>Good</option>
-                <option>Fair</option>
-              </select>
-              <button class="reset-btn" id="resetFilters">
-                <i data-lucide="rotate-ccw"></i>
-                Reset
-              </button>
-            </div>
-          </div>
-
-          <div class="browse-results-header">
-            <p class="results-count"><span id="itemCount">0</span> items available</p>
-            <a href="donate.html" class="donate-link">
-              <i data-lucide="plus"></i>
-              Post an item
-            </a>
-          </div>
-
-          <div class="items-grid" id="itemsGrid">
-          </div>
-
-          <div class="empty-state hidden" id="emptyState">
-            <i data-lucide="package-x"></i>
-            <h3>No items found</h3>
-            <p>Try adjusting your filters or be the first to post an item!</p>
-            <a href="donate.html" class="btn btn-primary">
-              <i data-lucide="plus"></i>
-              Post an Item
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <div class="modal-overlay hidden" id="modalOverlay">
-        <div class="modal-panel glass-card" id="itemModal">
-          <button class="modal-close" id="modalClose">
-            <i data-lucide="x"></i>
-          </button>
-          <div class="modal-media" id="modalMedia">
-            <span id="modalEmoji">📦</span>
-            <span class="modal-badge" id="modalCondition">Condition</span>
-          </div>
-          <div class="modal-body">
-            <span class="modal-category" id="modalCategory">Category</span>
-            <h2 id="modalTitle">Item Title</h2>
-            <p id="modalDesc">Item description</p>
-            <p class="modal-meta">
-              <i data-lucide="map-pin"></i>
-              <span id="modalLocation">Location</span>
-            </p>
-            <p class="modal-meta">
-              <i data-lucide="clock"></i>
-              <span id="modalTime">Just now</span>
-            </p>
-            <div class="modal-actions">
-              <a href="chat.html" class="btn btn-primary chat-btn">
-                <i data-lucide="messages-square"></i>
-                Chat with Donor
-              </a>
-              <button class="btn btn-outline" id="closeModalBtn">Close</button>
-            </div>
-          </div>
+        <label class="field">
+          <span>Sort by</span>
+          <select id="sortFilter">
+            <option value="newest">Newest</option>
+            <option value="nearest">Nearest</option>
+            <option value="popular">Most requested</option>
+          </select>
+        </label>
+        <div class="form-actions">
+          <button class="btn btn-soft" type="button" id="resetFilters">Reset</button>
+          <a class="btn btn-hero" href="donate.html">Post New Listing</a>
         </div>
       </div>
-    </main>
-
-    <style>
-      .browse-page {
-        padding: 24px 0 80px;
-      }
-
-      .browse-hero {
-        padding: 40px 0 30px;
-        text-align: center;
-      }
-
-      .browse-hero .camp-soft-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 10px 14px;
-        border-radius: 999px;
-        margin-bottom: 16px;
-        background: rgba(255, 245, 247, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        color: #ffe4eb;
-        font-size: 0.86rem;
-        font-weight: 700;
-      }
-
-      .browse-hero h1 {
-        margin: 0 0 12px;
-        font-size: clamp(2rem, 5vw, 3.2rem);
-        color: #fff9fb;
-        letter-spacing: -0.04em;
-      }
-
-      .browse-hero p {
-        margin: 0 auto;
-        max-width: 560px;
-        color: rgba(246, 237, 240, 0.74);
-        font-size: 1.05rem;
-        line-height: 1.7;
-      }
-
-      .browse-section {
-        padding-top: 10px;
-      }
-
-      .browse-toolbar {
-        display: flex;
-        gap: 16px;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 20px;
-        border-radius: 22px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
-        border: 1px solid var(--border);
-        margin-bottom: 24px;
-      }
-
-      .search-wrap {
-        flex: 1;
-        min-width: 260px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        background: rgba(255, 255, 255, 0.07);
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        padding: 0 16px;
-      }
-
-      .search-wrap i {
-        color: var(--muted);
-        width: 20px;
-        height: 20px;
-      }
-
-      .search-wrap input {
-        flex: 1;
-        min-height: 48px;
-        border: none;
-        background: transparent;
-        color: white;
-        outline: none;
-        font-size: 0.95rem;
-      }
-
-      .search-wrap input::placeholder {
-        color: #aa98a1;
-      }
-
-      .filter-group {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-
-      .filter-group select {
-        min-height: 48px;
-        padding: 0 16px;
-        border-radius: 14px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.07);
-        color: white;
-        font-size: 0.9rem;
-        cursor: pointer;
-        outline: none;
-      }
-
-      .filter-group select:focus {
-        border-color: var(--primary);
-      }
-
-      .browse-results-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      .results-count {
-        margin: 0;
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-
-      .results-count span {
-        color: var(--white);
-        font-weight: 700;
-      }
-
-      .donate-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 10px 18px;
-        border-radius: 14px;
-        background: linear-gradient(135deg, var(--primary), var(--primary-2));
-        color: white;
-        font-weight: 700;
-        font-size: 0.9rem;
-        transition: var(--transition);
-      }
-
-      .donate-link:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(142, 35, 57, 0.34);
-      }
-
-      .items-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 20px;
-      }
-
-      .item-card {
-        border-radius: 20px;
-        overflow: hidden;
-        transition: var(--transition);
-        cursor: pointer;
-      }
-
-      .item-card:hover {
-        transform: translateY(-6px);
-      }
-
-      .item-card-media {
-        position: relative;
-        height: 180px;
-        display: grid;
-        place-items: center;
-        background: radial-gradient(circle at top left, rgba(217, 72, 93, 0.16), transparent 40%);
-        font-size: 4rem;
-        overflow: hidden;
-      }
-
-      .item-card-media img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .item-card-badge {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        background: rgba(20, 8, 13, 0.85);
-        color: white;
-        padding: 6px 10px;
-        border-radius: 999px;
-        font-size: 0.75rem;
-        font-weight: 700;
-      }
-
-      .item-card-body {
-        padding: 16px;
-      }
-
-      .item-card-topline {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 8px;
-      }
-
-      .item-card-category {
-        color: #ffd9df;
-        font-weight: 700;
-        font-size: 0.82rem;
-      }
-
-      .item-card-time {
-        color: var(--muted);
-        font-size: 0.78rem;
-      }
-
-      .item-card h3 {
-        margin: 0 0 8px;
-        font-size: 1.05rem;
-        color: var(--white);
-      }
-
-      .item-card p {
-        margin: 0 0 12px;
-        color: var(--muted);
-        font-size: 0.88rem;
-        line-height: 1.5;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-      }
-
-      .item-card-location {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        color: var(--soft);
-        font-size: 0.85rem;
-        margin-bottom: 14px;
-      }
-
-      .item-card-location i {
-        width: 14px;
-        height: 14px;
-      }
-
-      .item-card-actions {
-        display: flex;
-        gap: 8px;
-      }
-
-      .empty-state {
-        text-align: center;
-        padding: 60px 20px;
-      }
-
-      .empty-state i {
-        width: 64px;
-        height: 64px;
-        color: var(--muted);
-        margin-bottom: 16px;
-      }
-
-      .empty-state h3 {
-        margin: 0 0 8px;
-        font-size: 1.4rem;
-      }
-
-      .empty-state p {
-        margin: 0 0 20px;
-        color: var(--muted);
-      }
-
-      .modal-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(10, 3, 5, 0.85);
-        backdrop-filter: blur(8px);
-        z-index: 100;
-        display: grid;
-        place-items: center;
-        padding: 20px;
-      }
-
-      .modal-panel {
-        width: 100%;
-        max-width: 480px;
-        border-radius: 28px;
-        overflow: hidden;
-        position: relative;
-      }
-
-      .modal-close {
-        position: absolute;
-        top: 14px;
-        right: 14px;
-        width: 40px;
-        height: 40px;
-        border-radius: 12px;
-        border: none;
-        background: rgba(0, 0, 0, 0.5);
-        color: white;
-        cursor: pointer;
-        display: grid;
-        place-items: center;
-        z-index: 2;
-        transition: var(--transition);
-      }
-
-      .modal-close:hover {
-        background: rgba(0, 0, 0, 0.8);
-      }
-
-      .modal-media {
-        position: relative;
-        height: 240px;
-        display: grid;
-        place-items: center;
-        background: radial-gradient(circle at top left, rgba(217, 72, 93, 0.16), transparent 40%);
-        font-size: 6rem;
-      }
-
-      .modal-media img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .modal-badge {
-        position: absolute;
-        top: 14px;
-        left: 14px;
-        background: rgba(20, 8, 13, 0.85);
-        color: white;
-        padding: 8px 14px;
-        border-radius: 999px;
-        font-size: 0.85rem;
-        font-weight: 700;
-      }
-
-      .modal-body {
-        padding: 24px;
-      }
-
-      .modal-category {
-        color: #ffd9df;
-        font-weight: 700;
-        font-size: 0.88rem;
-        display: block;
-        margin-bottom: 8px;
-      }
-
-      .modal-body h2 {
-        margin: 0 0 12px;
-        font-size: 1.6rem;
-      }
-
-      .modal-body p {
-        margin: 0 0 10px;
-        color: var(--muted);
-        line-height: 1.6;
-      }
-
-      .modal-meta {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 8px !important;
-      }
-
-      .modal-meta i {
-        width: 16px;
-        height: 16px;
-        color: var(--soft);
-      }
-
-      .modal-actions {
-        display: flex;
-        gap: 12px;
-        margin-top: 20px;
-      }
-
-      .modal-actions .btn {
-        flex: 1;
-      }
-
-      @media (max-width: 768px) {
-        .browse-toolbar {
-          flex-direction: column;
-          align-items: stretch;
-        }
-
-        .search-wrap {
-          min-width: 100%;
-        }
-
-        .filter-group {
-          justify-content: center;
-        }
-
-        .items-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .modal-actions {
-          flex-direction: column;
-        }
-      }
-    </style>
-
-    <script src="js/api.js"></script>
-    <script src="js/notification.js"></script>
-    <script>
-      const itemsGrid = document.getElementById('itemsGrid');
-      const itemCount = document.getElementById('itemCount');
-      const emptyState = document.getElementById('emptyState');
-      const searchInput = document.getElementById('searchInput');
-      const categoryFilter = document.getElementById('categoryFilter');
-      const conditionFilter = document.getElementById('conditionFilter');
-      const resetFilters = document.getElementById('resetFilters');
-      const modalOverlay = document.getElementById('modalOverlay');
-      const modalClose = document.getElementById('modalClose');
-      const closeModalBtn = document.getElementById('closeModalBtn');
-
-      const categoryEmojis = {
-        'Books': '📚',
-        'Furniture': '🪑',
-        'Clothing': '👕',
-        'Electronics': '💻',
-        'Kitchen': '🍳',
-        'Toys': '🧸',
-        'Sports': '⚽',
-        'Baby & Kids': '👶',
-        'Other': '📦'
-      };
-
-      const USE_BACKEND = true;
-
-      async function getItems() {
-        if (USE_BACKEND && isLoggedIn()) {
-          try {
-            const data = await api.items.getAll();
-            return data.items || [];
-          } catch (error) {
-            console.log('Using localStorage fallback');
-            const items = localStorage.getItem('freeSewaaItems');
-            return items ? JSON.parse(items) : [];
-          }
-        } else {
-          const items = localStorage.getItem('freeSewaaItems');
-          return items ? JSON.parse(items) : [];
-        }
-      }
-
-      function timeAgo(timestamp) {
-        const now = Date.now();
-        const diff = now - timestamp;
-        const minutes = Math.floor(diff / 60000);
-        const hours = Math.floor(diff / 3600000);
-        const days = Math.floor(diff / 86400000);
-
-        if (minutes < 1) return 'Just now';
-        if (minutes < 60) return `${minutes}m ago`;
-        if (hours < 24) return `${hours}h ago`;
-        if (days < 7) return `${days}d ago`;
-        return new Date(timestamp).toLocaleDateString();
-      }
-
-      function renderItems(items) {
-        itemsGrid.innerHTML = '';
-        itemCount.textContent = items.length;
-
-        if (items.length === 0) {
-          emptyState.classList.remove('hidden');
-          itemsGrid.classList.add('hidden');
-          return;
-        }
-
-        emptyState.classList.add('hidden');
-        itemsGrid.classList.remove('hidden');
-
-        items.forEach(item => {
-          const emoji = categoryEmojis[item.category] || '📦';
-          const card = document.createElement('article');
-          card.className = 'item-card glass-card';
-          card.innerHTML = `
-            <div class="item-card-media">
-              ${item.image ? `<img src="${item.image}" alt="${item.title}" />` : `<span>${emoji}</span>`}
-              <span class="item-card-badge">${item.condition}</span>
-            </div>
-            <div class="item-card-body">
-              <div class="item-card-topline">
-                <span class="item-card-category">${item.category}</span>
-                <span class="item-card-time">${timeAgo(item.timestamp)}</span>
-              </div>
-              <h3>${item.title}</h3>
-              <p>${item.description}</p>
-              <p class="item-card-location">
-                <i data-lucide="map-pin"></i>
-                ${item.location}
-              </p>
-              <div class="item-card-actions">
-                <button class="mini-btn primary view-btn" data-id="${item.id}">View Details</button>
-                <a href="chat.html" class="mini-btn secondary">Chat</a>
-              </div>
-            </div>
-          `;
-          itemsGrid.appendChild(card);
-
-          card.querySelector('.view-btn').addEventListener('click', () => openModal(item));
-          card.addEventListener('click', (e) => {
-            if (!e.target.closest('button') && !e.target.closest('a')) {
-              openModal(item);
-            }
-          });
-        });
-
-        lucide.createIcons();
-      }
-
-      function filterItems() {
-        const items = getItems();
-        const search = searchInput.value.toLowerCase();
-        const category = categoryFilter.value;
-        const condition = conditionFilter.value;
-
-        const filtered = items.filter(item => {
-          const matchSearch = !search ||
-            item.title.toLowerCase().includes(search) ||
-            item.description.toLowerCase().includes(search) ||
-            item.category.toLowerCase().includes(search) ||
-            item.location.toLowerCase().includes(search);
-
-          const matchCategory = !category || item.category === category;
-          const matchCondition = !condition || item.condition === condition;
-
-          return matchSearch && matchCategory && matchCondition;
-        });
-
-        renderItems(filtered);
-      }
-
-      function openModal(item) {
-        const emoji = categoryEmojis[item.category] || '📦';
-        document.getElementById('modalEmoji').textContent = item.image ? '' : emoji;
-        document.getElementById('modalMedia').querySelector('img')?.remove();
-
-        if (item.image) {
-          const img = document.createElement('img');
-          img.src = item.image;
-          img.alt = item.title;
-          document.getElementById('modalMedia').prepend(img);
-        }
-
-        document.getElementById('modalCondition').textContent = item.condition;
-        document.getElementById('modalCategory').textContent = item.category;
-        document.getElementById('modalTitle').textContent = item.title;
-        document.getElementById('modalDesc').textContent = item.description;
-        document.getElementById('modalLocation').textContent = item.location;
-        document.getElementById('modalTime').textContent = timeAgo(item.timestamp || Date.now());
-
-        const chatBtn = document.querySelector('.chat-btn');
-        chatBtn.href = `chat.html?itemId=${item.id}`;
-
-        modalOverlay.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeModal() {
-        modalOverlay.classList.add('hidden');
-        document.body.style.overflow = '';
-      }
-
-      searchInput.addEventListener('input', filterItems);
-      categoryFilter.addEventListener('change', filterItems);
-      conditionFilter.addEventListener('change', filterItems);
-
-      resetFilters.addEventListener('click', () => {
-        searchInput.value = '';
-        categoryFilter.value = '';
-        conditionFilter.value = '';
-        filterItems();
-      });
-
-      modalClose.addEventListener('click', closeModal);
-      closeModalBtn.addEventListener('click', closeModal);
-      modalOverlay.addEventListener('click', (e) => {
-        if (e.target === modalOverlay) closeModal();
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeModal();
-      });
-
-      async function initBrowse() {
-        const items = await getItems();
-        renderItems(items);
-        lucide.createIcons();
-      }
-
-      initBrowse();
-    </script>
-  </body>
+    </aside>
+
+    <div class="listings-area">
+      <div class="listings-toolbar reveal-block">
+        <div>
+          <p class="eyebrow">AVAILABLE NOW</p>
+          <h2 class="section-title small">Curated listings</h2>
+        </div>
+        <div class="toolbar-wrap">
+          <span class="sort-pill" id="resultsSummary">0 Results</span>
+          <span class="sort-pill" id="savedSummary">0 Saved</span>
+        </div>
+      </div>
+      <div class="listing-grid" id="listingGrid"></div>
+    </div>
+  </section>
+</main>
+
+<div class="modal-shell hidden" id="listingModal">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-card panel">
+    <button class="modal-close" type="button" data-close-modal>×</button>
+    <div id="listingModalContent"></div>
+  </div>
+</div>
+
+<script src="site.js"></script>
+</body>
 </html>
