@@ -1,0 +1,185 @@
+{
+  "users": [
+    {
+      "id": "user-demo",
+      "firstName": "Alisha",
+      "lastName": "Shrestha",
+      "name": "Alisha Shrestha",
+      "email": "alisha@example.com",
+      "password": "demo123",
+      "phone": "+821055582211",
+      "city": "Ulsan",
+      "region": "Nam-gu",
+      "createdAt": "2026-04-12T03:24:13.720Z"
+    }
+  ],
+  "states": {
+    "user-demo": {
+      "user": {
+        "id": "user-demo",
+        "name": "Alisha Shrestha",
+        "firstName": "Alisha",
+        "lastName": "Shrestha",
+        "email": "alisha@example.com",
+        "phone": "+821055582211",
+        "city": "Ulsan",
+        "region": "Nam-gu",
+        "joinedAt": "2026-04-12T03:24:13.720Z",
+        "bio": "Community member helping useful items reach the people who need them most.",
+        "pickupAvailability": "Weekdays after 6 PM · Weekend afternoon",
+        "savedListingIds": [204, 205],
+        "requestedListingIds": [205],
+        "drafts": {},
+        "preferences": {
+          "theme": "dark",
+          "language": "English",
+          "notifications": true,
+          "pickupReminders": true,
+          "marketing": false
+        }
+      },
+      "listings": [
+        {
+          "id": 201,
+          "ownerId": "user-demo",
+          "ownerName": "Alisha Shrestha",
+          "title": "Winter Jacket",
+          "category": "Clothing",
+          "condition": "Good",
+          "location": "Ulsan, Samsan-dong",
+          "distanceKm": 4,
+          "pickup": "Pickup only",
+          "pickupWindow": "Today after 6 PM",
+          "description": "Warm, clean, and wearable right away. Best fit for teen or adult.",
+          "notes": "Near the main road pickup point.",
+          "image": "https://images.unsplash.com/photo-1548883354-94bcfe321cbb?auto=format&fit=crop&w=900&q=80",
+          "createdAt": "2026-04-12T03:24:13.720Z",
+          "requestCount": 2,
+          "saveCount": 6,
+          "urgent": false,
+          "status": "active"
+        },
+        {
+          "id": 202,
+          "ownerId": "user-demo",
+          "ownerName": "Alisha Shrestha",
+          "title": "Children's Story Books Set",
+          "category": "Books",
+          "condition": "Like new",
+          "location": "Ulsan, Dal-dong",
+          "distanceKm": 7,
+          "pickup": "Flexible",
+          "pickupWindow": "Weekend mornings",
+          "description": "Colorful children's books in clean condition.",
+          "notes": "Can bundle with crayons if needed.",
+          "image": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=80",
+          "createdAt": "2026-04-11T03:24:13.720Z",
+          "requestCount": 1,
+          "saveCount": 9,
+          "urgent": false,
+          "status": "reserved"
+        },
+        {
+          "id": 203,
+          "ownerId": "community-1",
+          "ownerName": "Mina Park",
+          "title": "Compact Storage Shelf",
+          "category": "Home",
+          "condition": "Good",
+          "location": "Ulsan, Seongnam-dong",
+          "distanceKm": 10,
+          "pickup": "Pickup only",
+          "pickupWindow": "Saturday afternoon",
+          "description": "A small but sturdy shelf for home organization.",
+          "notes": "Top edge has a minor scratch.",
+          "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80",
+          "createdAt": "2026-04-10T03:24:13.720Z",
+          "requestCount": 2,
+          "saveCount": 8,
+          "urgent": false,
+          "status": "active"
+        },
+        {
+          "id": 204,
+          "ownerId": "community-2",
+          "ownerName": "Joon Lee",
+          "title": "Rice & Pantry Bundle",
+          "category": "Food",
+          "condition": "New",
+          "location": "Ulsan, Ok-dong",
+          "distanceKm": 5,
+          "pickup": "Flexible",
+          "pickupWindow": "Tonight before 8 PM",
+          "description": "Unopened rice, ramen, canned food, and pantry basics.",
+          "notes": "Please message only if you can collect within two days.",
+          "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80",
+          "createdAt": "2026-04-12T00:24:13.720Z",
+          "requestCount": 6,
+          "saveCount": 13,
+          "urgent": true,
+          "status": "active"
+        },
+        {
+          "id": 205,
+          "ownerId": "community-3",
+          "ownerName": "Ana Lopez",
+          "title": "Study Desk",
+          "category": "Home",
+          "condition": "Used",
+          "location": "Ulsan, Sinjeong-dong",
+          "distanceKm": 14,
+          "pickup": "Pickup only",
+          "pickupWindow": "Sunday afternoon",
+          "description": "Simple desk for study or laptop work.",
+          "notes": "Disassembles into two parts for transport.",
+          "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
+          "createdAt": "2026-04-08T03:24:13.720Z",
+          "requestCount": 3,
+          "saveCount": 5,
+          "urgent": false,
+          "status": "active"
+        }
+      ],
+      "requests": [
+        {
+          "id": "req-205",
+          "listingId": 205,
+          "status": "pending",
+          "requestedAt": "2026-04-12T01:24:13.720Z",
+          "note": "Can pick up this weekend."
+        }
+      ],
+      "conversations": [
+        {
+          "id": "conv-201-sarah",
+          "listingId": 201,
+          "participant": "Sarah Kim",
+          "participantCity": "Ulsan",
+          "unread": 1,
+          "updatedAt": "2026-04-12T03:24:13.720Z",
+          "messages": [
+            { "sender": "Sarah Kim", "text": "Hi! Is your jacket listing still available?", "time": "9:02 AM", "type": "received" },
+            { "sender": "You", "text": "Yes, pickup is possible this evening.", "time": "9:04 AM", "type": "sent" }
+          ]
+        },
+        {
+          "id": "conv-205-ana",
+          "listingId": 205,
+          "participant": "Ana Lopez",
+          "participantCity": "Ulsan",
+          "unread": 0,
+          "updatedAt": "2026-04-12T01:24:13.720Z",
+          "messages": [
+            { "sender": "You", "text": "Hi, I'm interested in your desk. Is it still available?", "time": "7:30 AM", "type": "sent" },
+            { "sender": "Ana Lopez", "text": "Yes, weekend pickup works best.", "time": "7:32 AM", "type": "received" }
+          ]
+        }
+      ],
+      "notifications": [
+        { "id": "n1", "text": "Sarah Kim requested your Winter Jacket listing.", "type": "request", "read": false, "createdAt": "2026-04-12T03:24:13.720Z" },
+        { "id": "n2", "text": "Ana Lopez replied to your desk request.", "type": "message", "read": false, "createdAt": "2026-04-12T01:24:13.720Z" }
+      ]
+    }
+  },
+  "meta": { "lastUpdatedAt": "2026-04-12T04:01:08.935Z" }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "freesewaa-fullstack",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Free Sewaa connected frontend and backend",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}
