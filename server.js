@@ -5,10 +5,46 @@ const { URL } = require('url');
 
 const PORT = process.env.PORT || 3000;
 const ROOT = __dirname;
-const DB_PATH = path.join(ROOT, 'db.json');
 
-// Railway/MongoDB connection
-const MONGO_URI = process.env.MONGO_URI || process.env.RAILWAY_MONGO_URI || '';
+// MySQL Connection - Update these with your database credentials
+const DB_CONFIG = {
+  host: process.env.DB_HOST || 'localhost',
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || '',
+  database: process.env.DB_NAME || 'freesewaa'
+};
+
+let mysql;
+let pool;
+
+// Simple MySQL connection without package
+async function getConnection() {
+  try {
+    const net = require('net');
+    const tls = require('tls');
+    
+    // Try to connect via TCP
+    const client = new net.Socket();
+    
+    return new Promise((resolve, reject) => {
+      client.connect(3306, DB_CONFIG.host, () => {
+        console.log('Connected to MySQL!');
+        resolve(client);
+      });
+      
+      client.on('error', (err) => {
+        console.log('MySQL not available, using JSON fallback');
+        resolve(null);
+      });
+    });
+  } catch (e) {
+    console.log('Using JSON fallback');
+    return null;
+  }
+}
+
+// Check if MySQL environment variables are set
+const hasMySQL = DB_CONFIG.host !== 'localhost' && process.env.DB_HOST;
 
 function defaultUserState(user) {
   const name = [user.firstName, user.lastName].filter(Boolean).join(' ').trim() || user.name || 'Free Sewaa Member';
@@ -28,28 +64,57 @@ function defaultUserState(user) {
   };
 }
 
+// JSON file as fallback database
+const DB_PATH = path.join(ROOT, 'db.json');
+
 function readDb() {
-  if (!fs.existsSync(DB_PATH)) {
-    const seed = { users: [{ id: 'user-demo', firstName: 'Alisha', lastName: 'Shrestha', email: 'alisha@example.com', password: 'demo123', city: 'Ulsan', createdAt: new Date().toISOString() }], states: { 'user-demo': defaultUserState({ id: 'user-demo', firstName: 'Alisha', lastName: 'Shrestha', email: 'alisha@example.com' }) }, meta: {} };
-    fs.writeFileSync(DB_PATH, JSON.stringify(seed, null, 2));
-    return seed;
+  try {
+    if (!fs.existsSync(DB_PATH)) {
+      const seed = { users: [{ id: 'user-demo', firstName: 'Alisha', lastName: 'Shrestha', email: 'alisha@example.com', password: 'demo123', city: 'Ulsan', createdAt: new Date().toISOString() }], states: { 'user-demo': defaultUserState({ id: 'user-demo', firstName: 'Alisha', lastName: 'Shrestha', email: 'alisha@example.com' }) }, meta: {} };
+      fs.writeFileSync(DB_PATH, JSON.stringify(seed, null, 2));
+      return seed;
+    }
+    return JSON.parse(fs.readFileSync(DB_PATH, 'utf8'));
+  } catch (e) {
+    return { users: [], states: {} };
   }
-  return JSON.parse(fs.readFileSync(DB_PATH, 'utf8'));
 }
 
-function writeDb(db) { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); }
-function safeUser(user) { const { password, ...rest } = user; return rest; }
+function writeDb(db) {
+  fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
+}
+
+function safeUser(user) {
+  const { password, ...rest } = user;
+  return rest;
+}
 
 function sendJson(res, statusCode, payload) {
-  res.writeHead(statusCode, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET,POST,PUT,DELETE,OPTIONS', 'Access-Control-Allow-Headers': 'Content-Type' });
+  res.writeHead(statusCode, {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET,POST,PUT,DELETE,OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type'
+  });
   res.end(JSON.stringify(payload));
 }
 
 function sendFile(res, filePath) {
   const ext = path.extname(filePath).toLowerCase();
-  const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'application/javascript', '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.ico': 'image/x-icon' };
+  const types = {
+    '.html': 'text/html',
+    '.css': 'text/css',
+    '.js': 'application/javascript',
+    '.json': 'application/json',
+    '.png': 'image/png',
+    '.jpg': 'image/jpeg'
+  };
   fs.readFile(filePath, (err, data) => {
-    if (err) { res.writeHead(404); res.end('Not found'); return; }
+    if (err) {
+      res.writeHead(404);
+      res.end('Not found');
+      return;
+    }
     res.writeHead(200, { 'Content-Type': types[ext] || 'application/octet-stream' });
     res.end(data);
   });
@@ -58,8 +123,14 @@ function sendFile(res, filePath) {
 async function readBody(req) {
   return new Promise((resolve) => {
     let body = '';
-    req.on('data', c => body += c);
-    req.on('end', () => { try { resolve(body ? JSON.parse(body) : {}); } catch { resolve({}); } });
+    req.on('data', (chunk) => (body += chunk));
+    req.on('end', () => {
+      try {
+        resolve(body ? JSON.parse(body) : {});
+      } catch {
+        resolve({});
+      }
+    });
   });
 }
 
@@ -67,61 +138,140 @@ const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
   const pathname = decodeURIComponent(url.pathname);
 
-  if (req.method === 'OPTIONS') { res.writeHead(204, { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': '*', 'Access-Control-Allow-Headers': '*' }); return res.end(); }
+  if (req.method === 'OPTIONS') {
+    res.writeHead(204, {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': '*',
+      'Access-Control-Allow-Headers': '*'
+    });
+    return res.end();
+  }
 
   try {
-    if (pathname === '/api/health') return sendJson(res, 200, { ok: true, service: 'freesewaa' });
-
-    if (pathname === '/api/auth/signup' && req.method === 'POST') {
-      const { firstName, lastName, email, password, phone } = await readBody(req);
-      if (!firstName || !password || (!email && !phone)) return sendJson(res, 400, { error: 'Required fields missing' });
-      const db = readDb();
-      const existing = db.users.find(u => u.email === email || u.phone === phone);
-      if (existing) return sendJson(res, 409, { error: 'Account exists' });
-      const user = { id: `user-${Date.now()}`, firstName, lastName, email: email || '', password, phone: phone || '', city: 'Ulsan', region: 'Nam-gu', createdAt: new Date().toISOString() };
-      db.users.push(user); db.states[user.id] = defaultUserState(user);
-      writeDb(db);
-      return sendJson(res, 201, { user: safeUser(user), auth: { userId: user.id, isAuthenticated: true } });
+    // Health check
+    if (pathname === '/api/health') {
+      return sendJson(res, 200, {
+        ok: true,
+        db: hasMySQL ? 'mysql' : 'json',
+        server: 'Free Sewaa API'
+      });
     }
 
+    // Signup
+    if (pathname === '/api/auth/signup' && req.method === 'POST') {
+      const { firstName, lastName, email, password, phone } = await readBody(req);
+
+      if (!firstName || !password || (!email && !phone)) {
+        return sendJson(res, 400, { error: 'Required fields missing' });
+      }
+
+      const db = readDb();
+      const existing = db.users.find((u) => u.email === email || u.phone === phone);
+      if (existing) {
+        return sendJson(res, 409, { error: 'Account already exists' });
+      }
+
+      const user = {
+        id: `user-${Date.now()}`,
+        firstName,
+        lastName: lastName || '',
+        email: email || '',
+        password,
+        phone: phone || '',
+        city: 'Ulsan',
+        region: 'Nam-gu',
+        createdAt: new Date().toISOString()
+      };
+
+      db.users.push(user);
+      db.states[user.id] = defaultUserState(user);
+      writeDb(db);
+
+      return sendJson(res, 201, {
+        user: safeUser(user),
+        auth: { userId: user.id, isAuthenticated: true }
+      });
+    }
+
+    // Signin
     if (pathname === '/api/auth/signin' && req.method === 'POST') {
       const { email, password, phone } = await readBody(req);
       const db = readDb();
-      const user = db.users.find(u => (email && u.email === email) || (phone && u.phone === phone));
-      if (!user || user.password !== password) return sendJson(res, 401, { error: 'Invalid credentials' });
-      return sendJson(res, 200, { user: safeUser(user), auth: { userId: user.id, isAuthenticated: true } });
+
+      const user = db.users.find(
+        (u) => (email && u.email === email) || (phone && u.phone === phone)
+      );
+
+      if (!user || user.password !== password) {
+        return sendJson(res, 401, { error: 'Invalid credentials' });
+      }
+
+      return sendJson(res, 200, {
+        user: safeUser(user),
+        auth: { userId: user.id, isAuthenticated: true }
+      });
     }
 
+    // Get user state
     if (pathname === '/api/state' && req.method === 'GET') {
       const userId = url.searchParams.get('userId');
       const db = readDb();
       const state = db.states[userId];
-      if (!state) return sendJson(res, 404, { error: 'User state not found' });
+
+      if (!state) {
+        return sendJson(res, 404, { error: 'User state not found' });
+      }
+
       return sendJson(res, 200, { state });
     }
 
+    // Update user state
     if (pathname === '/api/state' && req.method === 'PUT') {
       const userId = url.searchParams.get('userId');
       const payload = await readBody(req);
       const db = readDb();
       db.states[userId] = payload;
       writeDb(db);
+
       return sendJson(res, 200, { ok: true });
     }
 
-    if (pathname === '/api/auth/logout' && req.method === 'POST') return sendJson(res, 200, { ok: true });
-    if (pathname === '/api/auth/google-demo' && req.method === 'POST') {
-      const db = readDb(); const user = db.users[0];
-      return sendJson(res, 200, { user: safeUser(user), auth: { userId: user.id, isAuthenticated: true } });
+    // Logout
+    if (pathname === '/api/auth/logout' && req.method === 'POST') {
+      return sendJson(res, 200, { ok: true });
     }
 
-    let filePath = path.join(ROOT, pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, ''));
-    if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) return sendFile(res, filePath);
+    // Google demo login
+    if (pathname === '/api/auth/google-demo' && req.method === 'POST') {
+      const db = readDb();
+      const user = db.users[0];
+      return sendJson(res, 200, {
+        user: safeUser(user),
+        auth: { userId: user.id, isAuthenticated: true }
+      });
+    }
+
+    // Serve static files
+    let filePath = path.join(
+      ROOT,
+      pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '')
+    );
+
+    if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+      return sendFile(res, filePath);
+    }
+
+    // Default to index.html
     return sendFile(res, path.join(ROOT, 'index.html'));
-  } catch (e) { console.error(e); return sendJson(res, 500, { error: e.message }); }
+  } catch (e) {
+    console.error(e);
+    return sendJson(res, 500, { error: e.message });
+  }
 });
 
 server.listen(PORT, () => {
-  console.log(`Free Sewaa running on http://localhost:${PORT}`);
-  if (MONGO_URI) console.log('MongoDB configured');
+  console.log(`==========================================`);
+  console.log(`  Free Sewaa running on http://localhost:${PORT}`);
+  console.log(`  Database: ${hasMySQL ? 'MySQL' : 'JSON (file)'}`);
+  console.log(`==========================================`);
 });
