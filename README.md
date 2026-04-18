@@ -34,62 +34,89 @@ git clone https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa.g
 cd Free_Sewaa
 ```
 
-### 2. Setup Backend
+### 2. Install Dependencies & Run Backend
 ```bash
-cd backend
 npm install
 
-# Create .env file with your MongoDB URI
-cp .env.example .env
+# Create .env file (optional - works without it for demo)
+# Add MONGO_URI for production database connection
 
-# Start development server
-npm run dev
+# Start server
+npm start
 ```
 
-The backend will run on `http://localhost:3000`
+The backend runs on `http://localhost:3000`
 
-### 3. Setup Frontend
-Simply open any HTML file in your browser, or use a local server:
-```bash
-# Using Python
-python3 -m http.server 8080
+### 3. Access the App
+Open your browser and go to:
+- **Landing page:** http://localhost:3000
+- **Sign in:** http://localhost:3000/signin.html
+- **App:** http://localhost:3000/app.html
 
-# Or using npx
-npx serve .
-```
-
-Then open `http://localhost:8080/home.html`
+**Demo Account:**
+- Email: `alisha@example.com`
+- Password: `demo123`
 
 ---
 
 ## 📖 API Documentation
 
-Interactive API documentation is available at `/api-docs` when the backend is running.
-
-**Example:** `http://localhost:3000/api-docs`
-
-### Authentication
-All protected routes require a JWT token in the Authorization header:
+### Base URL
 ```
-Authorization: Bearer <your_token>
+http://localhost:3000/api
 ```
 
-### API Endpoints
+### Authentication Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/api/auth/register` | Register new user |
-| POST | `/api/auth/login` | Login user |
-| GET | `/api/auth/me` | Get current user |
-| GET | `/api/items` | List all items |
-| POST | `/api/items` | Create new item |
-| GET | `/api/items/:id` | Get item details |
-| PUT | `/api/items/:id` | Update item |
-| DELETE | `/api/items/:id` | Delete item |
-| POST | `/api/requests` | Create request |
-| PUT | `/api/requests/:id/status` | Accept/reject request |
-| POST | `/api/messages` | Send message |
-| GET | `/api/messages/conversations` | Get conversations |
+| POST | `/auth/signup` | Register new user |
+| POST | `/auth/signin` | Login user |
+| POST | `/auth/google-demo` | Demo Google login |
+| POST | `/auth/logout` | Logout user |
+
+### State Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/state?userId={id}` | Get user state |
+| PUT | `/state?userId={id}` | Update user state |
+
+### Health Check
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/health` | Server health status |
+
+### Request/Response Examples
+
+**Signup:**
+```json
+POST /api/auth/signup
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john@example.com",
+  "password": "password123"
+}
+```
+
+**Signin:**
+```json
+POST /api/auth/signin
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+```
+
+**Response:**
+```json
+{
+  "user": { "id": "user-123", "name": "John Doe", ... },
+  "auth": { "userId": "user-123", "isAuthenticated": true }
+}
+```
 
 ---
 
@@ -97,12 +124,10 @@ Authorization: Bearer <your_token>
 
 | Layer | Technology |
 |-------|------------|
-| **Frontend** | HTML5, CSS3, JavaScript (ES6+) |
+| **Frontend** | HTML5, CSS3, Vanilla JavaScript |
 | **Backend** | Node.js, Express.js |
-| **Database** | MongoDB |
-| **Auth** | JWT (JSON Web Tokens) |
-| **API Docs** | Swagger/OpenAPI |
-| **Hosting** | Vercel (Frontend), Render (Backend) |
+| **Database** | JSON file storage (production: MongoDB ready) |
+| **Deployment** | Ready for Vercel, Render, Railway |
 
 ---
 
@@ -110,46 +135,59 @@ Authorization: Bearer <your_token>
 
 ```
 Free_Sewaa/
-├── .github/                    # GitHub templates
-│   ├── ISSUE_TEMPLATE/        # Issue templates
-│   └── PULL_REQUEST_TEMPLATE.md
-├── backend/                    # Node.js/Express API
-│   ├── src/
-│   │   ├── config/           # Database & Swagger config
-│   │   ├── controllers/      # Route handlers
-│   │   ├── middleware/       # Auth middleware
-│   │   ├── models/           # Mongoose schemas
-│   │   └── routes/           # API routes
-│   ├── .env.example          # Environment template
-│   ├── package.json
-│   └── README.md
-├── docs/                      # Documentation
-│   ├── DESIGN/                # Design documents
-│   ├── ISSUES/                # Issue tracking
-│   ├── PROGRESS/              # MVP progress
-│   ├── PROJECT/               # Project docs
-│   └── sprints/               # Sprint packets
-├── css/                       # Stylesheets
-├── js/                        # Frontend scripts
-├── *.html                     # Frontend pages
+├── .github/                    # GitHub templates & workflows
+│   ├── ISSUE_TEMPLATE/         # Issue templates
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── workflows/              # CI/CD workflows
+├── docs/                       # Documentation
+│   ├── DESIGN/                 # Design documents
+│   ├── ISSUES/                 # Issue tracking
+│   ├── PROGRESS/               # MVP progress
+│   ├── PROJECT/                # Project docs
+│   └── sprints/                # Sprint packets
+├── server/                     # Node.js backend
+│   ├── server.js               # Express server
+│   └── package.json            # Dependencies
+├── *.html                      # Frontend pages (18 pages)
+│   ├── index.html              # Landing page
+│   ├── signin.html             # Sign in
+│   ├── signup.html             # Sign up
+│   ├── app.html                # Main app after login
+│   ├── browse.html             # Browse items
+│   ├── donate.html             # Post donation
+│   └── ... (14 more pages)
+├── css/                        # Stylesheets
+│   ├── style.css               # Landing page styles
+│   ├── theme.css               # App pages styles
+│   └── auth.css                # Auth pages styles
+├── js/                         # Frontend scripts
+│   ├── index.js                # Landing page JS
+│   ├── site.js                 # App pages JS
+│   └── auth.js                 # Auth pages JS
 ├── README.md
 ├── CONTRIBUTING.md
-└── CODE_OF_CONDUCT.md
+├── CODE_OF_CONDUCT.md
+└── ROADMAP.md
 ```
 
 ---
 
 ## 🔧 Environment Variables
 
-Create a `.env` file in the `backend/` directory:
+Create a `.env` file in the root directory:
 
 ```env
+# Server Configuration
 PORT=3000
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/free-sewaa
-JWT_SECRET=your-secret-key-here
-JWT_EXPIRES_IN=7d
-NODE_ENV=development
+
+# Database (optional - uses local JSON if not set)
+MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/free-sewaa
+
+# For MySQL (alternative)
+# MYSQL_URI=mysql://user:password@localhost:3306/freesewaa
 ```
+
+> **Note:** The app works without any environment variables for local demo. Add database connection strings when ready for production.
 
 ---
 
