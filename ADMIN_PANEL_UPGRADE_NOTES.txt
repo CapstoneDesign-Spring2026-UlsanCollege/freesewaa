@@ -1,0 +1,31 @@
+Free Sewaa Admin Panel Upgrade
+
+What changed:
+- Rebuilt admin.html into a clearer admin command center
+- Stronger separation between admin and normal user permissions
+- Added hidden post count and improved health summary
+- Added moderation queue filters
+- Added user status filter and listing status filter
+- Added delete user action
+- Added hide / restore listing actions
+- Added feature / unfeature listing actions
+- Kept review action for moderation workflow
+- Improved admin action messaging and cleaner layout
+
+New admin actions:
+- Block user
+- Unblock user
+- Make admin
+- Remove admin
+- Delete user
+- Feature post
+- Remove feature
+- Mark reviewed
+- Hide post
+- Restore post
+- Delete post
+
+Important:
+- Delete user removes the account and the content owned by that user in the demo database
+- Hide post keeps the post in the system but removes it from normal active visibility
+- Restore post returns a hidden post to active

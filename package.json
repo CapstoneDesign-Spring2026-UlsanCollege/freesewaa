@@ -5,9 +5,15 @@
   "description": "Free Sewaa connected frontend and backend",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "start:mongo": "node backend/src/server.js",
+    "dev:mongo": "node backend/src/server.js"
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "mongodb": "^6.21.0"
   }
 }

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login - Free Sewaa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="auth.css?v=20260418" />
+  <script>
+    try {
+      const user = JSON.parse(localStorage.getItem('freesewaa-user') || '{}');
+      const authed = localStorage.getItem('freesewaa-auth') === 'true';
+      if (authed && user && user.id) {
+        window.location.replace(user.role === 'admin' ? 'admin.html' : 'user-panel.html');
+      }
+    } catch (e) {}
+  </script>
+</head>
+<body class="auth-page">
+  <div class="auth-bg" style="--bg:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=72')"></div>
+  <div class="auth-overlay"></div>
+  <canvas class="particles" id="particles"></canvas>
+
+  <header class="auth-header">
+    <a href="index.html" class="brand">Free Sewaa</a>
+    <nav class="auth-header__actions">
+      <a href="auth-choice.html" class="mini-link">Choose Portal</a>
+      <a href="signin.html" class="mini-link">User Sign In</a>
+    </nav>
+  </header>
+
+  <main class="auth-shell">
+    <section class="auth-left">
+      <p class="eyebrow">ADMIN ACCESS</p>
+      <h1>Sign in to manage Free Sewaa.</h1>
+      <p class="auth-copy">This portal is only for the admin account. Use the user portal for normal member sign in.</p>
+    </section>
+
+    <section class="auth-card">
+      <div class="auth-card__top">
+        <p class="eyebrow">ADMIN LOGIN</p>
+        <h2>Welcome admin</h2>
+        <p class="auth-card__text">Use your administrator credentials to continue securely.</p>
+        <div class="auth-demo-note auth-demo-note--admin">
+          <strong>Restricted admin access</strong>
+          <span>Administrative credentials are intentionally hidden from the interface.</span>
+          <span>Only authorized administrators should continue here.</span>
+        </div>
+      </div>
+
+      <form class="auth-form" id="adminLoginForm" novalidate>
+        <label class="field">
+          <span>Email address</span>
+          <input id="adminEmail" type="email" placeholder="Enter your admin email" autocomplete="username" required />
+        </label>
+        <label class="field">
+          <span>Password</span>
+          <input id="adminPassword" type="password" placeholder="Enter your password" autocomplete="current-password" required />
+        </label>
+        <button class="primary-btn" id="adminSubmit" type="submit">Sign In</button>
+        <p class="auth-message" id="adminMessage" data-tone="default" style="display:none;"></p>
+      </form>
+
+      <p class="auth-footer">Back to <a href="auth-choice.html">portal choice</a></p>
+    </section>
+  </main>
+
+  <script>
+    const canvas = document.getElementById('particles');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      let dpr = window.devicePixelRatio || 1;
+      function resizeCanvas() {
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        dpr = window.devicePixelRatio || 1;
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        canvas.style.width = `${w}px`;
+        canvas.style.height = `${h}px`;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        particles = Array.from({ length: Math.min(28, Math.max(12, Math.floor(w / 65))) }, () => ({
+          x: Math.random() * w, y: Math.random() * h, r: Math.random() * 1.8 + 0.5,
+          vx: (Math.random() - 0.5) * 0.15, vy: (Math.random() - 0.5) * 0.15, a: Math.random() * 0.18 + 0.03
+        }));
+      }
+      function renderParticles() {
+        const w = window.innerWidth; const h = window.innerHeight;
+        ctx.clearRect(0, 0, w, h);
+        particles.forEach(p => {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < -10) p.x = w + 10; if (p.x > w + 10) p.x = -10;
+          if (p.y < -10) p.y = h + 10; if (p.y > h + 10) p.y = -10;
+          ctx.beginPath(); ctx.fillStyle = `rgba(234,216,191,${p.a})`; ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+        });
+        requestAnimationFrame(renderParticles);
+      }
+      window.addEventListener('resize', resizeCanvas); resizeCanvas(); renderParticles();
+    }
+
+    const form = document.getElementById('adminLoginForm');
+    const submitBtn = document.getElementById('adminSubmit');
+    const message = document.getElementById('adminMessage');
+    function showMessage(text, tone = 'error') {
+      message.style.display = 'block';
+      message.textContent = text;
+      message.dataset.tone = tone;
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      message.style.display = 'none';
+      const email = document.getElementById('adminEmail').value.trim();
+      const password = document.getElementById('adminPassword').value;
+      if (!email || !password) {
+        showMessage('Please enter your email and password.');
+        return;
+      }
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Signing in...';
+      try {
+        const response = await fetch('/api/auth/admin/signin', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          throw new Error(data.error || 'Admin sign in failed.');
+        }
+        const user = data.user || {};
+        const token = data.token || data.auth?.token || '';
+        const userId = user.id || data.auth?.userId || '';
+        if (!userId || user.role !== 'admin') {
+          throw new Error('Admin response was incomplete.');
+        }
+        localStorage.setItem('freesewaa-auth', 'true');
+        localStorage.setItem('freesewaa-current-user-id', userId);
+        localStorage.setItem('freesewaa-user', JSON.stringify(user));
+        if (token) localStorage.setItem('freesewaa-token', token);
+        window.location.href = 'admin.html';
+      } catch (error) {
+        const msg = error && error.message ? error.message : 'Could not sign in.';
+        if (error instanceof TypeError || /Failed to fetch/i.test(msg)) {
+          showMessage('Cannot reach the server. Start the project with "npm start" and open the localhost address shown in the terminal. Admin login will not work if you open the HTML file directly.');
+        } else {
+          showMessage(msg);
+        }
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Sign In';
+      }
+    });
+  </script>
+</body>
+</html>

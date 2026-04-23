@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Sewaa — User Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css" />
+</head>
+<body data-page="user-panel">
+  <div class="grain"></div>
+  <canvas id="particles" class="particles"></canvas>
+
+  <header class="site-header" id="siteHeader">
+    <div class="site-header__inner">
+      <a href="app.html" class="brand">Free Sewaa</a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="app.html" class="nav-link">Home</a>
+        <a href="browse.html" class="nav-link">Browse</a>
+        <a href="donate.html" class="nav-link">Donate</a>
+        <a href="messages.html" class="nav-link">Messages</a>
+      </nav>
+      <div class="header-actions">
+        <a href="notifications.html" class="icon-link"><span class="icon-dot"></span><span>Notifications</span></a>
+        <div class="settings-dropdown">
+          <button class="icon-link settings-trigger" type="button"><span class="icon-gear">⚙</span><span>Settings</span></button>
+          <div class="settings-menu">
+            <a href="profile.html">Profile</a>
+            <a href="logout.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="user-dashboard">
+    <section class="page-hero generic-hero app-shell-hero user-hero">
+      <div class="hero-overlay"></div>
+      <div class="page-hero__content wrap user-hero__grid">
+        <div>
+          <p class="eyebrow">USER DASHBOARD</p>
+          <h1 class="page-title">Welcome back, <span data-user-name>Member</span>.</h1>
+          <p class="page-text">This page is only for normal users. Here you can manage your own donations, requests, saved items, profile, and messages — but you cannot control other users or marketplace-wide posts.</p>
+          <div class="action-stack">
+            <a class="btn btn-hero" href="donate.html">Create donation post</a>
+            <a class="btn btn-soft" href="browse.html">Browse items</a>
+          </div>
+        </div>
+        <aside class="page-badge">
+          <span class="mini-label">ACCOUNT STATUS</span>
+          <strong data-user-role-badge>User member</strong>
+          <p>Your dashboard is limited to your own account and activity.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="wrap panel-grid-4">
+      <article class="metric-panel"><span>My active posts</span><strong data-user-active>0</strong></article>
+      <article class="metric-panel"><span>My requests</span><strong data-user-requests>0</strong></article>
+      <article class="metric-panel"><span>Saved items</span><strong data-user-saved>0</strong></article>
+      <article class="metric-panel"><span>Unread messages</span><strong data-user-unread>0</strong></article>
+    </section>
+
+    <section class="wrap dashboard-grid">
+      <article class="panel reveal-card">
+        <div class="panel-head"><div><p class="eyebrow">MY ACCOUNT</p><h2 class="section-title small">Profile snapshot</h2></div></div>
+        <div id="userProfileSummary" class="user-summary-card"></div>
+      </article>
+      <article class="panel reveal-card">
+        <div class="panel-head"><div><p class="eyebrow">QUICK ACCESS</p><h2 class="section-title small">Things you can do</h2></div></div>
+        <div class="action-stack user-shortcuts">
+          <a class="btn btn-soft" href="my-posts.html">Manage my posts</a>
+          <a class="btn btn-soft" href="requests.html">My requests</a>
+          <a class="btn btn-soft" href="saved.html">Saved items</a>
+          <a class="btn btn-soft" href="profile.html">Edit profile</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="wrap dashboard-grid user-dashboard-grid--three">
+      <article class="panel reveal-card">
+        <div class="panel-head"><div><p class="eyebrow">MY POSTS</p><h2 class="section-title small">Your current listings</h2></div></div>
+        <div id="userPostsList" class="stack-list"></div>
+      </article>
+      <article class="panel reveal-card">
+        <div class="panel-head"><div><p class="eyebrow">MY REQUESTS</p><h2 class="section-title small">Items you asked for</h2></div></div>
+        <div id="userRequestsList" class="stack-list"></div>
+      </article>
+      <article class="panel reveal-card">
+        <div class="panel-head"><div><p class="eyebrow">SAVED & MESSAGES</p><h2 class="section-title small">Your private activity</h2></div></div>
+        <div id="userSavedList" class="stack-list"></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="site.js?v=20260418"></script>
+  <script src="user-panel.js"></script>
+</body>
+</html>

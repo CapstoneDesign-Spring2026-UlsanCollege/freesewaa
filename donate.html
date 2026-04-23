@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Sewaa — Donate</title>
+  <meta name="description" content="Create a donation listing on Free Sewaa" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css" />
+</head>
+<body data-page="donate">
+  <div class="grain"></div>
+  <canvas id="particles" class="particles"></canvas>
+
+<header class="site-header" id="siteHeader">
+  <div class="site-header__inner">
+    <a href="app.html" class="brand">Free Sewaa</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="app.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="donate.html" class="nav-link active">Donate</a>
+      <a href="browse.html" class="nav-link">Browse</a>
+      <a href="donate-us.html" class="nav-link">Donate Us</a>
+    </nav>
+    <div class="header-actions">
+      <a href="notifications.html" class="icon-link"><span class="icon-badge"></span><span>Notifications</span></a>
+      <a href="messages.html" class="icon-link"><span class="icon-dot"></span><span>Messages</span></a>
+      <div class="settings-dropdown">
+        <button class="icon-link settings-trigger" type="button" aria-expanded="false">
+          <span class="icon-gear">⚙</span><span>Settings</span>
+        </button>
+        <div class="settings-menu">
+          <a href="my-posts.html">My Posts</a>
+          <a href="orders.html">Track Your Order</a>
+          <a href="premium.html">Premium Plans</a>
+          <a href="profile.html">Personal Information</a>
+          <a href="profile.html#edit">Edit Profile</a>
+          <a href="region.html">Change Region</a>
+          <a href="saved.html">Saved Items</a>
+          <a href="requests.html">My Requests</a>
+          <button type="button" class="settings-button" data-theme-toggle="true">Toggle Dark Mode</button>
+          <a href="logout.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero generic-hero donate-hero app-shell-hero">
+    <div class="page-hero__bg donate-hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="page-hero__content wrap">
+      <div>
+        <p class="eyebrow reveal">CREATE A LISTING</p>
+        <h1 class="page-title reveal reveal-1">Donate something<br>that still matters.</h1>
+        <p class="page-text reveal reveal-2">A connected, multi-step posting flow with live preview, saved drafts, validation, image upload, and a cleaner item creation experience.</p>
+      </div>
+      <div class="page-badge reveal reveal-3">
+        <span class="mini-label">DONATION FLOW</span>
+        <strong id="donateStepLabel">Step 1 of 4</strong>
+        <p id="donateStepText">Start with strong images and a clear title so people can trust the listing quickly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-layout wrap donate-app-layout">
+    <div class="panel panel-form reveal-card panel-form--wide">
+      <div class="panel-head panel-head--between">
+        <div>
+          <p class="eyebrow">DONATION DETAILS</p>
+          <h2 class="section-title small">Post an item</h2>
+        </div>
+        <div class="stepper" id="donateStepper">
+          <span class="step-dot is-active">1</span>
+          <span class="step-dot">2</span>
+          <span class="step-dot">3</span>
+          <span class="step-dot">4</span>
+        </div>
+      </div>
+
+      <form class="premium-form" id="donateForm">
+        <section class="donate-step is-active" data-step="1">
+          <div class="upload-box upload-box--interactive" id="uploadTrigger">
+            <input type="file" id="imageUpload" accept="image/*" multiple hidden />
+            <div class="upload-box__icon">+</div>
+            <strong>Add item photos</strong>
+            <p>Upload up to 5 images. The first image becomes the main listing photo.</p>
+          </div>
+          <div class="upload-preview-grid" id="uploadPreviewGrid"></div>
+          <div class="field-grid two compact-grid">
+            <label class="field"><span>Item name</span><input type="text" id="itemTitle" placeholder="e.g. Winter jacket" required /></label>
+            <label class="field"><span>Category</span><select id="itemCategory"><option>Clothing</option><option>Books</option><option>Furniture</option><option>Electronics</option><option>Food</option><option>Essentials</option><option>Home</option></select></label>
+          </div>
+        </section>
+
+        <section class="donate-step" data-step="2">
+          <label class="field"><span>Description</span><textarea id="itemDescription" rows="6" maxlength="240" placeholder="Describe the item, size, condition, pickup timing, and anything important for the receiver."></textarea></label>
+          <div class="input-meta-row">
+            <span class="helper-text">Write clearly so the right person requests it faster.</span>
+            <strong id="descriptionCount">0 / 240</strong>
+          </div>
+          <div class="field-grid three compact-grid">
+            <label class="field"><span>Condition</span><select id="itemCondition"><option>Like new</option><option>Good</option><option>Used</option><option>New</option></select></label>
+            <label class="field"><span>Pickup type</span><select id="itemPickup"><option>Pickup only</option><option>Meet halfway</option><option>Flexible</option></select></label>
+            <label class="field"><span>Best pickup time</span><input type="text" id="itemPickupWindow" placeholder="e.g. Weekdays after 6 PM" /></label>
+          </div>
+        </section>
+
+        <section class="donate-step" data-step="3">
+          <div class="field-grid two compact-grid">
+            <label class="field"><span>City / area</span><input type="text" id="itemLocation" placeholder="e.g. Ulsan, Samsan-dong" /></label>
+            <label class="field"><span>Distance radius</span><select id="itemDistance"><option value="5">Within 5 km</option><option value="10">Within 10 km</option><option value="15">Within 15 km</option><option value="30">Within 30 km</option></select></label>
+          </div>
+          <label class="field"><span>Pickup notes</span><textarea id="itemNotes" rows="4" placeholder="Add landmark details, delivery notes, or timing guidance for the receiver."></textarea></label>
+          <label class="field checkbox-field"><input type="checkbox" id="itemUrgent" /> <span>Mark this listing as urgent support needed</span></label>
+        </section>
+
+        <section class="donate-step" data-step="4">
+          <div class="publish-review" id="publishReview"></div>
+          <div class="success-state hidden" id="publishSuccess">
+            <p class="eyebrow">LISTING CREATED</p>
+            <h3>Your item is now live in the app.</h3>
+            <p>The new listing has been added to Browse, saved in your local app data, and is ready for requests.</p>
+            <div class="form-actions stack-mobile">
+              <a class="btn btn-hero" href="browse.html">View in Browse</a>
+              <button class="btn btn-soft" type="button" id="createAnotherListing">Create another listing</button>
+            </div>
+          </div>
+        </section>
+
+        <div class="form-status" id="donateStatus"></div>
+
+        <div class="form-actions step-actions stack-mobile">
+          <button type="button" class="btn btn-soft" id="saveDraftButton">Save Draft</button>
+          <div class="step-actions__right">
+            <button type="button" class="btn btn-soft" id="prevStepButton">Back</button>
+            <button type="button" class="btn btn-hero" id="nextStepButton">Continue</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <aside class="panel panel-side reveal-card donate-sidebar">
+      <div class="side-card">
+        <span class="mini-label">LISTING HEALTH</span>
+        <strong id="qualityScore">Listing score: 35%</strong>
+        <p id="qualityText">Add a title, description, and location to make your post feel complete and trustworthy.</p>
+      </div>
+      <div class="side-card">
+        <span class="mini-label">BEST PRACTICE</span>
+        <strong>Describe honestly</strong>
+        <p>Clear condition notes reduce confusion and lead to smoother pickup conversations.</p>
+      </div>
+      <div class="side-preview side-preview--app">
+        <div class="side-preview__media" id="listingPreviewImage"></div>
+        <div class="side-preview__body">
+          <span class="mini-label">LIVE PREVIEW</span>
+          <strong id="listingPreviewTitle">Your listing preview</strong>
+          <p id="listingPreviewMeta">Add details and watch this card update live.</p>
+        </div>
+      </div>
+    </aside>
+  </section>
+</main>
+
+<script src="site.js"></script>
+</body>
+</html>

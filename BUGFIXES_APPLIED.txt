@@ -1,0 +1,13 @@
+Free Sewaa bug fixes applied
+
+1. Fixed backend .env loading path so backend/src/server.js works reliably.
+2. Prevented backend crash when MONGODB_URI is missing or MongoDB is offline.
+3. Removed duplicate Mongoose index declarations from User model.
+4. Fixed backend static path handling to use project-relative paths instead of process.cwd().
+5. Added Authorization and X-Session-Token to CORS preflight headers in the root server.
+
+Recommended run commands:
+- Demo/local JSON version: npm start
+- Mongo backend version: cd backend && npm start
+
+- Admin login page now shows a clear server-start message when opened without the local Node server.
