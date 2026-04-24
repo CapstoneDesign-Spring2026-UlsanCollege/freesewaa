@@ -1,0 +1,63 @@
+name: Deploy Website to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build static site artifact
+        run: |
+          set -e
+          mkdir -p _site
+
+          # Copy root-level website files.
+          cp -v *.html _site/ 2>/dev/null || true
+          cp -v *.css _site/ 2>/dev/null || true
+          cp -v *.js _site/ 2>/dev/null || true
+          cp -v *.json _site/ 2>/dev/null || true
+
+          # Copy known frontend integration folder if present.
+          if [ -d frontend_integration ]; then
+            cp -R frontend_integration _site/
+          fi
+
+          # Copy common asset folders if present.
+          for dir in assets img images public; do
+            if [ -d "$dir" ]; then
+              cp -R "$dir" _site/
+            fi
+          done
+
+          test -f _site/index.html
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
