@@ -9,12 +9,13 @@
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="auth.css?v=20260418" />
+  <script src="api-config.js"></script>
   <script>
     try {
       const user = JSON.parse(localStorage.getItem('freesewaa-user') || '{}');
       const authed = localStorage.getItem('freesewaa-auth') === 'true';
       if (authed && user && user.id) {
-        window.location.replace(user.role === 'admin' ? 'admin.html' : 'user-panel.html');
+        window.location.replace(user.role === 'admin' ? '/admin.html' : '/user_panel.html');
       }
     } catch (e) {}
   </script>
@@ -25,10 +26,10 @@
   <canvas class="particles" id="particles"></canvas>
 
   <header class="auth-header">
-    <a href="index.html" class="brand">Free Sewaa</a>
+    <a href="/index.html" class="brand">Free Sewaa</a>
     <nav class="auth-header__actions">
-      <a href="auth-choice.html" class="mini-link">Choose Portal</a>
-      <a href="signin.html" class="mini-link">User Sign In</a>
+      <a href="/auth_choice.html" class="mini-link">Choose Portal</a>
+      <a href="/signin.html" class="mini-link">User Sign In</a>
     </nav>
   </header>
 
@@ -64,11 +65,35 @@
         <p class="auth-message" id="adminMessage" data-tone="default" style="display:none;"></p>
       </form>
 
-      <p class="auth-footer">Back to <a href="auth-choice.html">portal choice</a></p>
+      <p class="auth-footer">Back to <a href="/auth_choice.html">portal choice</a></p>
     </section>
   </main>
 
   <script>
+    function getApiBaseUrl() {
+      let stored = '';
+      try {
+        stored = localStorage.getItem('freesewaa-api-base-url') || '';
+      } catch (error) {}
+
+      const configured = window.FREESEWAA_API_BASE_URL || window.FREESEWAA_API_ORIGIN || stored || '';
+      const normalized = String(configured || window.location.origin).replace(/\/+$/, '');
+
+      if (configured) {
+        try {
+          localStorage.setItem('freesewaa-api-base-url', normalized);
+        } catch (error) {}
+      }
+
+      return normalized;
+    }
+
+    function apiUrl(path) {
+      if (/^https?:\/\//i.test(path)) return path;
+      if (String(path).startsWith('//')) return `${window.location.protocol}${path}`;
+      return new URL(String(path), getApiBaseUrl()).toString();
+    }
+
     const canvas = document.getElementById('particles');
     if (canvas) {
       const ctx = canvas.getContext('2d');
@@ -111,6 +136,38 @@
       message.dataset.tone = tone;
     }
 
+    async function postJson(path, payload) {
+      const response = await fetch(apiUrl(path), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const text = await response.text();
+      let data = {};
+      try {
+        data = text ? JSON.parse(text) : {};
+      } catch (error) {
+        throw new Error('Admin sign in endpoint is not available yet.');
+      }
+      if (!response.ok) {
+        throw new Error(data.error || 'Admin sign in failed.');
+      }
+      return data;
+    }
+
+    async function signInAdmin(email, password) {
+      try {
+        return await postJson('/api/auth/admin/signin', { email, password });
+      } catch (error) {
+        const fallback = await postJson('/api/auth/signin', { email, password });
+        const fallbackUser = fallback.user || {};
+        if (fallbackUser.role !== 'admin' && fallback.auth?.role !== 'admin') {
+          throw error;
+        }
+        return fallback;
+      }
+    }
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       message.style.display = 'none';
@@ -123,15 +180,7 @@
       submitBtn.disabled = true;
       submitBtn.textContent = 'Signing in...';
       try {
-        const response = await fetch('/api/auth/admin/signin', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, password })
-        });
-        const data = await response.json().catch(() => ({}));
-        if (!response.ok) {
-          throw new Error(data.error || 'Admin sign in failed.');
-        }
+        const data = await signInAdmin(email, password);
         const user = data.user || {};
         const token = data.token || data.auth?.token || '';
         const userId = user.id || data.auth?.userId || '';
@@ -142,7 +191,7 @@
         localStorage.setItem('freesewaa-current-user-id', userId);
         localStorage.setItem('freesewaa-user', JSON.stringify(user));
         if (token) localStorage.setItem('freesewaa-token', token);
-        window.location.href = 'admin.html';
+        window.location.href = '/admin.html';
       } catch (error) {
         const msg = error && error.message ? error.message : 'Could not sign in.';
         if (error instanceof TypeError || /Failed to fetch/i.test(msg)) {

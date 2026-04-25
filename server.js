@@ -9,11 +9,18 @@ const { MongoClient, ObjectId } = require('mongodb');
 const PORT = process.env.PORT || 3000;
 const ROOT = __dirname;
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const PUBLIC_PAGE_ALIASES = {
+  '/auth-choice.html': 'auth_choice.html',
+  '/admin-login.html': 'admin_login.html',
+  '/user-panel.html': 'user_panel.html',
+  '/security-audit.html': 'security_audit.html'
+};
+
+const MONGODB_URI = process.env.MONGODB_URI || process.env.MONGO_URI;
 const DB_NAME = process.env.DB_NAME || 'freesewaa';
 
 if (!MONGODB_URI) {
-  console.error('❌ MONGODB_URI is missing in .env');
+  console.error('❌ Missing MongoDB connection string. Set MONGODB_URI (or MONGO_URI) in environment variables.');
   process.exit(1);
 }
 
@@ -76,6 +83,22 @@ function defaultDemoUser() {
     phone: '+8201096646162',
     city: 'Ulsan',
     region: 'Nam-gu',
+    role: 'user',
+    createdAt: new Date().toISOString()
+  };
+}
+
+function defaultDemoAdmin() {
+  return {
+    id: 'admin-demo',
+    firstName: 'Admin',
+    lastName: 'User',
+    name: 'Admin User',
+    email: 'admin@freesewaa.local',
+    password: 'admin12345',
+    city: 'Ulsan',
+    region: 'Nam-gu',
+    role: 'admin',
     createdAt: new Date().toISOString()
   };
 }
@@ -156,11 +179,36 @@ async function ensureSeedData() {
     existingUser = demoUser;
   }
 
+  if (existingUser && !existingUser.role) {
+    await usersCollection.updateOne({ id: existingUser.id }, { $set: { role: 'user' } });
+    existingUser.role = 'user';
+  }
+
+  let existingAdmin = await usersCollection.findOne({ id: 'admin-demo' });
+  if (!existingAdmin) {
+    const demoAdmin = defaultDemoAdmin();
+    await usersCollection.insertOne(demoAdmin);
+    existingAdmin = demoAdmin;
+  }
+
+  if (existingAdmin && !existingAdmin.role) {
+    await usersCollection.updateOne({ id: existingAdmin.id }, { $set: { role: 'admin' } });
+    existingAdmin.role = 'admin';
+  }
+
   const existingState = await statesCollection.findOne({ userId: existingUser.id });
   if (!existingState) {
     await statesCollection.insertOne({
       userId: existingUser.id,
       state: defaultUserState(existingUser)
+    });
+  }
+
+  const existingAdminState = await statesCollection.findOne({ userId: existingAdmin.id });
+  if (!existingAdminState) {
+    await statesCollection.insertOne({
+      userId: existingAdmin.id,
+      state: defaultUserState(existingAdmin)
     });
   }
 
@@ -503,6 +551,217 @@ async function touchMeta() {
   );
 }
 
+function getListingFlags(listing) {
+  const flags = [];
+  if (listing.urgent) flags.push('Urgent');
+  if ((listing.requestCount || 0) >= 4) flags.push('High demand');
+  if (!listing.reviewed && (listing.urgent || (listing.requestCount || 0) >= 2)) flags.push('Needs review');
+  if (listing.status === 'hidden') flags.push('Hidden');
+  return flags;
+}
+
+async function buildAdminDashboardData() {
+  const [users, listings, requests, conversations, notifications, meta] = await Promise.all([
+    usersCollection.find({}).toArray(),
+    listingsCollection.find({}).toArray(),
+    requestsCollection.find({}).toArray(),
+    conversationsCollection.find({}).toArray(),
+    notificationsCollection.find({}).toArray(),
+    metaCollection.findOne({ key: 'app-meta' })
+  ]);
+
+  const listingCounts = listings.reduce((map, listing) => {
+    const key = String(listing.ownerId || '');
+    map.set(key, (map.get(key) || 0) + 1);
+    return map;
+  }, new Map());
+
+  const normalizedUsers = users
+    .map(user => {
+      const safe = safeUser(user) || {};
+      const id = String(safe.id || user.id || user._id || '');
+
+      return {
+        ...safe,
+        id,
+        listingCount: listingCounts.get(id) || 0
+      };
+    })
+    .sort((left, right) => String(left.name || '').localeCompare(String(right.name || '')));
+
+  const normalizedListings = listings
+    .map(listing => {
+      const normalized = normalizeDoc(listing) || {};
+      const reviewed = Boolean(normalized.reviewed);
+
+      return {
+        ...normalized,
+        reviewed,
+        flags: getListingFlags({ ...normalized, reviewed })
+      };
+    })
+    .sort((left, right) => String(right.createdAt || '').localeCompare(String(left.createdAt || '')));
+
+  const moderationQueue = normalizedListings.filter(item => item.flags.length || item.urgent || item.status === 'hidden' || !item.reviewed);
+
+  const summary = {
+    users: normalizedUsers.length,
+    admins: users.filter(user => user.role === 'admin').length,
+    blockedUsers: users.filter(user => user.isBlocked).length,
+    listings: normalizedListings.length,
+    activeListings: normalizedListings.filter(item => item.status === 'active').length,
+    reservedListings: normalizedListings.filter(item => item.status === 'reserved').length,
+    donatedListings: normalizedListings.filter(item => item.status === 'donated').length,
+    featuredListings: normalizedListings.filter(item => item.featured).length,
+    flaggedListings: moderationQueue.length,
+    unreadNotifications: notifications.filter(item => !item.read).length,
+    conversations: conversations.length,
+    openRisks: moderationQueue.filter(item => item.urgent || item.status === 'hidden' || !item.reviewed).length,
+    healthScore: Math.max(0, 100 - (users.filter(user => user.isBlocked).length * 12) - (moderationQueue.length * 4) - Math.min(20, notifications.filter(item => !item.read).length)),
+    lastUpdatedAt: meta?.lastUpdatedAt || new Date().toISOString()
+  };
+
+  const activity = [
+    ...notifications.slice(0, 4).map(item => ({
+      title: item.type === 'message' ? 'Message update' : item.type === 'request' ? 'Request update' : 'Notification',
+      detail: item.text || 'No details available.',
+      createdAt: item.createdAt || new Date().toISOString()
+    })),
+    ...requests.slice(0, 3).map(item => ({
+      title: `Request ${item.status || 'updated'}`,
+      detail: `${item.requesterName || 'A user'} requested listing ${item.listingId}.`,
+      createdAt: item.requestedAt || new Date().toISOString()
+    })),
+    ...normalizedListings.slice(0, 3).map(item => ({
+      title: `Listing ${item.status || 'updated'}`,
+      detail: `${item.title || 'Listing'} is currently ${item.status || 'active'}.`,
+      createdAt: item.updatedAt || item.createdAt || new Date().toISOString()
+    }))
+  ]
+    .sort((left, right) => String(right.createdAt || '').localeCompare(String(left.createdAt || '')))
+    .slice(0, 10);
+
+  return {
+    summary,
+    users: normalizedUsers,
+    listings: normalizedListings,
+    moderationQueue,
+    activity
+  };
+}
+
+async function requireAdminUser(req, url) {
+  const userId = getUserId(req, url);
+  if (!userId) {
+    return { error: 'Admin access required.' };
+  }
+
+  const user = await usersCollection.findOne({ id: userId });
+  if (!user || user.role !== 'admin') {
+    return { error: 'Admin access required.' };
+  }
+
+  return { user };
+}
+
+async function applyAdminUserAction(targetUserId, action) {
+  const targetUser = await usersCollection.findOne({ id: targetUserId });
+  if (!targetUser) {
+    throw new Error('Target user not found.');
+  }
+
+  if (action === 'block') {
+    await usersCollection.updateOne({ id: targetUserId }, { $set: { isBlocked: true } });
+    await touchMeta();
+    return buildAdminDashboardData();
+  }
+
+  if (action === 'unblock') {
+    await usersCollection.updateOne({ id: targetUserId }, { $unset: { isBlocked: '' } });
+    await touchMeta();
+    return buildAdminDashboardData();
+  }
+
+  if (action === 'make-admin') {
+    await usersCollection.updateOne({ id: targetUserId }, { $set: { role: 'admin' } });
+    await touchMeta();
+    return buildAdminDashboardData();
+  }
+
+  if (action === 'remove-admin') {
+    await usersCollection.updateOne({ id: targetUserId }, { $set: { role: 'user' } });
+    await touchMeta();
+    return buildAdminDashboardData();
+  }
+
+  if (action === 'delete-user') {
+    const ownedListings = await listingsCollection.find({ ownerId: targetUserId }).toArray();
+    const ownedListingIds = ownedListings.map(listing => listing.id);
+    const ownedConversations = await conversationsCollection.find({ participantIds: targetUserId }).toArray();
+    const ownedConversationIds = ownedConversations.map(conversation => conversation.id);
+
+    await Promise.all([
+      usersCollection.deleteOne({ id: targetUserId }),
+      statesCollection.deleteOne({ userId: targetUserId }),
+      listingsCollection.deleteMany({ ownerId: targetUserId }),
+      requestsCollection.deleteMany({
+        $or: [
+          { requesterId: targetUserId },
+          { ownerId: targetUserId },
+          { listingId: { $in: ownedListingIds } }
+        ]
+      }),
+      notificationsCollection.deleteMany({ userId: targetUserId }),
+      conversationsCollection.deleteMany({
+        $or: [
+          { participantIds: targetUserId },
+          { listingId: { $in: ownedListingIds } }
+        ]
+      }),
+      messagesCollection.deleteMany({ conversationId: { $in: ownedConversationIds } })
+    ]);
+
+    await touchMeta();
+    return buildAdminDashboardData();
+  }
+
+  throw new Error('Unsupported user action.');
+}
+
+async function applyAdminListingAction(listingId, action) {
+  const listing = await listingsCollection.findOne({ id: listingId });
+  if (!listing) {
+    throw new Error('Listing not found.');
+  }
+
+  if (action === 'feature') {
+    await listingsCollection.updateOne({ id: listingId }, { $set: { featured: true, updatedAt: new Date().toISOString() } });
+  } else if (action === 'unfeature') {
+    await listingsCollection.updateOne({ id: listingId }, { $unset: { featured: '' }, $set: { updatedAt: new Date().toISOString() } });
+  } else if (action === 'review') {
+    await listingsCollection.updateOne({ id: listingId }, { $set: { reviewed: true, updatedAt: new Date().toISOString() } });
+  } else if (action === 'hide') {
+    await listingsCollection.updateOne({ id: listingId }, { $set: { status: 'hidden', updatedAt: new Date().toISOString() } });
+  } else if (action === 'restore') {
+    await listingsCollection.updateOne({ id: listingId }, { $set: { status: 'active', updatedAt: new Date().toISOString() } });
+  } else if (action === 'delete') {
+    const relatedConversations = await conversationsCollection.find({ listingId }).toArray();
+    const relatedConversationIds = relatedConversations.map(conversation => conversation.id);
+
+    await Promise.all([
+      listingsCollection.deleteOne({ id: listingId }),
+      requestsCollection.deleteMany({ listingId }),
+      conversationsCollection.deleteMany({ listingId }),
+      messagesCollection.deleteMany({ conversationId: { $in: relatedConversationIds } })
+    ]);
+  } else {
+    throw new Error('Unsupported listing action.');
+  }
+
+  await touchMeta();
+  return buildAdminDashboardData();
+}
+
 const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
   const pathname = decodeURIComponent(url.pathname);
@@ -568,6 +827,7 @@ const server = http.createServer(async (req, res) => {
         phone: normalizedPhone || undefined,
         city: 'Ulsan',
         region: 'Nam-gu',
+        role: 'user',
         createdAt: new Date().toISOString()
       };
 
@@ -595,12 +855,116 @@ const server = http.createServer(async (req, res) => {
         return sendJson(res, 401, { error: 'Invalid credentials.' });
       }
 
+      if (user.isBlocked) {
+        return sendJson(res, 403, { error: 'This account is blocked.' });
+      }
+
       await ensureStateForUser(user);
 
       return sendJson(res, 200, {
         user: safeUser(user),
         auth: { userId: user.id, isAuthenticated: true }
       });
+    }
+
+    if (pathname === '/api/auth/admin/signin' && req.method === 'POST') {
+      const { email = '', password = '', phone = '' } = await readRequestBody(req);
+
+      const { query } = buildAuthQuery(email, phone);
+
+      if (!query.length) {
+        return sendJson(res, 400, { error: 'Email or phone is required.' });
+      }
+
+      const user = await usersCollection.findOne({ $or: query });
+
+      if (!user || user.password !== password) {
+        return sendJson(res, 401, { error: 'Invalid credentials.' });
+      }
+
+      if (user.role !== 'admin') {
+        return sendJson(res, 403, { error: 'Admin access required.' });
+      }
+
+      if (user.isBlocked) {
+        return sendJson(res, 403, { error: 'This account is blocked.' });
+      }
+
+      await ensureStateForUser(user);
+
+      return sendJson(res, 200, {
+        user: safeUser(user),
+        auth: { userId: user.id, isAuthenticated: true, role: 'admin' }
+      });
+    }
+
+    if (pathname === '/api/admin/overview' && req.method === 'GET') {
+      const admin = await requireAdminUser(req, url);
+      if (admin.error) {
+        return sendJson(res, 403, { error: admin.error });
+      }
+
+      return sendJson(res, 200, await buildAdminDashboardData());
+    }
+
+    if (pathname === '/api/audits' && req.method === 'GET') {
+      const admin = await requireAdminUser(req, url);
+      if (admin.error) {
+        return sendJson(res, 403, { error: admin.error });
+      }
+
+      const dashboard = await buildAdminDashboardData();
+      const blockedUsers = dashboard.summary.blockedUsers || 0;
+      const flaggedListings = dashboard.summary.flaggedListings || 0;
+
+      return sendJson(res, 200, {
+        security: [
+          {
+            status: blockedUsers > 0 ? 'attention' : 'good',
+            title: blockedUsers > 0 ? 'Blocked accounts need review' : 'No blocked accounts detected',
+            detail: blockedUsers > 0
+              ? `${blockedUsers} blocked account${blockedUsers === 1 ? '' : 's'} are currently inactive.`
+              : 'No user accounts are currently blocked.'
+          }
+        ],
+        accessibility: [
+          {
+            status: flaggedListings > 0 ? 'attention' : 'good',
+            title: 'Admin dashboard wiring is active',
+            detail: 'Signup, signin, admin login, and admin moderation pages all resolve through the same local server.'
+          }
+        ]
+      });
+    }
+
+    if (pathname === '/api/admin/user-action' && req.method === 'POST') {
+      const admin = await requireAdminUser(req, url);
+      if (admin.error) {
+        return sendJson(res, 403, { error: admin.error });
+      }
+
+      const { targetUserId = '', action = '' } = await readRequestBody(req);
+      if (!targetUserId || !action) {
+        return sendJson(res, 400, { error: 'targetUserId and action are required.' });
+      }
+
+      const payload = await applyAdminUserAction(targetUserId, action);
+      return sendJson(res, 200, { payload });
+    }
+
+    if (pathname === '/api/admin/listing-action' && req.method === 'POST') {
+      const admin = await requireAdminUser(req, url);
+      if (admin.error) {
+        return sendJson(res, 403, { error: admin.error });
+      }
+
+      const { listingId = '', action = '' } = await readRequestBody(req);
+      if (!listingId || !action) {
+        return sendJson(res, 400, { error: 'listingId and action are required.' });
+      }
+
+      const payload = await applyAdminListingAction(listingId, action);
+      return sendJson(res, 200, { payload });
     }
 
     if (pathname === '/api/state' && req.method === 'GET') {
@@ -1063,7 +1427,15 @@ const server = http.createServer(async (req, res) => {
       return sendJson(res, 201, { message: normalizeDoc(message) });
     }
 
-    let filePath = path.join(ROOT, pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, ''));
+    if (pathname.startsWith('/api/')) {
+      return sendJson(res, 404, { error: 'API route not found.' });
+    }
+
+    const normalizedPath = pathname === '/' ? '/index.html' : pathname;
+    const aliasTarget = PUBLIC_PAGE_ALIASES[normalizedPath.toLowerCase()];
+    const relativePath = (aliasTarget || normalizedPath).replace(/^\/+/, '');
+
+    let filePath = path.join(ROOT, relativePath);
     if (!filePath.startsWith(ROOT)) {
       return sendJson(res, 403, { error: 'Forbidden' });
     }
