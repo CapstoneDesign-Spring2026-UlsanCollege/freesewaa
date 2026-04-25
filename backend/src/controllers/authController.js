@@ -29,7 +29,14 @@ exports.signup = async (req, res) => {
     if (existing) return res.status(409).json({ error: 'User already exists with this email or phone.' });
 
     const passwordHash = await bcrypt.hash(password, 12);
-    const user = await User.create({ firstName, lastName, email: email.toLowerCase() || undefined, phone: phone || undefined, passwordHash });
+    const payload = { firstName, lastName, passwordHash };
+    const normalizedEmail = String(email || '').trim().toLowerCase();
+    const normalizedPhone = String(phone || '').trim();
+
+    if (normalizedEmail) payload.email = normalizedEmail;
+    if (normalizedPhone) payload.phone = normalizedPhone;
+
+    const user = await User.create(payload);
     const token = generateToken(user);
     res.status(201).json({ token, user: userPayload(user) });
   } catch (error) {

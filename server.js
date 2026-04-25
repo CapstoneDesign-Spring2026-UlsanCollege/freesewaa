@@ -822,14 +822,15 @@ const server = http.createServer(async (req, res) => {
         firstName: firstName.trim(),
         lastName: lastName.trim(),
         name: `${firstName.trim()} ${lastName.trim()}`.trim(),
-        email: normalizedEmail || undefined,
         password,
-        phone: normalizedPhone || undefined,
         city: 'Ulsan',
         region: 'Nam-gu',
         role: 'user',
         createdAt: new Date().toISOString()
       };
+
+      if (normalizedEmail) user.email = normalizedEmail;
+      if (normalizedPhone) user.phone = normalizedPhone;
 
       await usersCollection.insertOne(user);
       await setUserState(user.id, defaultUserState(user));
