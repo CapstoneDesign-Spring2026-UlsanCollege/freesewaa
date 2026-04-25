@@ -280,6 +280,30 @@
     }
   }
 
+  function getApiBaseUrl() {
+    let stored = '';
+    try {
+      stored = localStorage.getItem('freesewaa-api-base-url') || '';
+    } catch (error) {}
+
+    const configured = window.FREESEWAA_API_BASE_URL || window.FREESEWAA_API_ORIGIN || stored || '';
+    const normalized = String(configured || window.location.origin).replace(/\/+$/, '');
+
+    if (configured) {
+      try {
+        localStorage.setItem('freesewaa-api-base-url', normalized);
+      } catch (error) {}
+    }
+
+    return normalized;
+  }
+
+  function apiUrl(path) {
+    if (/^https?:\/\//i.test(path)) return path;
+    if (String(path).startsWith('//')) return `${window.location.protocol}${path}`;
+    return new URL(String(path), getApiBaseUrl()).toString();
+  }
+
   function isAdmin() {
     return getCurrentUser().role === 'admin';
   }
@@ -316,7 +340,7 @@
     const userId = getCurrentUserId();
     if (!userId) return null;
     try {
-      const response = await fetch(`/api/state?userId=${encodeURIComponent(userId)}`, { headers: getSessionHeaders() });
+      const response = await fetch(apiUrl(`/api/state?userId=${encodeURIComponent(userId)}`), { headers: getSessionHeaders() });
       if (!response.ok) throw new Error('Unable to load server state.');
       const data = await response.json();
       return data.state || null;
@@ -331,7 +355,7 @@
     const userId = getCurrentUserId();
     if (!userId) return;
     try {
-      await fetch(`/api/state?userId=${encodeURIComponent(userId)}`, {
+      await fetch(apiUrl(`/api/state?userId=${encodeURIComponent(userId)}`), {
         method: 'PUT',
         headers: getSessionHeaders({ 'Content-Type': 'application/json' }),
         body: JSON.stringify(appState)
@@ -374,7 +398,7 @@
 
   async function fetchAuditData() {
     try {
-      const response = await fetch('/api/audits');
+      const response = await fetch(apiUrl('/api/audits'));
       if (!response.ok) throw new Error('Unable to load audits.');
       return await response.json();
     } catch (error) {
@@ -387,7 +411,7 @@
     const userId = getCurrentUserId();
     if (!userId) return null;
     try {
-      const response = await fetch('/api/admin/overview', { headers: getSessionHeaders() });
+      const response = await fetch(apiUrl('/api/admin/overview'), { headers: getSessionHeaders() });
       if (!response.ok) throw new Error('Unable to load admin overview.');
       return await response.json();
     } catch (error) {
@@ -1795,7 +1819,7 @@
     const settingsMenu = document.querySelector('.settings-menu');
     if (settingsMenu && !settingsMenu.querySelector('[data-dynamic-panel-link]')) {
       const panelLink = document.createElement('a');
-      panelLink.href = isAdmin() ? 'admin.html' : 'user-panel.html';
+      panelLink.href = isAdmin() ? '/admin.html' : '/user_panel.html';
       panelLink.textContent = isAdmin() ? 'Admin Panel' : 'User Panel';
       panelLink.setAttribute('data-dynamic-panel-link', 'true');
       settingsMenu.prepend(panelLink);
@@ -1803,7 +1827,7 @@
     const nav = document.querySelector('.main-nav');
     if (nav && !nav.querySelector('[data-dynamic-audit-link]')) {
       const link = document.createElement('a');
-      link.href = isAdmin() ? 'admin.html' : 'user-panel.html';
+      link.href = isAdmin() ? '/admin.html' : '/user_panel.html';
       link.className = 'nav-link';
       link.textContent = isAdmin() ? 'Admin' : 'Dashboard';
       link.setAttribute('data-dynamic-audit-link', 'true');
@@ -1836,7 +1860,7 @@
 
   async function initAdminPage() {
     if (!isAdmin()) {
-      window.location.replace('user-panel.html');
+      window.location.replace('/user_panel.html');
       return;
     }
     const data = await fetchAdminOverview();
@@ -1904,7 +1928,7 @@
 
   async function bootApp() {
     if (!isAuthenticated()) {
-      window.location.replace('signin.html');
+      window.location.replace('/signin.html');
       return;
     }
 

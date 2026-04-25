@@ -15,6 +15,30 @@
     catch { return {}; }
   };
 
+  function getApiBaseUrl() {
+    let stored = '';
+    try {
+      stored = localStorage.getItem('freesewaa-api-base-url') || '';
+    } catch (error) {}
+
+    const configured = window.FREESEWAA_API_BASE_URL || window.FREESEWAA_API_ORIGIN || stored || '';
+    const normalized = String(configured || window.location.origin).replace(/\/+$/, '');
+
+    if (configured) {
+      try {
+        localStorage.setItem('freesewaa-api-base-url', normalized);
+      } catch (error) {}
+    }
+
+    return normalized;
+  }
+
+  function apiUrl(path) {
+    if (/^https?:\/\//i.test(path)) return path;
+    if (String(path).startsWith('//')) return `${window.location.protocol}${path}`;
+    return new URL(String(path), getApiBaseUrl()).toString();
+  }
+
   function escapeHtml(value) {
     return String(value ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
   }
@@ -46,8 +70,10 @@
   async function api(path, options = {}) {
     const headers = Object.assign({ 'Content-Type': 'application/json' }, options.headers || {});
     const sessionToken = token();
+    const userId = currentUser().id || localStorage.getItem('freesewaa-current-user-id') || '';
     if (sessionToken) headers.Authorization = `Bearer ${sessionToken}`;
-    const response = await fetch(path, { ...options, headers });
+    if (userId) headers['x-user-id'] = userId;
+    const response = await fetch(apiUrl(path), { ...options, headers });
     const data = await response.json().catch(() => ({}));
     if (!response.ok) {
       throw new Error(data.error || 'Request failed.');
@@ -58,13 +84,20 @@
   async function logoutToIndex() {
     try {
       const sessionToken = token();
-      await fetch('/api/auth/logout', { method: 'POST', headers: sessionToken ? { Authorization: `Bearer ${sessionToken}` } : {} });
+      const userId = currentUser().id || localStorage.getItem('freesewaa-current-user-id') || '';
+      await fetch(apiUrl('/api/auth/logout'), {
+        method: 'POST',
+        headers: {
+          ...(sessionToken ? { Authorization: `Bearer ${sessionToken}` } : {}),
+          ...(userId ? { 'x-user-id': userId } : {})
+        }
+      });
     } catch (error) {}
     localStorage.removeItem('freesewaa-auth');
     localStorage.removeItem('freesewaa-current-user-id');
     localStorage.removeItem('freesewaa-token');
     localStorage.removeItem('freesewaa-user');
-    window.location.replace('index.html');
+    window.location.replace('/index.html');
   }
 
   document.getElementById('adminLogoutButton')?.addEventListener('click', logoutToIndex);
@@ -73,7 +106,7 @@
     const user = currentUser();
     const authed = localStorage.getItem('freesewaa-auth') === 'true';
     if (!authed || !user?.id || user.role !== 'admin') {
-      window.location.replace('admin-login.html');
+      window.location.replace('/admin_login.html');
       return false;
     }
     return true;
@@ -92,7 +125,7 @@
       if (/Admin access required/i.test(error.message)) {
         localStorage.removeItem('freesewaa-auth');
         localStorage.removeItem('freesewaa-token');
-        window.location.replace('admin-login.html');
+        window.location.replace('/admin_login.html');
         return;
       }
       showToast(error.message || 'Could not load admin panel.', 'error');

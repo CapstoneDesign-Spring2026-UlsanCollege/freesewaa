@@ -12,7 +12,7 @@
 
 <script>
 if (localStorage.getItem('freesewaa-auth') === 'true' && localStorage.getItem('freesewaa-current-user-id')) {
-  try { const u = JSON.parse(localStorage.getItem('freesewaa-user') || '{}'); window.location.replace(u.role === 'admin' ? 'admin.html' : 'user-panel.html'); } catch(e) { window.location.replace('app.html'); }
+  try { const u = JSON.parse(localStorage.getItem('freesewaa-user') || '{}'); window.location.replace(u.role === 'admin' ? '/admin.html' : '/user_panel.html'); } catch(e) { window.location.replace('/app.html'); }
 }
 </script>
 </head>
@@ -24,10 +24,10 @@ if (localStorage.getItem('freesewaa-auth') === 'true' && localStorage.getItem('f
   <header class="auth-header">
     <a href="index.html" class="brand">Free Sewaa</a>
     <nav class="auth-header__actions">
-      <a href="auth-choice.html" class="mini-link">Choose Portal</a>
-      <a href="signin.html" class="mini-link is-active">User Sign In</a>
-      <a href="admin-login.html" class="mini-link">Admin Login</a>
-      <a href="signup.html" class="mini-link">Sign Up</a>
+      <a href="/auth_choice.html" class="mini-link">Choose Portal</a>
+      <a href="/signin.html" class="mini-link is-active">User Sign In</a>
+      <a href="/admin_login.html" class="mini-link">Admin Login</a>
+      <a href="/signup.html" class="mini-link">Sign Up</a>
     </nav>
   </header>
 
@@ -98,13 +98,14 @@ if (localStorage.getItem('freesewaa-auth') === 'true' && localStorage.getItem('f
         </form>
       </div>
 
-      <p class="auth-footer">Don’t have an account? <a href="signup.html">Create one</a><br /><a href="auth-choice.html">Choose portal</a> · <a href="admin-login.html">Admin login</a></p>
+      <p class="auth-footer">Don’t have an account? <a href="/signup.html">Create one</a><br /><a href="/auth_choice.html">Choose portal</a> · <a href="/admin_login.html">Admin login</a></p>
     </section>
   </main>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="firebase-config.js"></script>
+<script src="api-config.js"></script>
 <script src="auth.js"></script>
 </body>
 </html>

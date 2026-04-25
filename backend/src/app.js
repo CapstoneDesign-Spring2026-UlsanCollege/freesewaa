@@ -11,10 +11,30 @@ const notificationRoutes = require('./routes/notificationRoutes');
 
 const app = express();
 
+const publicPageAliases = {
+  '/auth-choice.html': 'auth_choice.html',
+  '/admin-login.html': 'admin_login.html',
+  '/user-panel.html': 'user_panel.html',
+  '/security-audit.html': 'security_audit.html'
+};
+
 app.use(cors({ origin: true, credentials: true }));
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use((req, _res, next) => {
+  if (req.method !== 'GET') {
+    return next();
+  }
+
+  const aliasTarget = publicPageAliases[String(req.path || '').toLowerCase()];
+  if (aliasTarget) {
+    const suffix = String(req.url || '').slice(String(req.path || '').length);
+    req.url = `/${aliasTarget}${suffix}`;
+  }
+
+  return next();
+});
 app.use('/uploads', express.static(path.join(process.cwd(), 'backend', 'uploads')));
 app.use(express.static(process.cwd()));
 

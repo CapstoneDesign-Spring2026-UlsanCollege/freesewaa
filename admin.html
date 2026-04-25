@@ -16,10 +16,10 @@
         const isAuthed = localStorage.getItem('freesewaa-auth') === 'true';
 
         if (!isAuthed || !storedUser || storedUser.role !== 'admin') {
-          window.location.href = 'signin.html';
+          window.location.href = '/admin_login.html';
         }
       } catch (error) {
-        window.location.href = 'signin.html';
+        window.location.href = '/admin_login.html';
       }
     })();
   </script>
@@ -104,8 +104,8 @@
         <div class="admin-v2-sidecard">
           <span class="mini-label">Quick links</span>
           <div class="admin-v2-quicklinks">
-            <a href="user-panel.html">View user dashboard</a>
-            <a href="security-audit.html">Security audit</a>
+            <a href="/user_panel.html">View user dashboard</a>
+            <a href="/security_audit.html">Security audit</a>
             <a href="accessibility-audit.html">Accessibility audit</a>
             <button type="button" class="admin-v2-logoutlink" id="adminLogoutButton">Logout</button>
           </div>
@@ -286,6 +286,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
   <script src="firebase-config.js"></script>
+  <script src="api-config.js"></script>
   <script src="admin-panel.js?v=adminrebuild20260418"></script>
 
   <script>
@@ -335,7 +336,7 @@
         showAdminToast('Logged out successfully.');
 
         setTimeout(() => {
-          window.location.href = 'signin.html';
+          window.location.href = '/admin_login.html';
         }, 700);
       } catch (error) {
         console.error('Logout failed:', error);

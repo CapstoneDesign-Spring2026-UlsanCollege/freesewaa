@@ -88,10 +88,34 @@ const phoneAuthState = {
   sendingForForm: null
 };
 
+function getApiBaseUrl() {
+  let stored = '';
+  try {
+    stored = localStorage.getItem('freesewaa-api-base-url') || '';
+  } catch (error) {}
+
+  const configured = window.FREESEWAA_API_BASE_URL || window.FREESEWAA_API_ORIGIN || stored || '';
+  const normalized = String(configured || window.location.origin).replace(/\/+$/, '');
+
+  if (configured) {
+    try {
+      localStorage.setItem('freesewaa-api-base-url', normalized);
+    } catch (error) {}
+  }
+
+  return normalized;
+}
+
+function apiUrl(path) {
+  if (/^https?:\/\//i.test(path)) return path;
+  if (String(path).startsWith('//')) return `${window.location.protocol}${path}`;
+  return new URL(String(path), getApiBaseUrl()).toString();
+}
+
 function getPageMode() {
   const path = window.location.pathname.toLowerCase();
   if (path.includes('signup')) return 'signup';
-  if (path.includes('admin-login')) return 'admin-signin';
+  if (path.includes('admin_login') || path.includes('admin-login')) return 'admin-signin';
   return 'signin';
 }
 
@@ -150,7 +174,7 @@ async function postJson(url, payload) {
   } catch (error) {
     if (error instanceof TypeError) {
       throw new Error(
-        'Cannot reach the server. Start the project with "npm start" and open the localhost address shown in your terminal.'
+        'Cannot reach the server. Set FREESEWAA_API_BASE_URL for deployment or open the app through the server that hosts the API.'
       );
     }
     throw error;
@@ -161,8 +185,11 @@ function setSession(data) {
   const user = data.user || {};
   const userId = user.id || data.auth?.userId || '';
   const token = data.token || data.auth?.token || '';
+  const sessionRole = user.role || data.auth?.role || 'user';
 
   if (!userId) throw new Error('Invalid response format from server.');
+
+  user.role = sessionRole;
 
   localStorage.setItem(STORAGE_KEYS.auth, 'true');
   localStorage.setItem(STORAGE_KEYS.currentUserId, userId);
@@ -174,7 +201,7 @@ function setSession(data) {
     localStorage.removeItem(STORAGE_KEYS.token);
   }
 
-  window.location.href = user.role === 'admin' ? 'admin.html' : 'user-panel.html';
+  window.location.href = sessionRole === 'admin' ? '/admin.html' : '/user_panel.html';
 }
 
 function validateSignupEmailForm(form, values) {
@@ -231,7 +258,7 @@ function parseDisplayName(name = '') {
 async function syncFirebaseSession({ idToken, provider, firstName = '', lastName = '', phone = '' }) {
   if (!idToken) throw new Error('Missing Firebase ID token.');
 
-  return postJson('/api/auth/firebase', {
+  return postJson(apiUrl('/api/auth/firebase'), {
     idToken,
     provider,
     firstName,
@@ -494,17 +521,17 @@ document.querySelectorAll('.auth-form').forEach(form => {
         validateSignupEmailForm(form, raw);
         const [firstName, lastName, email, password] = raw;
         payload = { firstName, lastName, email, password };
-        endpoint = '/api/auth/signup';
+        endpoint = apiUrl('/api/auth/signup');
       } else if (pageMode === 'signin') {
         validateSigninEmailForm(raw);
         const [email, password] = raw;
-        payload = { email, password };
-        endpoint = '/api/auth/signin';
+          payload = { email, password };
+          endpoint = apiUrl('/api/auth/signin');
       } else if (pageMode === 'admin-signin') {
         validateSigninEmailForm(raw);
         const [email, password] = raw;
         payload = { email, password };
-        endpoint = '/api/auth/admin/signin';
+          endpoint = apiUrl('/api/auth/admin/signin');
       }
 
       const data = await postJson(endpoint, payload);

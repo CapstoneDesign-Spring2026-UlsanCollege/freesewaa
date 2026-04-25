@@ -12,7 +12,7 @@
 
 <script>
 if (localStorage.getItem('freesewaa-auth') === 'true' && localStorage.getItem('freesewaa-current-user-id')) {
-  try { const u = JSON.parse(localStorage.getItem('freesewaa-user') || '{}'); window.location.replace(u.role === 'admin' ? 'admin.html' : 'user-panel.html'); } catch(e) { window.location.replace('app.html'); }
+  try { const u = JSON.parse(localStorage.getItem('freesewaa-user') || '{}'); window.location.replace(u.role === 'admin' ? '/admin.html' : '/user_panel.html'); } catch(e) { window.location.replace('/app.html'); }
 }
 </script>
 </head>
@@ -24,10 +24,10 @@ if (localStorage.getItem('freesewaa-auth') === 'true' && localStorage.getItem('f
   <header class="auth-header">
     <a href="index.html" class="brand">Free Sewaa</a>
     <nav class="auth-header__actions">
-      <a href="auth-choice.html" class="mini-link">Choose Portal</a>
-      <a href="signin.html" class="mini-link">User Sign In</a>
-      <a href="admin-login.html" class="mini-link">Admin Login</a>
-      <a href="signup.html" class="mini-link is-active">Sign Up</a>
+      <a href="/auth_choice.html" class="mini-link">Choose Portal</a>
+      <a href="/signin.html" class="mini-link">User Sign In</a>
+      <a href="/admin_login.html" class="mini-link">Admin Login</a>
+      <a href="/signup.html" class="mini-link is-active">Sign Up</a>
     </nav>
   </header>
 
@@ -90,17 +90,19 @@ if (localStorage.getItem('freesewaa-auth') === 'true' && localStorage.getItem('f
           <button class="secondary-btn" type="button" data-phone-action="send-code">Send Verification Code</button>
           <div id="recaptcha-container" class="recaptcha-container"></div>
           <label class="field"><span>Verification code</span><input type="text" placeholder="Enter 6-digit code" /></label>
+          <label class="checkbox"><input type="checkbox" /><span>I agree to the Terms and Privacy Policy</span></label>
           <button class="primary-btn" type="submit">Create Account</button>
         </form>
       </div>
 
-      <p class="auth-footer">Already have an account? <a href="signin.html">Sign in</a></p>
+      <p class="auth-footer">Already have an account? <a href="/signin.html">Sign in</a></p>
     </section>
   </main>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="firebase-config.js"></script>
+<script src="api-config.js"></script>
 <script src="auth.js"></script>
 </body>
 </html>
