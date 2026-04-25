@@ -9,6 +9,30 @@
 
 ---
 
+## Live Deployment
+
+This project is deployed from the GitHub `main` branch using Render.
+
+- Live website: https://free-sewaa-qh05.onrender.com
+- Signup page: https://free-sewaa-qh05.onrender.com/signup.html
+- Admin login: https://free-sewaa-qh05.onrender.com/admin_login.html
+
+Admin demo account:
+
+```text
+Email: admin@freesewaa.local
+Password: admin12345
+```
+
+User demo account:
+
+```text
+Email: alisha@example.com
+Password: demo123
+```
+
+---
+
 ## 🎯 About
 
 **Free Sewaa** is a community-based donation platform that enables people to give away usable items for free to those who need them. The mission is to reduce waste, support communities, and make helping others simple and accessible.
