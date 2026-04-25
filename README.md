@@ -27,8 +27,8 @@ Password: admin12345
 User demo account:
 
 ```text
-Email: alisha@example.com
-Password: demo123
+Email: pathakram09555gmail.com
+Password:123456
 ```
 
 ---
