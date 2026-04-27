@@ -241,6 +241,10 @@ MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/free-sewaa
 
 ---
 
+## 📋 Quick Reference
+
+---
+
 ## 🔗 Links
 
 - **Repository:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa
