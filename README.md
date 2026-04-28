@@ -217,13 +217,19 @@ MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/free-sewaa
 
 ## 👥 Team
 
-| Role | Name |
-|------|------|
-| Project Manager | Ram Pathak |
-| Scribe | Swarnim Jung Karki |
-| QA Lead | Sujan Shrestha |
-| Demo Driver | Mohan Khadka |
-| Developer | Sujan Tamang |
+| Role | Name | Responsibilities |
+|------|------|------------------|
+| Project Manager | Ram Pathak | Overall coordination, timeline management |
+| Lead Developer | Sujan Tamang | Frontend & backend development |
+| Demo Driver | Mohan Khadka | Live demo presentation, troubleshooting |
+| QA Lead | Sujan Shrestha | Testing, bug verification |
+| Scribe / Documentation | Swarnim Jung Karki | Documentation, presentations, repo management |
+
+### Team Presentation Roles for Midterm
+- **Pitch:** Ram Pathak, Sujan Tamang
+- **Demo:** Mohan Khadka
+- **Q&A:** All team members
+- **Brochure:** Swarnim Jung Karki
 
 ---
 
