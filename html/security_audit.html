@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Sewaa — Security Audit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/theme.css" />
+</head>
+<body data-page="security-audit">
+  <div class="grain"></div>
+  <canvas id="particles" class="particles"></canvas>
+  <main>
+    <section class="page-hero generic-hero app-shell-hero"><div class="hero-overlay"></div><div class="page-hero__content wrap"><div><p class="eyebrow">SECURITY AUDIT</p><h1 class="page-title">Security readiness snapshot.</h1><p class="page-text">Generated from the current project setup and recent backend improvements.</p></div><div class="page-badge"><span class="mini-label">GENERATED</span><strong data-audit-generated-at>—</strong><p>Review before launch.</p></div></div></section>
+    <section class="wrap audit-grid" id="auditFindings"></section>
+    <section class="wrap panel reveal-card"><div class="panel-head"><div><p class="eyebrow">NEXT HARDENING STEPS</p><h2 class="section-title small">Recommended</h2></div></div><ul class="bullet-lite"><li>Add rate limiting on sign-in and sign-up routes.</li><li>Move from localStorage auth to secure HTTP-only cookies or signed JWT flow.</li><li>Restrict CORS to production domains only.</li><li>Add server-side file scanning and MIME validation before persistent uploads.</li></ul></section>
+  </main>
+  <script src="../js/site.js"></script>
+</body>
+</html>

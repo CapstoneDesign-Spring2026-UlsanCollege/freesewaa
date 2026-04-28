@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choose Portal - Free Sewaa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/auth.css?v=20260418" />
+</head>
+<body class="auth-page portal-page">
+  <div class="auth-overlay"></div>
+
+  <header class="auth-header">
+    <div class="brand">Free Sewaa</div>
+    <div class="auth-header__actions">
+      <a class="mini-link" href="/index.html">Home</a>
+      <a class="mini-link is-active" href="/auth_choice.html">Portal</a>
+      <a class="mini-link" href="/signup.html">Create account</a>
+    </div>
+  </header>
+
+  <main class="auth-shell portal-shell">
+    <section class="auth-left portal-left">
+      <p class="eyebrow">CONTROL ACCESS</p>
+      <h1>Choose the right entrance for your role.</h1>
+      <p class="auth-copy">
+        Free Sewaa has separate spaces for community members and administrators. Users can donate,
+        request, message, and manage their activity. Admins can review listings, manage users,
+        handle moderation, and keep the platform safe.
+      </p>
+
+      <div class="auth-feature-list portal-feature-list">
+        <article class="auth-feature">
+          <div class="auth-feature__dot"></div>
+          <div>
+            <strong>User Portal</strong>
+            <p>Manage donations, requests, saved items, messages, and personal account settings.</p>
+          </div>
+        </article>
+        <article class="auth-feature">
+          <div class="auth-feature__dot"></div>
+          <div>
+            <strong>Admin Command Center</strong>
+            <p>Review posts, block or restore users, feature listings, and monitor platform activity.</p>
+          </div>
+        </article>
+        <article class="auth-feature">
+          <div class="auth-feature__dot"></div>
+          <div>
+            <strong>Safer Access Flow</strong>
+            <p>Clean separation between community access and administrative controls for better security.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="auth-card portal-card">
+      <div class="auth-card__top portal-card__top">
+        <p class="eyebrow">WELCOME</p>
+        <h2>Select your portal</h2>
+        <p class="auth-card__text">Choose the space that matches how you want to enter Free Sewaa.</p>
+      </div>
+
+      <div class="portal-grid">
+        <a class="portal-option portal-option--user" href="/signin.html">
+          <div class="portal-option__badge">For Members</div>
+          <div class="portal-option__icon">👤</div>
+          <div class="portal-option__body">
+            <h3>User Login</h3>
+            <p>Access your donations, requests, conversations, saved items, and account profile.</p>
+            <ul>
+              <li>My donations</li>
+              <li>My requests</li>
+              <li>Messages & saved items</li>
+            </ul>
+          </div>
+          <span class="portal-option__cta">Continue as user</span>
+        </a>
+
+        <a class="portal-option portal-option--admin" href="/admin_login.html">
+          <div class="portal-option__badge">Restricted Access</div>
+          <div class="portal-option__icon">🛡️</div>
+          <div class="portal-option__body">
+            <h3>Admin Login</h3>
+            <p>Open the command center to moderate listings, manage users, and oversee activity.</p>
+            <ul>
+              <li>User controls</li>
+              <li>Listing moderation</li>
+              <li>Admin tools & review</li>
+            </ul>
+          </div>
+          <span class="portal-option__cta">Continue as admin</span>
+        </a>
+      </div>
+
+      <div class="portal-footer-links">
+        <a class="text-link" href="/signup.html">Need an account? Create one</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

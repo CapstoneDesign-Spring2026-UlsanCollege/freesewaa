@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Sewaa — Admin Control Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/theme.css?v=adminrebuild20260418" />
+
+  <script>
+    (function () {
+      try {
+        const storedUser = JSON.parse(localStorage.getItem('freesewaa-user') || '{}');
+        const isAuthed = localStorage.getItem('freesewaa-auth') === 'true';
+
+        if (!isAuthed || !storedUser || storedUser.role !== 'admin') {
+          window.location.href = '/admin_login.html';
+        }
+      } catch (error) {
+        window.location.href = '/admin_login.html';
+      }
+    })();
+  </script>
+
+  <style>
+    .admin-v2-logoutlink {
+      border: none;
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      color: #fff;
+      padding: 0.8rem 1rem;
+      border-radius: 12px;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 10px 25px rgba(220, 38, 38, 0.22);
+    }
+
+    .admin-v2-logoutlink:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+    }
+
+    .admin-v2-logoutlink:active {
+      transform: translateY(0);
+    }
+
+    .admin-v2-logoutlink:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .admin-toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 9999;
+      min-width: 220px;
+      max-width: 360px;
+      background: rgba(17, 17, 17, 0.94);
+      color: #fff;
+      padding: 14px 16px;
+      border-radius: 14px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .admin-toast.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body data-page="admin" class="admin-v2-body">
+  <div class="grain"></div>
+  <div class="admin-v2-shell">
+    <aside class="admin-v2-sidebar">
+      <a href="admin.html" class="admin-v2-brand">Free Sewaa <span>Admin</span></a>
+      <p class="admin-v2-copy">A dedicated moderation workspace with platform-wide control over users, posts, review queues, and safety signals.</p>
+
+      <nav class="admin-v2-nav" aria-label="Admin sections">
+        <button type="button" class="admin-v2-nav__link is-active" data-admin-nav="overview">Overview</button>
+        <button type="button" class="admin-v2-nav__link" data-admin-nav="moderation">Moderation</button>
+        <button type="button" class="admin-v2-nav__link" data-admin-nav="users">Users</button>
+        <button type="button" class="admin-v2-nav__link" data-admin-nav="listings">Listings</button>
+        <button type="button" class="admin-v2-nav__link" data-admin-nav="activity">Activity</button>
+      </nav>
+
+      <div class="admin-v2-sidepanel">
+        <div class="admin-v2-sidecard">
+          <span class="mini-label">Boundaries</span>
+          <strong>Separate from user panel</strong>
+          <p>Admins can moderate everything. Regular users only manage their own profile, listings, and requests.</p>
+        </div>
+
+        <div class="admin-v2-sidecard">
+          <span class="mini-label">Quick links</span>
+          <div class="admin-v2-quicklinks">
+            <a href="/user_panel.html">View user dashboard</a>
+            <a href="/security_audit.html">Security audit</a>
+            <a href="accessibility-audit.html">Accessibility audit</a>
+            <button type="button" class="admin-v2-logoutlink" id="adminLogoutButton">Logout</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="admin-v2-main">
+      <header class="admin-v2-hero" id="section-overview">
+        <div>
+          <p class="eyebrow">ADMIN CONTROL CENTER</p>
+          <h1>New professional admin panel for moderation, trust, and platform operations.</h1>
+          <p class="admin-v2-hero__text">This panel fully replaces the old admin page. It gives admins cleaner oversight of risky posts, blocked users, featured content, unread alerts, and recent moderation activity from one dashboard.</p>
+          <div class="admin-v2-hero__chips">
+            <span class="admin-v2-chip"><strong data-admin-last-updated>--</strong><small>Last updated</small></span>
+            <span class="admin-v2-chip"><strong data-admin-health-score>--/100</strong><small>Platform health</small></span>
+            <span class="admin-v2-chip"><strong data-admin-open-risks>0</strong><small>Open risks</small></span>
+          </div>
+        </div>
+
+        <section class="admin-v2-healthcard">
+          <span class="mini-label">Health monitor</span>
+          <strong data-admin-health-score-big>--</strong>
+          <p data-admin-health-text>Loading dashboard status…</p>
+          <div class="admin-v2-progress"><span data-admin-health-bar></span></div>
+          <div class="admin-v2-healthmeta">
+            <div><span>Security</span><strong data-admin-security-status>--</strong></div>
+            <div><span>Accessibility</span><strong data-admin-accessibility-status>--</strong></div>
+          </div>
+        </section>
+      </header>
+
+      <section class="admin-v2-stats" aria-label="Summary metrics">
+        <article class="admin-v2-stat admin-v2-stat--accent">
+          <span>Total users</span>
+          <strong data-admin-users>0</strong>
+          <p><span data-admin-admins>0</span> admins · <span data-admin-blocked-users>0</span> blocked</p>
+        </article>
+
+        <article class="admin-v2-stat">
+          <span>Total listings</span>
+          <strong data-admin-listings>0</strong>
+          <p><span data-admin-active>0</span> active · <span data-admin-hidden>0</span> hidden</p>
+        </article>
+
+        <article class="admin-v2-stat">
+          <span>Review queue</span>
+          <strong data-admin-flagged>0</strong>
+          <p><span data-admin-featured>0</span> featured · needs moderation</p>
+        </article>
+
+        <article class="admin-v2-stat">
+          <span>Inbox alerts</span>
+          <strong data-admin-unread>0</strong>
+          <p><span data-admin-conversations>0</span> conversations</p>
+        </article>
+      </section>
+
+      <section class="admin-v2-grid admin-v2-grid--top" id="section-moderation">
+        <article class="admin-v2-panel admin-v2-panel--wide">
+          <div class="admin-v2-panel__head">
+            <div>
+              <p class="eyebrow">MODERATION INBOX</p>
+              <h2>Priority posts requiring admin action</h2>
+            </div>
+            <div class="admin-v2-togglebar">
+              <button class="admin-v2-toggle is-active" type="button" data-queue-filter="all">All</button>
+              <button class="admin-v2-toggle" type="button" data-queue-filter="urgent">Urgent</button>
+              <button class="admin-v2-toggle" type="button" data-queue-filter="reviewed">Reviewed</button>
+            </div>
+          </div>
+          <div id="adminModerationQueue" class="admin-v2-stack"></div>
+        </article>
+
+        <article class="admin-v2-panel">
+          <div class="admin-v2-panel__head">
+            <div>
+              <p class="eyebrow">ADMIN CAPABILITIES</p>
+              <h2>Actions available</h2>
+            </div>
+          </div>
+          <div class="admin-v2-capabilities">
+            <div><strong>User safety</strong><p>Block abusive users, promote trusted admins, remove bad accounts.</p></div>
+            <div><strong>Listing control</strong><p>Hide, restore, review, feature, or delete listings with one click.</p></div>
+            <div><strong>Live oversight</strong><p>Monitor unread alerts, risk score, queue volume, and recent actions.</p></div>
+            <div><strong>Cleaner workflow</strong><p>Search and filter users or listings before applying moderation.</p></div>
+          </div>
+          <div class="admin-v2-miniinfo">
+            <strong>Best practice</strong>
+            <p>Use <em>hide</em> for temporary moderation, <em>review</em> for cleared items, and <em>delete</em> when a listing or account should be permanently removed.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="admin-v2-grid admin-v2-grid--middle" id="section-users">
+        <article class="admin-v2-panel">
+          <div class="admin-v2-panel__head admin-v2-panel__head--stacked">
+            <div>
+              <p class="eyebrow">USER CONTROL</p>
+              <h2>Manage accounts and roles</h2>
+            </div>
+            <div class="admin-v2-controls">
+              <input id="adminUserSearch" type="search" placeholder="Search by name, email, or phone" />
+              <select id="adminUserStatusFilter" aria-label="Filter user status">
+                <option value="all">All users</option>
+                <option value="active">Active only</option>
+                <option value="blocked">Blocked only</option>
+                <option value="admins">Admins only</option>
+              </select>
+            </div>
+          </div>
+          <div id="adminUsersList" class="admin-v2-cardlist"></div>
+        </article>
+
+        <article class="admin-v2-panel" id="section-listings">
+          <div class="admin-v2-panel__head admin-v2-panel__head--stacked">
+            <div>
+              <p class="eyebrow">LISTING CONTROL</p>
+              <h2>Moderate current posts</h2>
+            </div>
+            <div class="admin-v2-controls">
+              <input id="adminListingSearch" type="search" placeholder="Search by title, owner, category, or location" />
+              <select id="adminListingStatusFilter" aria-label="Filter listing status">
+                <option value="all">All listings</option>
+                <option value="flagged">Needs review</option>
+                <option value="hidden">Hidden</option>
+                <option value="featured">Featured</option>
+                <option value="active">Active</option>
+              </select>
+            </div>
+          </div>
+          <div id="adminListingsList" class="admin-v2-cardlist"></div>
+        </article>
+      </section>
+
+      <section class="admin-v2-grid admin-v2-grid--bottom" id="section-activity">
+        <article class="admin-v2-panel">
+          <div class="admin-v2-panel__head">
+            <div>
+              <p class="eyebrow">RECENT ADMIN ACTIVITY</p>
+              <h2>Latest actions</h2>
+            </div>
+          </div>
+          <div id="adminActivityFeed" class="admin-v2-activity"></div>
+        </article>
+
+        <article class="admin-v2-panel">
+          <div class="admin-v2-panel__head">
+            <div>
+              <p class="eyebrow">SYSTEM CHECKS</p>
+              <h2>Audit snapshot</h2>
+            </div>
+          </div>
+          <div class="admin-v2-audits">
+            <div class="admin-v2-audititem">
+              <span>Security status</span>
+              <strong data-admin-security-title>Loading…</strong>
+              <p data-admin-security-text>Checking security posture…</p>
+            </div>
+            <div class="admin-v2-audititem">
+              <span>Accessibility status</span>
+              <strong data-admin-accessibility-title>Loading…</strong>
+              <p data-admin-accessibility-text>Checking accessibility quality…</p>
+            </div>
+            <div class="admin-v2-audititem">
+              <span>System guidance</span>
+              <strong>Admin only workspace</strong>
+              <p>This panel is intentionally separate from the user experience so moderation powers stay restricted.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <div class="admin-toast" id="adminToast"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="api-config.js"></script>
+  <script src="admin-panel.js?v=adminrebuild20260418"></script>
+
+  <script>
+    function showAdminToast(message) {
+      const toast = document.getElementById('adminToast');
+      if (!toast) return;
+
+      toast.textContent = message;
+      toast.classList.add('is-visible');
+
+      clearTimeout(showAdminToast._timer);
+      showAdminToast._timer = setTimeout(() => {
+        toast.classList.remove('is-visible');
+      }, 2200);
+    }
+
+    async function handleAdminLogout() {
+      const logoutButton = document.getElementById('adminLogoutButton');
+      if (logoutButton) {
+        logoutButton.disabled = true;
+        logoutButton.textContent = 'Logging out...';
+      }
+
+      try {
+        if (
+          window.FREESEWAA_FIREBASE_CONFIG &&
+          window.firebase &&
+          window.firebase.apps &&
+          !window.firebase.apps.length
+        ) {
+          window.firebase.initializeApp(window.FREESEWAA_FIREBASE_CONFIG);
+        }
+
+        if (window.firebase && window.firebase.auth) {
+          try {
+            await window.firebase.auth().signOut();
+          } catch (firebaseError) {
+            console.warn('Firebase logout warning:', firebaseError);
+          }
+        }
+
+        localStorage.removeItem('freesewaa-auth');
+        localStorage.removeItem('freesewaa-current-user-id');
+        localStorage.removeItem('freesewaa-token');
+        localStorage.removeItem('freesewaa-user');
+
+        showAdminToast('Logged out successfully.');
+
+        setTimeout(() => {
+          window.location.href = '/admin_login.html';
+        }, 700);
+      } catch (error) {
+        console.error('Logout failed:', error);
+
+        if (logoutButton) {
+          logoutButton.disabled = false;
+          logoutButton.textContent = 'Logout';
+        }
+
+        showAdminToast('Logout failed. Please try again.');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const logoutButton = document.getElementById('adminLogoutButton');
+      if (logoutButton) {
+        logoutButton.addEventListener('click', handleAdminLogout);
+      }
+    });
+  </script>
+</body>
+</html>
