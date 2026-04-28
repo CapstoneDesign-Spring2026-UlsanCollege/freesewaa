@@ -1,19 +1,14 @@
-# Sprint Packet — Sprint 4
-
-## MVP Week 4
-
-[Add MVP Week 4 link here]
-
----
+# Weekly Sprint Packet — Week 7
 
 ## Team
 
-**Team Name:** Free Sewaa
-**Repository:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/freesewaa
+**Team Name:** Free Sewaa  
+**Repository:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa  
+**Sprint:** Week 7 — Backend Integration & Stability
 
-**Sprint:** Sprint 4 — Week 4 (Frontend Development)
+---
 
-### Sprint Roles
+### Sprint Roles (Week 7)
 
 | Role            | Team Member        |
 | --------------- | ------------------ |
@@ -23,21 +18,13 @@
 | Demo Driver     | Mohan Khadka       |
 | Developer       | Sujan Shrestha     |
 
-The Project Manager coordinates sprint activities and prepares the Sprint Packet submission.
-
 ---
 
 # Demo
 
 **Demo Link:** [Add live demo link here]
 
-**Backup Demo:**
-
-**1**
-[Add demo video link]
-
-**2**
-[Add second demo video link]
+**Backup Demo:** *(add backup video or screenshots here)*
 
 ---
 
@@ -46,13 +33,9 @@ The Project Manager coordinates sprint activities and prepares the Sprint Packet
 * Introduce **Free Sewaa**, a community donation and resource-sharing platform.
 * Show the **GitHub repository** and project structure.
 * Show the **project board**, issues, and pull requests.
-* Demonstrate:
-
-  * Home Page
-  * Browse Page
-  * Donate Page
-* Show navigation and CSS styling.
-* Explain branch workflow.
+* Demonstrate the **backend API integration**.
+* Show **database connection** and data flow.
+* Highlight GitHub evidence: **issues, pull requests, and commits**.
 
 ---
 
@@ -60,13 +43,10 @@ The Project Manager coordinates sprint activities and prepares the Sprint Packet
 
 If the live demo does not work:
 
-* Screenshot of repository
-* Screenshot of project board
-* Screenshot of issues / PRs
-* Homepage screenshot
-* Browse page screenshot
-* Donate page screenshot
+* Screenshots of backend API endpoints
+* Screenshots of database connections
 * Recorded demo video
+* GitHub commits and pull requests
 
 ---
 
@@ -74,47 +54,42 @@ If the live demo does not work:
 
 ### To Do
 
-* Connect frontend pages
-* Improve CSS styling
-* Start backend setup
-* Create database plan
+[Add tasks here]
 
 ### Doing
 
-* Frontend development
-* GitHub workflow
+* Backend API integration
+* Database connection testing
 
 ### Done
 
-* Homepage created
-* Browse page created
-* Donate page created
-* CSS added
-* Branch workflow setup
-* Merged into main
+* Backend API merged (PR #78)
+* Database connection established
+* Backend code review completed
 
 ---
 
 # Owners
 
-| Responsibility      | Owner              |
-| ------------------- | ------------------ |
-| Project Manager     | Swarnim Jung Karki       |
-| Scribe              | Sujan Tamang |
-| QA Lead             | Ram Pathak         |
-| Demo Driver         | Mohan Khadka       |
-| Developer           | Sujan Shrestha     |
+| Responsibility                    | Owner              |
+| --------------------------------- | ------------------ |
+| Sprint coordination               | Sujan Tamang       |
+| Documentation and notes           | Swarnim Jung Karki |
+| Quality review and verification   | Ram Pathak         |
+| Demo preparation and presentation | Mohan Khadka       |
+| Frontend development              | Sujan Shrestha     |
 
 ---
 
 # Definition of Done
 
-* Pages created (Home, Browse, Donate)
-* CSS applied
-* Navigation working
-* Branches merged
-* Project board updated
-* Each member added contributions
+Week 7 is considered complete when:
+
+* Backend API is merged and tested
+* Database connection is established
+* Frontend-backend integration is ready for next sprint
+* GitHub project board is updated
+* Each team member has posted contribution receipts
 
 ---
 
@@ -122,39 +97,35 @@ If the live demo does not work:
 
 ## What Shipped
 
-* Home, Browse, Donate pages
-* CSS styling
-* Git workflow
-* Merging completed
+* Backend API integration (PR #78)
+* Database connection establishment
+* Backend API testing and validation
 
-## What Broke
+## What Broke / Problems
 
-* Merge conflicts
-* CSS path issues
+[Add issues here]
 
 ## How It Was Fixed
 
-* Manual merge resolution
-* Fixed file paths
+[Add solutions here]
 
 ## Next Sprint Plan
 
-* Backend setup
-* Database design
-* Item listing
-* Connect frontend + backend
+* Complete frontend-backend connection
+* Implement real database operations
+* Full application testing
 
 ## Risks / Blockers
 
-* Backend complexity
-* Time management
-* Merge conflicts
+* Database integration complexity
+* Frontend-backend sync issues
+* Team coordination
 
 ---
 
 # Individual Contribution Receipts
 
-## Sujan Tamang (PM)
+### Sujan Tamang (PM)
 
 **Pull Request:**
 [Add PR link]
@@ -165,11 +136,12 @@ If the live demo does not work:
 **Issues:**
 [Add issue links]
 
-## **Contribution:**
+**Work Done:**
+[Add description]
 
 ---
 
-## Swarnim Jung Karki
+### Swarnim Jung Karki
 
 **Pull Request:**
 [Add PR link]
@@ -180,11 +152,12 @@ If the live demo does not work:
 **Issues:**
 [Add issue links]
 
-## **Contribution:**
+**Work Done:**
+[Add description]
 
 ---
 
-## Ram Pathak
+### Ram Pathak
 
 **Pull Request:**
 - [PR #78: backend connection](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/78)
@@ -205,11 +178,11 @@ If the live demo does not work:
 **Issues:**
 [Add issue links]
 
-## **Contribution:** Backend API integration, database connection establishment, and code review support
+**Work Done:** Backend API integration, database connection establishment, and code review support
 
 ---
 
-## Mohan Khadka
+### Mohan Khadka
 
 **Pull Request:**
 [Add PR link]
@@ -220,11 +193,12 @@ If the live demo does not work:
 **Issues:**
 [Add issue links]
 
-## **Contribution:**
+**Work Done:**
+[Add description]
 
 ---
 
-## Sujan Shrestha
+### Sujan Shrestha
 
 **Pull Request:**
 [Add PR link]
@@ -235,14 +209,7 @@ If the live demo does not work:
 **Issues:**
 [Add issue links]
 
-## **Contribution:**
+**Work Done:**
+[Add description]
 
 ---
-
-# Instructor Notes
-
-**Comments:**
-[To be filled]
-
-**Suggestions:**
-[To be filled]
