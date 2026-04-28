@@ -13,10 +13,12 @@ Free Sewaa aims to be a community-driven platform that makes donating and receiv
 - Backend API structure
 - Authentication flow
 
-**Phase 2: Integration** 🔄 In Progress
-- MongoDB Atlas connection
-- Frontend-backend integration
-- Demo preparation
+**Phase 2: Integration** ✅ Near Complete
+- Frontend-backend integration (local JSON storage)
+- Demo-ready application
+
+**Phase 3: Production** 📋 Next
+- MongoDB Atlas connection (user has connection string ready)
 
 ---
 
@@ -39,14 +41,14 @@ Free Sewaa aims to be a community-driven platform that makes donating and receiv
 - [x] Node.js/Express setup
 - [x] MongoDB models
 - [x] REST API endpoints
-- [x] JWT authentication
-- [ ] MongoDB Atlas connection
+- [ ] MongoDB Atlas connection (ready, pending deployment)
 
-### Week 7-8: Integration 🔄
-- [ ] Connect frontend to backend
-- [ ] Replace localStorage with database
-- [ ] Test full user flows
-- [ ] Demo preparation
+### Week 7-8: Midterm Preparation 🔄
+- [x] Working demo application
+- [x] Full user flow (sign up → browse → request → message)
+- [x] Local JSON database
+- [ ] MongoDB production connection
+- [ ] Demo presentation
 
 ### Week 9-10: Polish
 - [ ] Complete request/contact flow
@@ -91,10 +93,10 @@ Free Sewaa aims to be a community-driven platform that makes donating and receiv
 
 ```
 Phase 1: ████████████████████ 100%
-Phase 2: ████████░░░░░░░░░░░░░ 40%
+Phase 2: ██████████████████░░░ 90% (Midterm ready)
 Phase 3: ░░░░░░░░░░░░░░░░░░░░ 0%
 ```
 
 ---
 
-*Last Updated: Week 6*
+*Last Updated: Week 8 - Midterm*
