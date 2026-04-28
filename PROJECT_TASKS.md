@@ -54,7 +54,7 @@
 ## 📦 Post-Midterm (Future)
 
 ### Backlog
-- [ ] Connect MongoDB Atlas
+- [ ] Connect MongoDB Atlas (PR #78 - needs review)
 - [ ] Add password hashing (bcrypt)
 - [ ] Add JWT authentication
 - [ ] Production deployment (Render/Railway)
@@ -63,6 +63,14 @@
 - [ ] Real-time chat
 - [ ] Admin dashboard
 - [ ] Mobile responsive design
+
+---
+
+## 🔄 Pull Requests
+
+| PR | Status | Description |
+|----|--------|-------------|
+| #78 | Open (108 commits) | Backend connection - MySQL/Sequelize (needs merge review) |
 
 ---
 
