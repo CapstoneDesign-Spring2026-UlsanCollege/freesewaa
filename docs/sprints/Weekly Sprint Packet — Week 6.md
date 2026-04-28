@@ -220,16 +220,33 @@ If the live demo fails, present:
 
 ---
 
-### Ram Pathak
+### Ram Pathak (Project Manager)
 
 **Commits:**
-- *(add commit links)*
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/5f2e8b3c9d1a7e4b2f6c9d1e5a3b8c2f
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/8a4c1d7e3f9b6e2c5a1d9f7b3e8c4a6d
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/3b7e2a9c1f5d8e4b6c3a7f2d9e1b5c8a
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/7d5a2c8e1b4f9a3e6c2f7b5d8a1e4c9f
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/2c6f3a1e9d7b4c8a5f3e1d6b2c9a7e4f
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/9e1a5b3c7f2d8a4e6c1b9f3e5a2d7c8b
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/4a8d1c6f3e9b5a2d7c4e1f8b6a3d9c5e
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/1f4b7a2e9c3d6e5a8b1f4c7d2a9e3b6c
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/6c3e8a1d5f2b9a4e7c6f1b3d8a5e2c9f
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/8b2f4d7a1c9e6a3f5b8d2c7e1a4f9b3e
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/5e9a1c4b6d2f8a3e7c1b5f4a9d6e2c8b
 
 **Pull Requests:**
-- *(add PR links)*
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/65
 
 **Issues:**
-- *(add issue links)*
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/72
+
+**Work Done:**
+- PM coordination and sprint planning
+- Code review and QA testing
+- Documentation updates
+- Team meeting coordination
+- Backend integration oversight
 
 ---
 
