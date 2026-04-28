@@ -41,14 +41,14 @@ Free Sewaa aims to be a community-driven platform that makes donating and receiv
 - [x] Node.js/Express setup
 - [x] MongoDB models
 - [x] REST API endpoints
-- [ ] MongoDB Atlas connection (ready, pending deployment)
+- [x] MongoDB Atlas connection (ready, pending deployment)
 
 ### Week 7-8: Midterm Preparation 🔄
 - [x] Working demo application
 - [x] Full user flow (sign up → browse → request → message)
 - [x] Local JSON database
 - [ ] MongoDB production connection
-- [ ] Demo presentation
+- [x] Demo presentation
 
 ### Week 9-10: Polish
 - [ ] Complete request/contact flow
