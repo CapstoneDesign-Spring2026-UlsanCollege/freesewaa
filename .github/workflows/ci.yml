@@ -1,0 +1,29 @@
+name: CI Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Check folders exist
+        run: |
+          test -d html && test -d css && test -d js && test -d server
+
+      - name: Count files
+        run: |
+          echo "HTML: $(ls html/*.html | wc -l)"
+          echo "CSS: $(ls css/*.css | wc -l)"
+          echo "JS: $(ls js/*.js | wc -l)"
+
+      - name: Verify server.js
+        run: test -f server/server.js
+
+      - name: Echo success
+        run: echo "✅ All checks passed"

@@ -1,6 +1,10 @@
 **Team Name**
 
 Free Sewaa Team
+
+## MVP Week 3
+https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/blob/ffbaaccdba5fcc53becb9ea980304614cbdc19df/docs/PROGRESS/MVP_WEEK_3.md
+
 # Sprint Packet — Week 3 (Frontend MVP)
 
 ## Team
@@ -23,7 +27,7 @@ Free Sewaa Team
 
 # Demo
 
-**Demo Link:** *(add working demo link or deployed URL here)*  
+**MVP Link:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/releases/tag/v1.0  
 **Backup Demo:** *
 
 
