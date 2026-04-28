@@ -187,22 +187,33 @@ Key achievements:
 
 # 📌 Individual Contribution Receipts
 
-Each member must provide:
 
-* GitHub commits
-* Pull Requests
-* Issues created/closed
-* Screenshots of work
+### Ram Pathak (Demo Driver)
 
----
+**Commits:**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/7a95e08af5180dc7c32a5a6e82c72651037eeb9a
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/bdf68812c039af8a319826a7d24f68f2ce7cb682
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/3a3ecd62bcca9d3d82ffd80327d9e2dad9b90102
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/b08d4acd2819ace659f28b6c8f503f3038355258
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/c65f84dfc555be91bffddc72b95dc09738ada6b5
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/9dfe19ccd6dbfc2235b5e5a64a7f698829804ca1
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/30cdc845c8d2b158f5cd4d8da29371114a384c61
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/bf56f39d76165c683dc10623672bf7b8f6159956
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/4095f23c0dea392e255a532ba1e506eb2ecef9fb
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/254e2bc40a6896c90740bbc2dc56c28dad7e2c96
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/4dfc3afd9dae2f9c5a344ea10263a50680c4691e
 
-(Example format)
+**Pull Requests:**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/55
 
-### Ram Pathak
+**Issues:**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/68
 
-* Commits: (add links)
-* PR: (add link)
-* Issues: (add link)
+**Work Done:**
+- Demo driver coordination and preparation
+- UI/UX testing and feedback
+- Feature presentation and walkthrough
+- Demo script development
 
 ### Sujan Shrestha
 
