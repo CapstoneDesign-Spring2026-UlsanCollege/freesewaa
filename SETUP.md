@@ -17,6 +17,19 @@ node server.js
 - Email: alisha@example.com
 - Password: demo123
 
+## Deployment
+
+### Render.com (Recommended)
+1. Connect GitHub repo to Render
+2. Build command: `npm install`
+3. Start command: `node server.js`
+4. Set environment variable `PORT=3000`
+
+### Railway
+1. Connect GitHub repo to Railway
+2. Add MONGO_URI for production database
+3. Deploy
+
 ## Adding MongoDB (Optional)
 Set environment variable:
 ```bash
