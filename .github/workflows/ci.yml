@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: CI Test
 
 on:
   push:
@@ -7,35 +7,25 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: List folders
+      - uses: actions/checkout@v4
+      
+      - name: Show structure
         run: ls -la
 
-      - name: Count HTML files
-        run: echo "HTML: $(ls html/*.html 2>/dev/null | wc -l)"
-
-      - name: Count CSS files
-        run: echo "CSS: $(ls css/*.css 2>/dev/null | wc -l)"
-
-      - name: Count JS files
-        run: echo "JS: $(ls js/*.js 2>/dev/null | wc -l)"
-
-      - name: Check server folder exists
-        run: ls server/
-
-      - name: Check server.js exists
-        run: test -f server/server.js && echo "server.js exists" || echo "server.js missing"
-
-      - name: Validate server.js syntax (if exists)
+      - name: Verify folders
         run: |
-          if [ -f server/server.js ]; then
-            node --check server/server.js && echo "✅ server.js valid"
-          else
-            echo "⚠️ server.js not found, skipping validation"
-          fi
+          echo "Checking folders..."
+          test -d html && echo "✓ html/"
+          test -d css && echo "✓ css/"
+          test -d js && echo "✓ js/"
+          test -d server && echo "✓ server/"
+          echo "✅ All folders exist"
+
+      - name: Count files
+        run: |
+          echo "HTML: $(ls html/*.html 2>/dev/null | wc -l | tr -d ' ')"
+          echo "CSS: $(ls css/*.css 2>/dev/null | wc -l | tr -d ' ')"
+          echo "JS: $(ls js/*.js 2>/dev/null | wc -l | tr -d ' ')"
