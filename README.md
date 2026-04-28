@@ -78,8 +78,10 @@ Open your browser and go to:
 - **App:** http://localhost:3000/app.html
 
 **Demo Account:**
-- Email: `ram@example.com`
-- Password: `ram123`
+- Email: `alisha@example.com`
+- Password: `demo123`
+
+> **Tip:** Use this account for presentation demo.
 
 ---
 
