@@ -234,22 +234,6 @@ When class starts, we will immediately:
 
 ---
 
-## 9) Individual Contribution Receipts
-
-Each student must add a comment below with **2–3 links minimum**.
-
-**Template for each student to copy/paste in comments:**
-
-```md
-## Contribution Receipts - [Your Name]
-
-- Receipt 1: [PR link or Issue link or commit link]
-- Receipt 2: [PR link or Issue link or commit link]
-- Receipt 3: [PR link or Issue link or commit link]
-
-### 1-sentence contribution summary
-
-[Describe what you did this week in one sentence]
 
 ### AI Use Note
 
