@@ -76,8 +76,8 @@ Be honest. This is not automatically bad. Hiding it is bad.
 
 | Code area | What is confusing? | Risk level | Owner | Next step |
 |---|---|---|---|---|
-| server.js async/await patterns | Error handling chain and promise resolution unclear | High | Rampathak12 | Review code comments and add documentation in next PR |
-| MongoDB aggregation pipelines | Complex queries for filtering/sorting donations | Medium | Rampathak12 | Pair programming session or add inline comments |
+| server.js async/await patterns | Error handling chain and promise resolution unclear | High | Rampathak12,suzmoon,sujan Tamang | Review code comments and add documentation in next PR |
+| MongoDB aggregation pipelines | Complex queries for filtering/sorting donations | Medium | Rampathak12,Swarnim Jung Karki,sujan Tamang | Pair programming session or add inline comments |
 | Express middleware security | Password hashing and session middleware not fully reviewed | High | Rampathak12, Sujan Shrestha | Security review needed before production |
 | Frontend-backend API integration | How requests flow from forms to server responses | Medium | Sujan Shrestha, Mohan Khadka | API documentation and testing needed |
 
@@ -183,7 +183,7 @@ By the end of Sprint 3, we should be able to show:
 | Team Member | GitHub Username | Date | Status |
 |-----------|---|------|--------|
 | Rampathak12 | Rampathak12 | 2026-04-29 | ✅ Reviewed |
-| Sujan Tamang | SujanTamang20 | 2026-04-29 | ⏳ Pending |
+| Sujan Tamang | [username] | 2026-04-29 | ⏳ Pending |
 | Sujan Shrestha | [username] | 2026-04-29 | ⏳ Pending |
 | Swarnim Jung Karki | [username] | 2026-04-29 | ⏳ Pending |
 | Mohan Khadka | [username] | 2026-04-29 | ⏳ Pending |
