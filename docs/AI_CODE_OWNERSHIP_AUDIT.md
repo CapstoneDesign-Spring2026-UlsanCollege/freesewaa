@@ -159,13 +159,66 @@ Be honest. This is not automatically bad. Hiding it is bad.
 
 ---
 
-## Swarnim Jung Karki - Specific Contributions
+## Team Members - Individual Contributions
+
+### Ram Pathak (Rampathak12) - Backend Lead
+
+| Area | File/Link | Evidence |
+|---|---|---|
+| Backend server | `server/server.js` | [PR #78](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/78) |
+| MongoDB setup | `docs/DESIGN/MONGODB_SETUP.md` | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
+| API endpoints | `server/server.js` | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
+| Sprint packets | `docs/sprints/` | Weekly updates |
+| Demo deployment | Render | [Live demo](https://free-sewaa-qh05.onrender.com) |
+
+---
+
+### Sujan Tamang (SujanTamang20) - Frontend Developer
+
+| Area | File/Link | Evidence |
+|---|---|---|
+| HTML pages | `html/*.html` | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
+| Profile page | `html/profile.html` | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
+| Auth pages | `html/auth.html`, `html/signup.html` | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
+| Donate page | `html/donate.html` | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
+| Sprint docs | `docs/sprints/SPRINT_*.md` | Sprint docs |
+
+---
+
+### Sujan Shrestha (suzmoon) - Backend Developer
+
+| Area | File/Link | Evidence |
+|---|---|---|
+| JavaScript validation | `js/auth.js` | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
+| API integration | `server/server.js` | [PR #78](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/78) |
+| Authentication flow | `js/auth.js`, `server/server.js` | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
+| Package dependencies | `server/package.json` | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
+| Backend security | Password hashing prep | [Issue #68](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/68) |
+
+---
+
+### Mohan Khadka - Frontend Developer
+
+| Area | File/Link | Evidence |
+|---|---|---|
+| JavaScript interactivity | `js/index.js`, `js/site.js` | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
+| DOM manipulation | `js/site.js` | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
+| Browse page | `html/browse.html` | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
+| Item detail page | `html/item.html` | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
+
+---
+
+### Swarnim Jung Karki (Swarnimkarki50) - Frontend & Design Lead
 
 | Area | File/Link | Evidence |
 |---|---|---|
 | CSS styling | `css/style.css`, `css/theme.css`, `css/auth.css` | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
 | Documentation | `CONTRIBUTORS.md`, `README.md`, AI audit | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
 | Board Reset Kanban | `board/` | [Commit cc84b3f](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/cc84b3f) |
+| Database schema | `docs/DESIGN/DATABASE_SCHEMA.md` | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
+| Presentation files | `presentation/`, `docs-midterm/` | Midterm docs |
+| Coding policy | `docs/POLICY.md` | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
+| Testing log | `docs/PROGRESS/TESTING_LOG.md` | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
 
 ---
 
