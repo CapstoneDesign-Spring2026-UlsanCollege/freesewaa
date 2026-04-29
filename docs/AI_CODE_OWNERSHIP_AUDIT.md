@@ -183,7 +183,7 @@ By the end of Sprint 3, we should be able to show:
 | Team Member | GitHub Username | Date | Status |
 |-----------|---|------|--------|
 | Rampathak12 | Rampathak12 | 2026-04-29 | ✅ Reviewed |
-| Sujan Tamang | [username] | 2026-04-29 | ⏳ Pending |
+| Sujan Tamang | SujanTamang20 | 2026-04-29 | ⏳ Pending |
 | Sujan Shrestha | [username] | 2026-04-29 | ⏳ Pending |
 | Swarnim Jung Karki | [username] | 2026-04-29 | ⏳ Pending |
 | Mohan Khadka | [username] | 2026-04-29 | ⏳ Pending |
