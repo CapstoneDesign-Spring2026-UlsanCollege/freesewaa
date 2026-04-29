@@ -135,7 +135,7 @@ Be honest. This is not automatically bad. Hiding it is bad.
 | Sujan Tamang | [Username needed] | HTML pages (browse, donate, item, profile, auth) | ✅ Clear | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
 | **Swarnim Jung Karki** | **Swarnimkarki50** | **CSS styling (all), responsive design, documentation, Board Reset app** | **✅ Clear** | **[Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main)** |
 | Sujan Shrestha | [Username needed] | JavaScript validation, API integration | Needs review | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
-| Mohan Khadka | [Username needed] | JavaScript (index.js, site.js), DOM manipulation | ✅ Clear | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
+| Mohan Khadka | Mohankhadkaa | JavaScript (index.js, site.js), DOM manipulation | ✅ Clear | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
 
 ---
 
@@ -155,7 +155,7 @@ Be honest. This is not automatically bad. Hiding it is bad.
 | Sujan Tamang | SujanTamang20 | 2026-04-29 | ⏳ Pending |
 | Sujan Shrestha | [**suzmoon** ] | 2026-04-29 |  **✅ Reviewed**  |
 | **Swarnim Jung Karki** | **Swarnimkarki50** | **2026-04-29** | **✅ Reviewed** |
-| Mohan Khadka | [Username needed] | 2026-04-29 | ⏳ Pending |
+| Mohan Khadka | Mohankhadkaa | 2026-04-29 | **✅ Reviewed** |
 
 ---
 
