@@ -134,7 +134,7 @@ Be honest. This is not automatically bad. Hiding it is bad.
 | Ram Pathak | Rampathak12 | Backend server, Express routing, API, MongoDB | ✅ Clear | [PR #78](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/78) |
 | Sujan Tamang |SujanTamang20 | HTML pages (browse, donate, item, profile, auth) | ✅ Clear | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
 | **Swarnim Jung Karki** | **Swarnimkarki50** | **CSS styling (all), responsive design, documentation, Board Reset app** | **✅ Clear** | **[Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main)** |
-| Sujan Shrestha | suzmoon| JavaScript validation, API integration | Needs review | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
+| Sujan Shrestha | suzmoon| JavaScript validation, API integration |  ✅ Clear  | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
 | Mohan Khadka | Mohankhadkaa | JavaScript (index.js, site.js), DOM manipulation | ✅ Clear | [Commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main) |
 
 ---
@@ -197,7 +197,7 @@ Be honest. This is not automatically bad. Hiding it is bad.
 
 ---
 
-### Mohan Khadka - Frontend Developer
+### Mohan Khadka(Mohankhadkaa) - Frontend Developer
 
 | Area | File/Link | Evidence |
 |---|---|---|
