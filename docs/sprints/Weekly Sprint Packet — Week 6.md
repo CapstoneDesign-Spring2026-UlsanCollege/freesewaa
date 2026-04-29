@@ -253,10 +253,11 @@ If the live demo fails, present:
 ### Sujan Shrestha
 
 **Commits:**
-- *(add commit links)*
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/3f0b0c49ba062464514a213af5e41589fe0659c1 — Rename Weekly Sprint Packet file
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/3555e09f1bce6b71ae9f31493123587e2f880ef2 — Create communication.md
 
 **Pull Requests:**
-- *(add PR links)*
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/40 — [WIP] Connect Post Item, Browse Items, and Request Item in a user flow
 
 **Issues:**
 - *(add issue links)*

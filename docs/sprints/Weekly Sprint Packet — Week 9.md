@@ -315,13 +315,18 @@ Designed all CSS styling and responsive layout for Free Sewaa, ensuring it works
 ```md
 ## Contribution Receipts - Sujan Shrestha (suzmoon)
 
-- Receipt 1: [PR #78 code review and commits](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main?author=suzmoon)
-- Receipt 2: [JavaScript validation in auth.js](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/blob/main/js/auth.js)
-- Receipt 3: [Identified password hashing gap (P0 issue)](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/blob/main/docs/AI_CODE_OWNERSHIP_AUDIT.md)
+- Receipt 1: [PR #78 - backend connection (contributor)](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/78)
+- Receipt 2: [PR #87 - Verify and stabilize core MVP flow (reviewer)](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/87)
+- Receipt 3: [PR #40 - Connect Post Item, Browse Items, and Request Item in a user flow](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/40)
+- Receipt 4: [Commit - Rename Weekly Sprint Packet file](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/3f0b0c49ba062464514a213af5e41589fe0659c1)
+- Receipt 5: [Commit - Create communication.md](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/3555e09f1bce6b71ae9f31493123587e2f880ef2)
+- Receipt 6: [JavaScript validation in auth.js](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/blob/main/js/auth.js)
+- Receipt 7: [Identified password hashing gap (P0 issue)](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/blob/main/docs/AI_CODE_OWNERSHIP_AUDIT.md)
+- All commits: https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main?author=suzmoon
 
 ### 1-sentence contribution summary
 
-Reviewed backend code, implemented JavaScript validation, identified critical security gaps, and documented code ownership.
+Reviewed backend code (PR #78 & PR #87), implemented JavaScript validation, connected core user flow features (PR #40), renamed sprint packet files, created communication.md, identified critical security gaps, and documented code ownership.
 
 ### AI Use Note
 

@@ -194,15 +194,20 @@ PR #48: Move frontend folder into docs](https://github.com/CapstoneDesign-Spring
 ### Sujan Shrestha
 
 **Pull Request:**
-[Add PR link]
+- [PR #78: backend connection](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/78) — backend connection (contributor)
+- [PR #40: Connect Post Item, Browse Items, and Request Item](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/40) — [WIP] Connect Post Item, Browse Items, and Request Item in a user flow
 
 **Commits:**
-[Add commit links]
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/3f0b0c49ba062464514a213af5e41589fe0659c1 — Rename Weekly Sprint Packet file
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/3555e09f1bce6b71ae9f31493123587e2f880ef2 — Create communication.md
 
 **Issues:**
-[Add issue links]
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commits/main?author=suzmoon — All commits by suzmoon
 
 **Work Done:**
-[Add description]
+- Contributed to backend connection implementation
+- Connected Post Item, Browse Items, and Request Item in user flow
+- Renamed sprint packet files for consistency
+- Created communication.md for team guidelines
 
 ---
