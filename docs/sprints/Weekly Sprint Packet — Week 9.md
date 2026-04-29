@@ -6,12 +6,12 @@
 
 ## 0) Team + Sprint
 
-- **Team:** Ram Pathak (Rampathak12in), Sujan Tamang (SujanTamang20), Sujan Shrestha (suzmoon), Swarnim Jung Karki (Swarnimkarki50), Mohan Khadka (Mohankhadkaa)
+- **Team:** Ram Pathak (Rampathak12), Sujan Tamang (SujanTamang20), Sujan Shrestha (suzmoon), Swarnim Jung Karki (Swarnimkarki50), Mohan Khadka (Mohankhadkaa)
 - **Week #:** 9
 - **Sprint:** Sprint 3
 - **Sprint phase:** MVP Verification + Code Ownership
 - **Sprint dates:** Week 9–11
-- **PM:** Ram Pathak (Rampathak12in)
+- **PM:** Ram Pathak (Rampathak12)
 - **Scribe:** Swarnim Jung Karki (Swarnimkarki50)
 - **QA Lead:** Mohan Khadka (Mohankhadkaa)
 - **Demo Driver:** Sujan Tamang (SujanTamang20)
@@ -78,10 +78,10 @@ If the live deployment is down, we will show:
 
 | Item | Owner | Definition of Done | Priority |
 |---|---|---|---|
-| Write unit tests for API endpoints | Rampathak12in | Tests passing, CI green | High |
+| Write unit tests for API endpoints | Rampathak12 | Tests passing, CI green | High |
 | Improve error messages for users | Sujan Tamang, Swarnim Jung Karki | Tested on frontend | High |
-| Document API endpoints | Rampathak12in | README with examples | Medium |
-| Optimize MongoDB queries | Rampathak12in | Query performance tested | Medium |
+| Document API endpoints | Rampathak12 | README with examples | Medium |
+| Optimize MongoDB queries | Rampathak12 | Query performance tested | Medium |
 | Add responsive CSS fixes | Swarnim Jung Karki | Mobile layout verified | Medium |
 
 ### Scope cut / Nice Later
@@ -115,11 +115,11 @@ List 3–8 important shipped items. Every item needs a link.
 | Bug / problem | Severity | Owner | Evidence / Issue link | Next step |
 |---|---|---|---|---|
 | Password hashing not implemented | P0 | Sujan Shrestha | [Issue mentioned in Audit](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/blob/main/docs/AI_CODE_OWNERSHIP_AUDIT.md) | Implement bcrypt before Week 10 |
-| Session timeout not configured | P1 | Rampathak12in | [Issue link TBD] | Add session.cookie.maxAge logic |
+| Session timeout not configured | P1 | Rampathak12 | [Issue link TBD] | Add session.cookie.maxAge logic |
 | Input validation missing on forms | P1 | Sujan Tamang, Mohan Khadka | [Issue #68 - Form validation improvements](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/68) | Add client & server validation checks |
-| Admin panel security not tested | P1 | Sujan Shrestha, Rampathak12in | [Issue #81 - Admin panel access not properly restricted](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/81) | Review admin auth and permissions |
+| Admin panel security not tested | P1 | Sujan Shrestha, Rampathak12 | [Issue #81 - Admin panel access not properly restricted](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/81) | Review admin auth and permissions |
 | Error messages not user-friendly | P2 | Sujan Tamang, Swarnim Jung Karki | [Issue #80 - Admin login error message](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/80) | Improve error message text and display |
-| No unit tests for API endpoints | P2 | Rampathak12in | [Issue #88 - Add basic backend endpoint tests](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/88) | Write tests for /api/* endpoints |
+| No unit tests for API endpoints | P2 | Rampathak12| [Issue #88 - Add basic backend endpoint tests](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/88) | Write tests for /api/* endpoints |
 | CSS not fully responsive on mobile | P2 | Swarnim Jung Karki | [Issue #71 - UI consistency check](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/71) | Test and fix mobile breakpoints |
 
 ---
@@ -128,7 +128,7 @@ List 3–8 important shipped items. Every item needs a link.
 
 | Risk / blocker | Owner | What we need | Evidence link | Mitigation |
 |---|---|---|---|---|
-| PR #78 unreviewed (15 days old, merged) | Rampathak12in | Code review + security review | [PR #78 - backend connection](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/78) | Split into smaller commits for future PRs, add documentation |
+| PR #78 unreviewed (15 days old, merged) | Rampathak12 | Code review + security review | [PR #78 - backend connection](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/78) | Split into smaller commits for future PRs, add documentation |
 | No automated testing | Rampathak12in | Time to write tests | [Issue #88 - Add tests](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/88) | Start with basic API endpoint tests in Week 10 |
 | Password security incomplete | Sujan Shrestha, Rampathak12in | bcrypt integration | [AI Code Ownership Audit - Security Gaps](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/blob/main/docs/AI_CODE_OWNERSHIP_AUDIT.md) | Priority fix before production |
 | MongoDB connection strings in code | Rampathak12in | Use environment variables | [Issue #72 - MongoDB Atlas Setup](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/72) | Move secrets to .env file |
@@ -196,7 +196,7 @@ Each member should be able to explain at least one code area, doc, test, or bug.
 
 | Student | Area owned | Evidence link | Can explain? |
 |---|---|---|---|
-| Rampathak12in (PM) | Backend server, Express routing, API endpoints, database | [PR #78 - backend connection](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/78) | Clear |
+| Rampathak12 (PM) | Backend server, Express routing, API endpoints, database | [PR #78 - backend connection](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/78) | Clear |
 | Sujan Tamang (Demo Driver) | HTML frontend structure (browse, donate, item, profile, auth pages) | [HTML files](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/tree/main/html) | Clear |
 | Swarnim Jung Karki (Scribe) | CSS styling (all stylesheets), responsive design | [CSS files](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/tree/main/css) | Clear |
 | Sujan Shrestha (AI Steward) | JavaScript validation (auth.js), API integration, security review | [auth.js](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/blob/main/js/auth.js) | Needs work |
@@ -206,9 +206,9 @@ Each member should be able to explain at least one code area, doc, test, or bug.
 
 | Area | What is confusing? | Owner | Plan to understand/fix |
 |---|---|---|---|
-| server.js async/await chains | Error handling flow and promise resolution | Rampathak12in | Add detailed comments to each async function |
-| MongoDB aggregation queries | Complex filtering logic for browse/search | Rampathak12in | Pair programming session with Sujan Shrestha |
-| Express middleware security | How authentication middleware prevents unauthorized access | Sujan Shrestha, Rampathak12in | Security workshop or documentation review |
+| server.js async/await chains | Error handling flow and promise resolution | Rampathak12 | Add detailed comments to each async function |
+| MongoDB aggregation queries | Complex filtering logic for browse/search | Rampathak12 | Pair programming session with Sujan Shrestha |
+| Express middleware security | How authentication middleware prevents unauthorized access | Sujan Shrestha, Rampathak12 | Security workshop or documentation review |
 | Frontend-backend API flow | How form submissions map to server endpoints | Sujan Shrestha, Mohan Khadka | Create API documentation with curl examples |
 
 ---
@@ -228,7 +228,7 @@ Top 3 goals. Each must be demoable or evidence-based.
 When class starts, we will immediately:
 
 - Review feedback on Week 9 Sprint Packet
-- [Assign PR #78 security review to Sujan Shrestha](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/78)
+- [Assign PR #78 security review to Ram Pathak](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/78)
 - Start implementing password hashing (bcrypt)
 - Create test file for API endpoints
 
