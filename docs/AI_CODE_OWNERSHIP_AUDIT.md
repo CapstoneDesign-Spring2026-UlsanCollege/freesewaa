@@ -6,7 +6,7 @@
 
 ## 1) Team + Project
 
-- **Team:** Rampathak12in, Sujan Tamang, Sujan Shrestha, Swarnim Jung Karki, Mohan Khadka
+- **Team:** Rampathak12, Sujan Tamang, Sujan Shrestha, Swarnim Jung Karki, Mohan Khadka
 - **Project name:** [Your project name - e.g., "Community Donation Platform"]
 - **Current repo:** https://github.com/[owner]/[repo]
 - **Current demo link:** [Live URL or deployment link if available]
@@ -125,7 +125,7 @@ Each student must own at least one part of the project.
 
 | Student | Owned area | Can explain? | Evidence link | Needs help with |
 |---|---|---|---|---|
-| Rampathak12in (YOU) | Backend server, Express routing, API endpoints, database setup | Clear | [Link to PR #78 or commits] | Security implementation, unit tests |
+| Rampathak12 | Backend server, Express routing, API endpoints, database setup | Clear | [Link to PR #78 or commits] | Security implementation, unit tests |
 | Sujan Tamang | HTML frontend (browse, donate, item, profile, auth pages), user authentication logic | Clear | [Link to PR or commits] | Advanced JavaScript patterns |
 | Swarnim Jung Karki | CSS styling (all stylesheets), responsive design, theme implementation | Clear | [Link to PR or commits] | Advanced CSS animations |
 | Sujan Shrestha | JavaScript validation (auth.js), password hashing implementation, API integration | Needs work | [Link to PR or commits] | Backend security patterns, full auth flow |
@@ -182,7 +182,7 @@ By the end of Sprint 3, we should be able to show:
 
 | Team Member | GitHub Username | Date | Status |
 |-----------|---|------|--------|
-| Rampathak12in | Rampathak12in | 2026-04-29 | ✅ Reviewed |
+| Rampathak12 | Rampathak12 | 2026-04-29 | ✅ Reviewed |
 | Sujan Tamang | [username] | 2026-04-29 | ⏳ Pending |
 | Sujan Shrestha | [username] | 2026-04-29 | ⏳ Pending |
 | Swarnim Jung Karki | [username] | 2026-04-29 | ⏳ Pending |
