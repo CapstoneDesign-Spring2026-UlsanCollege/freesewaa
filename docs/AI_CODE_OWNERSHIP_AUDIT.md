@@ -65,7 +65,7 @@ Our main user can:
 | JavaScript - Home page | `js/index.js` | Home page interactions and DOM manipulation | Mohan Khadka | [Link to PR or commit] |
 | JavaScript - Site-wide | `js/site.js` | Global site functionality and utilities | Mohan Khadka | [Link to PR or commit] |
 | JavaScript - Authentication | `js/auth.js` | Login/signup form validation and requests | Sujan Shrestha | [Link to PR or commit] |
-| Backend - Server setup | `server/server.js` | Express server, routing, API endpoints, database | Rampathak12in (YOU) | [Link to PR or commit] |
+| Backend - Server setup | `server/server.js` | Express server, routing, API endpoints, database | Rampathak12| [Link to PR or commit] |
 | Backend - Dependencies | `server/package.json` | Node.js dependencies and scripts | Sujan Shrestha | [Link to PR or commit] |
 
 ---
@@ -87,7 +87,7 @@ Be honest. This is not automatically bad. Hiding it is bad.
 
 | Area | AI tool used | What AI helped with | What humans checked/changed | Evidence |
 |---|---|---|---|---|
-| server.js | GitHub Copilot | Express routing setup, error handling structure, async function patterns | Rampathak12in reviewed all code, added custom error messages, modified middleware order | [Link to PR #78 or commit] |
+| server.js | GitHub Copilot | Express routing setup, error handling structure, async function patterns | Rampathak12 reviewed all code, added custom error messages, modified middleware order | [Link to PR #78 or commit] |
 | css/style.css | GitHub Copilot | CSS flexbox layouts, responsive breakpoints, color variable definitions | Swarnim Jung Karki reviewed styling, adjusted spacing values, customized theme colors | [Link to PR or commit] |
 | css/theme.css | GitHub Copilot | CSS variable definitions, color palette, typography scale | Swarnim Jung Karki tested on multiple browsers, refined color contrast for accessibility | [Link to PR or commit] |
 | css/auth.css | GitHub Copilot | Form styling, button states, error message styling | Swarnim Jung Karki adjusted animations, modified transition timings | [Link to PR or commit] |
@@ -98,11 +98,11 @@ Be honest. This is not automatically bad. Hiding it is bad.
 
 | Bug / problem | Severity | Evidence link | Owner | Next action |
 |---|---|---|---|---|
-| Password hashing not implemented | P0 | [Link to Issue or PR comment] | Rampathak12in, Sujan Shrestha | Implement bcrypt password hashing before next sprint |
-| Session timeout not configured | P1 | [Link to Issue or PR comment] | Rampathak12in | Add session expiration logic |
+| Password hashing not implemented | P0 | [Link to Issue or PR comment] | Rampathak12, Sujan Shrestha | Implement bcrypt password hashing before next sprint |
+| Session timeout not configured | P1 | [Link to Issue or PR comment] | Rampathak12| Add session expiration logic |
 | No input validation on donate form | P1 | [Link to Issue or PR comment] | Sujan Shrestha, Mohan Khadka | Add client-side and server-side validation |
-| Error messages unclear to users | P2 | [Link to Issue or PR comment] | Sujan Tamang, Rampathak12in | Improve error message UX |
-| No unit tests for backend | P2 | [Link to Issue or PR comment] | Rampathak12in | Write basic tests for API endpoints |
+| Error messages unclear to users | P2 | [Link to Issue or PR comment] | Sujan Tamang, Rampathak12 | Improve error message UX |
+| No unit tests for backend | P2 | [Link to Issue or PR comment] | Rampathak12| Write basic tests for API endpoints |
 | CSS not fully responsive on small screens | P2 | [Link to Issue or PR comment] | Swarnim Jung Karki | Test and fix mobile breakpoints |
 
 ---
@@ -111,10 +111,10 @@ Be honest. This is not automatically bad. Hiding it is bad.
 
 | Risk | Why it matters | Mitigation | Owner |
 |---|---|---|---|
-| PR #78 has 108 commits - large unreviewed code | Security and code quality risk | Split into smaller PRs for review, add documentation | Rampathak12in, Sujan Shrestha |
-| No unit tests for backend API | Hard to maintain and debug in future | Write tests for core endpoints, integrate CI/CD testing | Rampathak12in |
-| MongoDB queries not optimized | Could cause performance issues at scale | Review query efficiency, add indexes as needed | Rampathak12in |
-| Authentication flow needs security review | Passwords not hashed, sessions not tested | Implement bcrypt, test with security checklist | Rampathak12in, Sujan Shrestha |
+| PR #78 has 108 commits - large unreviewed code | Security and code quality risk | Split into smaller PRs for review, add documentation | Rampathak12, Sujan Shrestha |
+| No unit tests for backend API | Hard to maintain and debug in future | Write tests for core endpoints, integrate CI/CD testing | Rampathak12 |
+| MongoDB queries not optimized | Could cause performance issues at scale | Review query efficiency, add indexes as needed | Rampathak12|
+| Authentication flow needs security review | Passwords not hashed, sessions not tested | Implement bcrypt, test with security checklist | Rampathak12, Sujan Shrestha |
 | Limited error handling in frontend | Poor user experience on failures | Add error boundaries and user-friendly messages | Mohan Khadka, Sujan Shrestha |
 
 ---
