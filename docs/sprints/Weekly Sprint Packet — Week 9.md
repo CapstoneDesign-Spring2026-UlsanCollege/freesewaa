@@ -56,13 +56,13 @@ Password: demo123
 | Feature | Status | Evidence |
 |---------|--------|---------|
 | Homepage loads | Completed | https://free-sewaa-qh05.onrender.com/ |
-| User signup works | [ ] | https://free-sewaa-qh05.onrender.com/signup.html |
-| User login works | [ ] | https://free-sewaa-qh05.onrender.com/signin.html |
-| Browse items works | [ ] | https://free-sewaa-qh05.onrender.com/browse.html |
-| Post item works | [ ] | https://free-sewaa-qh05.onrender.com/donate.html |
-| Request item works | [ ] | https://free-sewaa-qh05.onrender.com/messages.html|
-| Messaging works | [ ] | https://free-sewaa-qh05.onrender.com/messages.html |
-| Admin panel works | [ ] | https://free-sewaa-qh05.onrender.com/admin_login.html |
+| User signup works |  Completed| https://free-sewaa-qh05.onrender.com/signup.html |
+| User login works | Completed | https://free-sewaa-qh05.onrender.com/signin.html |
+| Browse items works |Completed | https://free-sewaa-qh05.onrender.com/browse.html |
+| Post item works |Completed | https://free-sewaa-qh05.onrender.com/donate.html |
+| Request item works | Completed | https://free-sewaa-qh05.onrender.com/messages.html|
+| Messaging works | Completed | https://free-sewaa-qh05.onrender.com/messages.html |
+| Admin panel works |Completed | https://free-sewaa-qh05.onrender.com/admin_login.html |
 
 
 ---
