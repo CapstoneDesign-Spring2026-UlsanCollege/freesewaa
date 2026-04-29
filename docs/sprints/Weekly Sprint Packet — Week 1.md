@@ -170,14 +170,16 @@ PATHAK RAM
 
 
 sujan shrestha 
-**Commit:**  
-- Commit: 0ce9d107259208262363638bbf65902626c9cae3d10
+**Commits:**  
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/0ce9d107259208262363638bbf65902626c9cae3 — Update WEEK_1.md
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/f0e80848f9af3296a5a03cdba3b30872f860d3c5 — Update WEEK_1.md
 
-  **PR:**  
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/14#issue-4101625637
+**PR:**  
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/14 — Sprint 1 contributions
   
-**Issue Created / Updated:**[
-[https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/9#issue-4092354028]](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/51#issue-4198526690)
+**Issue Created / Updated:**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/51#issue-4198526690
+
 **Documentation Update:**  
 Updated PROJECT.md / TEAM_AGREEMENT.md / README.md
 

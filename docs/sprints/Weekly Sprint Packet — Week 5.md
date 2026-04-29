@@ -217,8 +217,16 @@ Key achievements:
 
 ### Sujan Shrestha
 
-* Commits: (add links)
-* PR: (add link)
-* Documentation updates
+**Commits:**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/3f0b0c49ba062464514a213af5e41589fe0659c1 — Rename Weekly Sprint Packet file
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/3555e09f1bce6b71ae9f31493123587e2f880ef2 — Create communication.md
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/62fcdd710061b9afa6aae5dcaf2e71e54da753a9 — Update WEEK_3.md
+
+**Pull Requests:**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/40 — [WIP] Connect Post Item, Browse Items, and Request Item in a user flow
+
+**Documentation Updates:**
+- Renamed sprint packet files for consistency
+- Created communication.md for team communication guidelines
 
 ---

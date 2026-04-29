@@ -230,13 +230,14 @@ Ram Pathak
 ## sujan shrestha 
 
 **Pull Request:**
--https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/40#issue-4183576663
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/40 — [WIP] Connect Post Item, Browse Items, and Request Item in a user flow
 
-**issue**
-- [https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/24](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/10#issue-4092373697)
+**Issue:**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/10#issue-4092373697
 
 **Commits:**
-- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/fcf97f9
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/62fcdd710061b9afa6aae5dcaf2e71e54da753a9 — Update WEEK_3.md
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/33329fd84113f2e5e896dbc106807a1d62dc689e — Update WEEK_2.md
 
 
 MOHAN KHADKA 

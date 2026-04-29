@@ -200,10 +200,14 @@ https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/c2ab
 
 ## sujan shrestha 
  
-**Commits:**
-- 62fcdd710061b9afa6aae5dcaf2e71e54da753a9
+**Pull Request:**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/40 — [WIP] Connect Post Item, Browse Items, and Request Item in a user flow
 
-**issue  :**
+**Commits:**
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/62fcdd710061b9afa6aae5dcaf2e71e54da753a9 — Update WEEK_3.md
+- https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/33329fd84113f2e5e896dbc106807a1d62dc689e — Update WEEK_2.md
+
+**Issue:**
 - https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/54#issue-4198681805
 
 

@@ -108,8 +108,10 @@ Commit: https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/com
 
 
 sujan shrestha 
-- **PR:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/45#issue-4192630346 
-- **Commit:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/issues/52
+- **PR:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/45 — Sprint 2 contributions
+- **Commits:**
+  - https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/33329fd84113f2e5e896dbc106807a1d62dc689e — Update WEEK_2.md
+  - https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/f0e80848f9af3296a5a03cdba3b30872f860d3c5 — Update WEEK_1.md
 
 MOHAN KHADKA
 - Commits:
