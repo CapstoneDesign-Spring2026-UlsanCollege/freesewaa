@@ -128,17 +128,9 @@ Week 7 is considered complete when:
 
 ### Sujan Tamang (PM)
 
-**Pull Request:**
-[Add PR link]
+PR #48: Move frontend folder into docs](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/pull/48)
 
-**Commits:**
-[Add commit links]
-
-**Issues:**
-[Add issue links]
-
-**Work Done:**
-[Add description]
+- [7b31fb326479bc559bfc72be6e76eddf5dc5fb89: Rename presentation to Midterm folder](https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/commit/7b31fb326479bc559bfc72be6e76eddf5dc5fb89)
 
 ---
 
