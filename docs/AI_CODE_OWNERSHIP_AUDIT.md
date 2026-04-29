@@ -7,7 +7,7 @@
 ## 1) Team + Project
 
 - **Team:** Rampathak12, Sujan Tamang, Sujan Shrestha, Swarnim Jung Karki, Mohan Khadka
-- **Project name:** [Your project name - e.g., "Community Donation Platform"]
+- **Project name:** [Freesewaa"]
 - **Current repo:** https://github.com/[owner]/[repo]
 - **Current demo link:** [Live URL or deployment link if available]
 - **Date updated:** 2026-04-29
