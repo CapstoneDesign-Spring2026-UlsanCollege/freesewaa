@@ -152,7 +152,7 @@ Be honest. This is not automatically bad. Hiding it is bad.
 | Team Member | GitHub Username | Date | Status |
 |-----------|---|------|--------|
 | Ram Pathak | Rampathak12 | 2026-04-29 | ✅ Reviewed |
-| Sujan Tamang | SujanTamang20 | 2026-04-29 | ⏳ Pending |
+| Sujan Tamang | SujanTamang20 | 2026-04-29 |  **✅ Reviewed** |
 | Sujan Shrestha | [**suzmoon** ] | 2026-04-29 |  **✅ Reviewed**  |
 | **Swarnim Jung Karki** | **Swarnimkarki50** | **2026-04-29** | **✅ Reviewed** |
 | Mohan Khadka | [Username needed] | 2026-04-29 | ⏳ Pending |
