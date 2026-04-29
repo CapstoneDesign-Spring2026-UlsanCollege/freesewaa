@@ -52,9 +52,8 @@
    ```
 
 5. **Access the Application**
-   - Frontend: http://localhost:3000
-   - Backend API: http://localhost:5000
-   - API Documentation: http://localhost:5000/api/docs
+   - Frontend: https://free-sewaa-qh05.onrender.com/
+   - Sign up: http: https://free-sewaa-qh05.onrender.com/signup.html
 
 ### Quick Demo Features
 
