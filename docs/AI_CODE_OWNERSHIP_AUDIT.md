@@ -8,7 +8,7 @@
 
 - **Team:** Rampathak12, Sujan Tamang, Sujan Shrestha, Swarnim Jung Karki, Mohan Khadka
 - **Project name:** [Freesewaa"]
-- **Current repo:** https://github.com/[owner]/[repo]
+- **Current repo:** [https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa]
 - **Current demo link:** [Live URL or deployment link if available]
 - **Date updated:** 2026-04-29
 
