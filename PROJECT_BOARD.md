@@ -1,7 +1,11 @@
 # Free Sewaa - Project Board
 
-## Quick Link
-**GitHub Projects:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/projects/new
+## Quick Links
+
+- **Create in Org:** https://github.com/orgs/CapstoneDesign-Spring2026-UlsanCollege/projects/new
+- **Create in Repo:** https://github.com/CapstoneDesign-Spring2026-UlsanCollege/Free_Sewaa/projects/new
+
+*(Note: If you have a specific board URL like /projects/30, use that. If it's blank, create a new project using the links above.)*
 
 ---
 
