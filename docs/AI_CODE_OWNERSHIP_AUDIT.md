@@ -76,9 +76,9 @@ Be honest. This is not automatically bad. Hiding it is bad.
 
 | Code area | What is confusing? | Risk level | Owner | Next step |
 |---|---|---|---|---|
-| server.js async/await patterns | Error handling chain and promise resolution unclear | High | Rampathak12in | Review code comments and add documentation in next PR |
-| MongoDB aggregation pipelines | Complex queries for filtering/sorting donations | Medium | Rampathak12in | Pair programming session or add inline comments |
-| Express middleware security | Password hashing and session middleware not fully reviewed | High | Rampathak12in, Sujan Shrestha | Security review needed before production |
+| server.js async/await patterns | Error handling chain and promise resolution unclear | High | Rampathak12 | Review code comments and add documentation in next PR |
+| MongoDB aggregation pipelines | Complex queries for filtering/sorting donations | Medium | Rampathak12 | Pair programming session or add inline comments |
+| Express middleware security | Password hashing and session middleware not fully reviewed | High | Rampathak12, Sujan Shrestha | Security review needed before production |
 | Frontend-backend API integration | How requests flow from forms to server responses | Medium | Sujan Shrestha, Mohan Khadka | API documentation and testing needed |
 
 ---
